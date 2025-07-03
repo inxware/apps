@@ -1,0 +1,277 @@
+#V:2.0.0
+#B:1
+#D:Y2024M3d29h8m54s32
+#N:RollerWidget
+1
+1	100000	90000
+BEGIN gui_text_real2 0
+%%%_widget7 g0000000.gui 0 0 2 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	2	2 F 1 S -1 	2 F -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_widget8 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 5 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 B -1 S 1 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	3	0 	0 	1 6 
+Or2	1	1	4	0 	0 	1 6 
+END
+BEGIN Constant_String1 0
+roller 
+Run_ConstantString	1	1	-1	0 	1 S 1 	0 
+END
+BEGIN MultiplexTwoInputReal 0
+*
+Run_Input1	1	1	1	1 F 2 	1 F 1 	1 2 
+Run_Input2	1	1	3	1 F 3 	1 F 1 	1 2 
+END
+BEGIN Constant_Real1 0
+-158.5 
+Run_ConstantReal	1	1	-1	0 	1 F 2 	0 
+END
+BEGIN gui_text_real2 0
+%%%_roller_1 g0000000.gui 0 0 2 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 17 S -1 	5 -1 -1 -1 35 34 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	7	2 F 4 S 2 	2 F 17 S -1 	2 35 34 
+END
+BEGIN gui_text_real2 0
+%%%_roller_2 g0000000.gui 0 0 2 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 18 S -1 	5 -1 -1 -1 38 36 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	8	2 F 5 S 3 	2 F 18 S -1 	2 38 36 
+END
+BEGIN gui_text_real2 0
+%%%_roller_3 g0000000.gui 0 0 2 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 19 S -1 	5 -1 -1 -1 40 39 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	9	2 F 6 S 3 	2 F 19 S -1 	2 40 39 
+END
+BEGIN gui_text_real2 0
+%%%_roller_4 g0000000.gui 0 0 2 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 16 S -1 	5 -1 -1 -1 43 42 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	10	2 F 7 S 4 	2 F 16 S -1 	2 43 42 
+END
+BEGIN Constant_String1 0
+-2,-1,-,0,1,2,3,4,5,6,7,8,9 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN Constant_String1 0
+0,1,2,3,4,5,6,7,8,9 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN Constant_String1 0
+.0,.1,.2,.3,.4,.5,.6,.7,.8,.9 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN ComparatorGreaterReal1 0
+0.0 
+Run_ComparatorGreaterReal	1	1	11	2 F 1 F -1 	1 B -1 	2 19 18 
+END
+BEGIN ConvertorIntToReal 0
+*
+Run	1	1	12	1 I 1 	1 F 14 	1 23 
+END
+BEGIN AbsInt 0
+*
+Run_AbsInt	1	1	13	1 I 2 	1 I 1 	1 12 
+END
+BEGIN ICalc_1 0
+A%10 
+run	1	1	12	1 I 1 	1 I 3 	1 14 
+END
+BEGIN ConvertorIntToReal 0
+*
+Run	1	1	14	1 I 3 	1 F 6 	1 9 
+END
+BEGIN ICalc_1 0
+(A/10)%10 
+run	1	1	12	1 I 1 	1 I 4 	1 15 
+END
+BEGIN ConvertorIntToReal 0
+*
+Run	1	1	15	1 I 4 	1 F 5 	1 8 
+END
+BEGIN ICalc_1 0
+(A/100)%10 
+run	1	1	12	1 I 1 	1 I 5 	1 16 
+END
+BEGIN ConvertorIntToReal 0
+*
+Run	1	1	16	1 I 5 	1 F 9 	1 11 
+END
+BEGIN MultiplexTwoInputReal 0
+*
+Run_Input1	1	1	17	1 F 8 	1 F 4 	1 7 
+Run_Input2	1	1	18	1 F 9 	1 F 4 	1 7 
+END
+BEGIN ComparatorEqualInt1 0
+1 
+Run_ComparatorEqualInt	1	1	19	2 I 5 I -1 	1 B -1 	2 21 -1 
+END
+BEGIN MultiplexThreeInputReal 0
+*
+Run_Input1	1	1	20	1 F 10 	1 F 8 	1 17 
+Run_Input2	1	1	21	1 F 11 	1 F 8 	1 17 
+Run_Input3	1	1	22	1 F 12 	1 F 8 	1 17 
+END
+BEGIN ComparatorEqualInt1 0
+0 
+Run_ComparatorEqualInt	1	1	19	2 I 5 I -1 	1 B -1 	2 22 -1 
+END
+BEGIN ComparatorEqualInt1 0
+2 
+Run_ComparatorEqualInt	1	1	19	2 I 5 I -1 	1 B -1 	2 20 -1 
+END
+BEGIN Constant_Real1 0
+-0.01 
+Run_ConstantReal	1	1	-1	0 	1 F 12 	0 
+END
+BEGIN Constant_Real1 0
+-1 
+Run_ConstantReal	1	1	-1	0 	1 F 11 	0 
+END
+BEGIN Constant_Real1 0
+-2 
+Run_ConstantReal	1	1	-1	0 	1 F 10 	0 
+END
+BEGIN AbsReal 0
+*
+Run_AbsReal	1	1	23	1 F 1 	1 F 13 	1 24 
+END
+BEGIN SubtractionReal 0
+*
+Run_SubtractionReal	1	1	24	2 F 13 F 14 	1 F 7 	1 10 
+END
+BEGIN ConvertorRealToInt 0
+*
+Run_ConvertorRealToInt	1	1	5	1 F 1 	1 I 2 	1 13 
+END
+BEGIN AdditionTwoInputReal 0
+*
+Run_AdditionTwoInputReal	1	1	25	2 F 15 F 16 	1 F 21 	1 26 
+END
+BEGIN ComparatorGreaterReal1 0
+0.0 
+Run_ComparatorGreaterReal	1	1	26	2 F 17 F -1 	1 B -1 	2 46 45 
+END
+BEGIN AbsInt 0
+*
+Run_AbsInt	1	1	27	1 I 6 	1 I 7 	1 30 
+END
+BEGIN ConvertorRealToInt 0
+*
+Run_ConvertorRealToInt	1	1	28	1 F 17 	1 I 6 	1 27 
+END
+BEGIN ICalc_4 0
+100*A+10*B+C 
+run	1	1	29	4 I 7 I 8 I 9 I -1 	1 I 10 	1 33 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	30	0 	0 	1 29 
+Or2	1	1	31	0 	0 	1 29 
+Or3	1	1	32	0 	0 	1 29 
+END
+BEGIN ConvertorRealToInt 0
+*
+Run_ConvertorRealToInt	1	1	28	1 F 18 	1 I 8 	1 31 
+END
+BEGIN ConvertorRealToInt 0
+*
+Run_ConvertorRealToInt	1	1	28	1 F 19 	1 I 9 	1 32 
+END
+BEGIN ConvertorIntToReal 0
+*
+Run	1	1	33	1 I 10 	1 F 15 	1 25 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	34	0 	0 	1 28 
+Or2	1	1	35	0 	0 	1 28 
+Or3	1	1	36	0 	0 	1 28 
+Or4	1	1	37	0 	0 	1 28 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	38	0 	0 	1 37 
+Or2	1	1	39	0 	0 	1 37 
+Or3	1	1	40	0 	0 	1 37 
+Or4	1	1	41	0 	0 	1 37 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	42	0 	0 	1 41 
+Or2	1	1	43	0 	0 	1 41 
+END
+BEGIN Constant_Real1 0
+-1 
+Run_ConstantReal	1	1	-1	0 	1 F 22 	0 
+END
+BEGIN MultiplexTwoInputReal 0
+*
+Run_Input1	1	1	44	1 F 20 	1 F 23 	1 47 
+Run_Input2	1	1	45	1 F 21 	1 F 23 	1 47 
+END
+BEGIN MultiplyTwoInputReal 0
+*
+Run_MultiplyTwoInputReal	1	1	46	2 F 22 F 21 	1 F 20 	1 44 
+END
+BEGIN gui_text_real2 0
+%%%_roller_label g0000000.gui 0 0 1 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 24 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	47	2 F 23 S -1 	2 F 24 S -1 	2 -1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_roller_apply g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 48 50 -1 -1 -1 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	48	2 B -1 S 5 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_roller_cancel g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 49 51 -1 -1 -1 
+show	1	1	5	0 	0 	1 -1 
+hide	1	1	6	0 	0 	1 -1 
+data	1	1	49	2 B -1 S 6 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+apply 
+Run_ConstantString	1	1	-1	0 	1 S 5 	0 
+END
+BEGIN Constant_String1 0
+cancel 
+Run_ConstantString	1	1	-1	0 	1 S 6 	0 
+END
+BEGIN MultiplexTwoInputReal 0
+*
+Run_Input1	1	1	50	1 F 24 	1 F 3 	1 52 
+Run_Input2	1	1	51	1 F 1 	1 F 3 	1 52 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	50	0 	0 	1 3 
+And2	1	1	52	0 	0 	1 3 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	51	0 	0 	1 4 
+And2	1	1	52	0 	0 	1 4 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

@@ -1,0 +1,9 @@
+Version 1.4
+PedGreen,GUI_Bitmap,214,26,154,370,0,255,Pedestrian Go.png,1
+PedRed,GUI_Bitmap,214,26,154,370,0,255,Pedestrian Stop.png,1
+PedBlank,GUI_Bitmap,213,26,154,370,0,255,Pedestrian Light Blank 1.png,1
+TrafficGreen,GUI_Bitmap,49,25,111,386,1,255,Traffic Light Green.png,0
+TrafficAmber,GUI_Bitmap,49,25,111,386,1,255,Traffic Light Amber.png,1
+TrafficRed,GUI_Bitmap,49,25,111,386,1,255,Traffic Light Red.png,1
+ButtonOff,GUI_Bitmap,213,378,163,147,9,255,Traffic Light Button off.png,0
+ButtonOn,GUI_Bitmap,213,378,163,147,9,255,Traffic Light Button on.png,0

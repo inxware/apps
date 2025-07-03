@@ -1,0 +1,10 @@
+Version 1.4
+widget0,GUI_Bitmap,335,22,128,128,1,255,010-notes.png,0
+widget2,GUI_Bitmap,185,22,128,128,1,255,011-house.png,0
+widget3,GUI_Bitmap,35,22,128,128,1,255,012-daily health app.png,0
+widget4,GUI_Bitmap,185,165,128,128,1,255,042-transport.png,0
+widget5,GUI_Bitmap,35,165,128,128,1,255,025-settings.png,0
+widget6,GUI_Bitmap,335,165,128,128,1,255,051-drive.png,0
+widget7,GUI_IntBox2,32,307,432,40,1,255,255,0,255,255,0,0,255,arial10,5,5,5,5,14,1,0,0,0
+widget8,GUI_Patch,552,263,110,60,1,255,100,100,100,0
+widget9,GUI_BoolBox2,552,343,110,60,1,255,255,255,255,255,100,100,100,arial10,5,5,5,5,14,0,0,0,0

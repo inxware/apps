@@ -1,0 +1,145 @@
+#V:2.0.0
+#B:45
+#D:Y2024M2d27h12m16s43
+#N:Debugger Demo
+1
+1	100000	90000
+BEGIN state_condition 0
+7 8 
+doCondition	1	1	2	1 U 1 	0 	1 -1 
+END
+BEGIN state_condition 0
+8 1 
+doCondition	1	1	2	1 U 1 	0 	1 -1 
+END
+BEGIN state_condition 0
+1 2 
+doCondition	1	1	2	1 U 1 	0 	1 19 
+END
+BEGIN state_condition 0
+2 3 
+doCondition	1	1	2	1 U 1 	0 	1 17 
+END
+BEGIN state_condition 0
+3 4 
+doCondition	1	1	2	1 U 1 	0 	1 18 
+END
+BEGIN state_condition 0
+4 5 
+doCondition	1	1	2	1 U 1 	0 	1 8 
+END
+BEGIN state_condition 0
+5 6 
+doCondition	1	1	3	1 U 1 	0 	1 10 
+END
+BEGIN state_condition 0
+6 7 
+doCondition	1	1	4	1 U 1 	0 	1 14 
+END
+BEGIN state_manager 0
+7 
+enabled	1	1	1	0 	2 U 1 I 1 	2 -1 -1 
+END
+BEGIN state_condition 0
+6 9 
+doCondition	1	1	5	1 U 1 	0 	1 15 
+END
+BEGIN state_condition 0
+5 10 
+doCondition	1	1	6	1 U 1 	0 	1 11 
+END
+BEGIN state_condition 0
+9 1 
+doCondition	1	1	2	1 U 1 	0 	1 -1 
+END
+BEGIN state_condition 0
+10 2 
+doCondition	1	1	2	1 U 1 	0 	1 20 
+END
+BEGIN time_clock 0
+300000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 2 
+END
+BEGIN state_debug 0
+*
+Run	1	1	-1	1 I 1 	0 	0 
+END
+BEGIN time_clock 0
+300000 0 1 
+start	1	1	7	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 6 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	8	1 B 1 	0 	2 7 9 
+END
+BEGIN time_clock 0
+300000 0 1 
+start	1	1	9	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 3 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	10	0 	1 B 1 	1 -1 
+Reset	1	1	11	0 	1 B 1 	1 -1 
+END
+BEGIN time_clock 0
+300000 0 1 
+start	1	1	12	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 5 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	10	1 B 2 	0 	2 12 13 
+END
+BEGIN time_clock 0
+300000 0 1 
+start	1	1	13	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 4 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	14	0 	1 B 2 	1 -1 
+Reset	1	1	15	0 	1 B 2 	1 -1 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	16	1 S 1 	1 S 6 	1 21 
+Run_Input2	1	1	17	1 S 2 	1 S 6 	1 21 
+Run_Input3	1	1	18	1 S 3 	1 S 6 	1 21 
+Run_Input4	1	1	8	1 S 4 	1 S 6 	1 21 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	19	0 	0 	1 16 
+Or2	1	1	20	0 	0 	1 16 
+END
+BEGIN mqtt_publish 0
+default 0 
+publish	1	1	21	3 S 5 S 6 I -1 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+Running  
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN Constant_String1 0
+Starting 
+Run_ConstantString	1	1	-1	0 	1 S 1 	0 
+END
+BEGIN Constant_String1 0
+Warning 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN Constant_String1 0
+Not Running 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN Constant_String1 0
+Device Status 
+Run_ConstantString	1	1	-1	0 	1 S 5 	0 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END
