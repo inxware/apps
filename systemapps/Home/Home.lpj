@@ -1,0 +1,387 @@
+<LucidProject>
+<Version>1.4</Version>
+<ProjectName>Home</ProjectName>
+<Toolboxes/>
+<LastTransferToTarget>2025-01-06 14:26:03:000</LastTransferToTarget>
+<GroupSet>
+<Group>
+<ID>1</ID>
+<Name>Default</Name>
+<Period>100000</Period>
+<Allocation>90000</Allocation>
+</Group>
+</GroupSet>
+<ExternalFiles>
+<GuiFileSet>
+<GuiFile>
+<HostFileName>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</HostFileName>
+<Description>Auto-generated default layout</Description>
+<Screen>default</Screen>
+</GuiFile>
+<GuiFile>
+<HostFileName>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_play select menu</HostFileName>
+<Description>widget group</Description>
+<Screen>play select menu</Screen>
+</GuiFile>
+<GuiFile>
+<HostFileName>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_viewport</HostFileName>
+<Description/>
+<Screen>viewport</Screen>
+</GuiFile>
+</GuiFileSet>
+<PngFileSet>
+<PngFile>
+<HostFileName>placeholder.png</HostFileName>
+<Description/>
+<TargetFileName>p0000000.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>MB_0004_HW_info.png</HostFileName>
+<Description/>
+<TargetFileName>p0000001.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>hwinfoicon.png</HostFileName>
+<Description/>
+<TargetFileName>p0000002.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>border_6.png</HostFileName>
+<Description/>
+<TargetFileName>p0000008.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>line_8.png</HostFileName>
+<Description/>
+<TargetFileName>p0000019.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>defaultAppIcon_small.png</HostFileName>
+<Description/>
+<TargetFileName>p0000022.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>defaultAppIcon.png</HostFileName>
+<Description/>
+<TargetFileName>p0000023.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>offButton.png</HostFileName>
+<Description/>
+<TargetFileName>p0000024.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>upArrow.png</HostFileName>
+<Description/>
+<TargetFileName>p0000025.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>downArrow.png</HostFileName>
+<Description/>
+<TargetFileName>p0000026.png</TargetFileName>
+</PngFile>
+</PngFileSet>
+<BmpFileSet/>
+<DataFileSet/>
+<BdfFileSet>
+<BdfFile>
+<HostFileName>lsr.bdf</HostFileName>
+<Description/>
+<TargetFileName>f0000000.bdf</TargetFileName>
+</BdfFile>
+<BdfFile>
+<HostFileName>arial12.bdf</HostFileName>
+<Description/>
+<TargetFileName>f0000001.bdf</TargetFileName>
+</BdfFile>
+<BdfFile>
+<HostFileName>arial10.bdf</HostFileName>
+<Description/>
+<TargetFileName>f0000002.bdf</TargetFileName>
+</BdfFile>
+<BdfFile>
+<HostFileName>arial14.bdf</HostFileName>
+<Description/>
+<TargetFileName>f0000003.bdf</TargetFileName>
+</BdfFile>
+<BdfFile>
+<HostFileName>arial16.bdf</HostFileName>
+<Description/>
+<TargetFileName>f0000004.bdf</TargetFileName>
+</BdfFile>
+</BdfFileSet>
+<ResourceFileSet>
+<ResourceFile>
+<HostFileName>icon128x128.png</HostFileName>
+<Description/>
+<TargetFileName>icon128x128.png</TargetFileName>
+</ResourceFile>
+</ResourceFileSet>
+</ExternalFiles>
+<ScreenSet>
+<Screen>
+<Tag>default</Tag>
+<Description>Auto-generated default layout</Description>
+<TargetFileName>g0000000.gui</TargetFileName>
+<ActiveHostLayout>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</ActiveHostLayout>
+</Screen>
+<Screen>
+<Tag>play select menu</Tag>
+<Description>widget group</Description>
+<TargetFileName>g0000001.gui</TargetFileName>
+<ActiveHostLayout>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_play select menu</ActiveHostLayout>
+</Screen>
+<Screen>
+<Tag>viewport</Tag>
+<Description/>
+<TargetFileName>g0000002.gui</TargetFileName>
+<ActiveHostLayout>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_viewport</ActiveHostLayout>
+</Screen>
+</ScreenSet>
+<WidgetSet>
+<Widget>
+<WidgetTag>binTextBox</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>deviceID</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>ipaddress</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>ram</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>storage</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>bluePatch</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>redPatch</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appName</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>hwInfoIcon</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>BackGround_List</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>SelectorIcon</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>TestSelect</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline1</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline2</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline3</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline4</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline5</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline6</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline7</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>textline8</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>debugAmt</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appCommName</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appVers</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appDesc</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>viewport</WidgetTag>
+<ScreenTag>viewport</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appIcon</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>pairHeadText</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>cursor</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>appInfoPatch</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>defaultAppName</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>defaultAppTitle</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>defaultAppPatch</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line1</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line2</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line3</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line4</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line5</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line6</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line7</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>Line8</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>turnOff</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>upArrow</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>downArrow</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>greyed_out</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_1</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_2</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_3</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_4</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_5</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_6</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_7</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>GridLine_8</WidgetTag>
+<ScreenTag>play select menu</ScreenTag>
+</Widget>
+</WidgetSet>
+<ExternalDataFileMetas>
+<NumberOfHighestGuiFile>10</NumberOfHighestGuiFile>
+<NumberOfHighestPngFile>27</NumberOfHighestPngFile>
+<NumberOfHighestBmpFile>0</NumberOfHighestBmpFile>
+<NumberOfHighestDatFile>0</NumberOfHighestDatFile>
+<NumberOfHighestBdfFile>5</NumberOfHighestBdfFile>
+</ExternalDataFileMetas>
+<Transferrables>
+<DataFileSet/>
+<ImageFileSet>
+<Location>border_6.png</Location>
+<Location>defaultAppIcon.png</Location>
+<Location>defaultAppIcon_small.png</Location>
+<Location>downArrow.png</Location>
+<Location>hwinfoicon.png</Location>
+<Location>offButton.png</Location>
+<Location>upArrow.png</Location>
+</ImageFileSet>
+<LayoutFileSet>
+<Location>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</Location>
+<Location>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_play select menu</Location>
+<Location>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_viewport</Location>
+</LayoutFileSet>
+<ResourceFileSet>
+<Location>icon128x128.png</Location>
+</ResourceFileSet>
+<MiscFileSet>
+<Location>ert1.sdl</Location>
+</MiscFileSet>
+<FontFileSet>
+<Location>arial10.bdf</Location>
+<Location>arial12.bdf</Location>
+<Location>arial14.bdf</Location>
+<Location>lsr.bdf</Location>
+</FontFileSet>
+</Transferrables>
+</LucidProject>

@@ -1,0 +1,16 @@
+Version 1.4
+bluePatch,GUI_Patch,5,5,336,149,0,255,75,172,179,0
+redPatch,GUI_Patch,346,5,338,39,0,255,128,255,0,0
+defaultAppPatch,GUI_Patch,346,50,338,104,0,255,96,166,110,0
+binTextBox,GUI_TextBox2,432,9,242,31,1,255,255,255,255,25,0,0,0,arial12,10,0,5,0,16,0,0,0,0
+deviceID,GUI_TextBox2,124,9,209,34,1,255,255,255,255,25,0,0,0,arial10,10,0,5,0,16,0,0,0,0
+ipaddress,GUI_TextBox2,124,119,209,33,1,255,255,255,255,25,0,0,0,arial12,10,0,5,0,16,0,0,0,0
+ram,GUI_TextBox2,124,46,209,33,1,255,255,255,255,25,0,0,0,arial12,10,0,5,0,16,0,0,0,0
+storage,GUI_TextBox2,124,82,209,33,1,255,255,255,255,25,0,0,0,arial12,10,0,5,0,16,0,0,0,0
+pairHeadText,GUI_TextBox2,350,9,78,31,1,255,255,255,255,25,0,0,0,arial12,10,5,5,0,16,0,0,0,0
+defaultAppName,GUI_TextBox2,352,96,322,35,1,255,255,255,255,25,0,0,0,arial12,10,0,5,0,14,0,0,0,0
+hwInfoIcon,GUI_Bitmap,21,34,94,88,1,255,hwinfoicon.png,1
+defaultAppTitle,GUI_TextBox2,351,54,322,35,2,255,255,255,255,25,0,0,0,arial12,10,0,5,0,14,0,0,0,0
+cursor,GUI_Patch,431,13,4,26,2,255,255,255,255,0
+turnOff,GUI_Bitmap,698,12,28,28,2,255,offButton.png,1
+debugAmt,GUI_IntBox2,10,15,110,60,3,255,255,255,255,255,100,100,100,lsr,5,5,5,5,14,0,0,0,0
