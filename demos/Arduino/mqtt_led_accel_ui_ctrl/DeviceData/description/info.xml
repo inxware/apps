@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>mqtt_led_accel_ui_ctrl</Name>
+  <CommercialName>mqtt_led_ctrl</CommercialName>
+  <Version>1.4</Version>
+  <Description>mqtt_led_accel_ui_ctrl</Description>
+</root>

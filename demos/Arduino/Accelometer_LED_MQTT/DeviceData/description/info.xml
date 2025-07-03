@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>Accelometer_LED_MQTT</Name>
+  <CommercialName>RGB LED MQTT</CommercialName>
+  <Version>1.4</Version>
+  <Description>RGB LED MQTT</Description>
+</root>

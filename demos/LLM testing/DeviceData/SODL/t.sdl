@@ -1,0 +1,159 @@
+#V:2.0.0
+#B:33
+#D:Y2024M11d17h9m21s0
+#N:LLM testing
+1
+1	100000	90000
+BEGIN state_manager 0
+1465 
+enabled	1	1	1	0 	2 U 1 I 1 	2 -1 -1 
+END
+BEGIN state_condition 0
+1465 1467 
+doCondition	1	1	2	1 U 1 	0 	1 7 
+END
+BEGIN state_condition 0
+1467 1469 
+doCondition	1	1	3	1 U 1 	0 	1 8 
+END
+BEGIN state_condition 0
+1469 1471 
+doCondition	1	1	4	1 U 1 	0 	1 9 
+END
+BEGIN state_condition 0
+1471 1473 
+doCondition	1	1	5	1 U 1 	0 	1 10 
+END
+BEGIN state_condition 0
+1473 1465 
+doCondition	1	1	6	1 U 1 	0 	1 12 
+END
+BEGIN time_clock 0
+3000000 0 1 
+start	1	1	7	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 3 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	8	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 4 
+END
+BEGIN time_clock 0
+20000000 0 1 
+start	1	1	9	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 5 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	10	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 6 
+END
+BEGIN state_debug 0
+*
+Run	1	1	-1	1 I 1 	0 	0 
+END
+BEGIN GUI_Image_File 0
+%%%_TrafficGreen g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	11	0 	0 	1 -1 
+hide	1	1	7	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_TrafficAmber g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	7	0 	0 	1 -1 
+hide	1	1	8	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_TrafficRed g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	8	0 	0 	1 -1 
+hide	1	1	12	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_PedGreen g0000001.gui 0 0 0 
+create	1	1	9	0 	4 I -1 I -1 I -1 I -1 	3 20 -1 -1 
+destroy	1	1	12	0 	0 	1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	13	0 	0 	1 -1 
+hide	1	1	14	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_PedRed g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	15	0 	0 	1 -1 
+hide	1	1	9	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_ButtonOff g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 17 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	16	0 	0 	1 -1 
+hide	1	1	17	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_ButtonOn g0000001.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	17	0 	0 	1 19 
+hide	1	1	7	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_PedBlank g0000001.gui 0 0 0 
+create	1	1	10	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+destroy	1	1	12	0 	0 	1 -1 
+load	1	1	1	1 S -1 	0 	1 -1 
+show	1	1	14	0 	0 	1 -1 
+hide	1	1	18	0 	0 	1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 16 
+Or2	1	1	7	0 	0 	1 16 
+END
+BEGIN time_clock 0
+4000000 0 1 
+start	1	1	19	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 2 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	20	0 	0 	1 13 
+Or2	1	1	21	0 	0 	1 13 
+END
+BEGIN EventToggleBoolean 0
+*
+Toggle	1	1	22	0 	1 B 1 	1 23 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	23	1 B 1 	0 	2 21 14 
+END
+BEGIN time_clock 0
+500000 1 1 
+start	1	1	10	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	12	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 22 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	21	0 	0 	1 18 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 11 
+Or2	1	1	12	0 	0 	1 11 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 15 
+Or2	1	1	12	0 	0 	1 15 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

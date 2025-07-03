@@ -1,0 +1,78 @@
+#V:2.0.0
+#B:6
+#D:Y2025M2d17h7m53s8
+#N:MqttStatus
+1
+1	100000	90000
+BEGIN mqtt_client 0
+test.mosquitto.org 1883 NULL NULL NULL 0 NULL NULL NULL 
+connect	1	1	2	6 S -1 B -1 S -1 S 1 I -1 S -1 	1 S -1 	3 9 -1 10 
+END
+BEGIN Constant_String1 0
+inxArduino 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	3	2 S 2 S 3 	1 S 1 	1 2 
+END
+BEGIN ConvertorIntToString 0
+*
+Run_ConvertorIntToString	1	1	4	1 I 1 	1 S 3 	1 3 
+END
+BEGIN rng 0
+44 100000 999999 
+run	1	1	1	1 I -1 	1 I 1 	1 4 
+END
+BEGIN led 0
+0 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	5	2 B 1 I -1 	0 	1 -1 
+END
+BEGIN led 0
+1 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	6	2 B 2 I -1 	0 	1 -1 
+END
+BEGIN led 0
+2 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	7	2 B 3 I -1 	0 	1 -1 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	8	0 	1 B 1 	1 5 
+Reset	1	1	9	0 	1 B 1 	1 5 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 8 
+Or2	1	1	10	0 	0 	1 8 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	9	0 	1 B 2 	1 6 
+Reset	1	1	10	0 	1 B 2 	1 6 
+END
+BEGIN time_clock 0
+100000 0 1 
+start	1	1	11	3 I -1 B -1 B -1 	0 	1 12 
+tick	1	1	-1	0 	0 	1 13 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	12	0 	1 B 3 	1 7 
+Reset	1	1	13	0 	1 B 3 	1 7 
+END
+BEGIN mqtt_subscribe 0
+inx/arduino/printf 0 
+subscribe	1	1	1	2 S -1 I -1 	2 S 4 I -1 	2 -1 11 
+END
+BEGIN console_print 0
+1 
+PrintFunc	1	1	11	1 S 4 	0 	1 -1 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

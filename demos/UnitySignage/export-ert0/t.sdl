@@ -1,0 +1,869 @@
+#V:2.0.0
+#B:67
+#D:Y2024M3d4h17m4s50
+#N:UnitySignage
+1
+1	100000	90000
+BEGIN unity2 0
+*
+create	1	1	2	3 S 1 S -1 S 2 	1 S -1 	2 83 -1 
+destroy	1	1	3	0 	0 	1 -1 
+setmedia	1	1	4	4 S 3 S 4 S 5 S 6 	0 	1 -1 
+END
+BEGIN unity2 0
+*
+create	1	1	5	3 S 7 S -1 S 8 	1 S -1 	2 51 -1 
+destroy	1	1	6	0 	0 	1 -1 
+setmedia	1	1	7	4 S 3 S 4 S 5 S 6 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+1 
+Run_ConstantString	1	1	-1	0 	1 S 1 	0 
+END
+BEGIN Constant_String1 0
+2 
+Run_ConstantString	1	1	-1	0 	1 S 7 	0 
+END
+BEGIN unity2 0
+*
+create	1	1	8	3 S 9 S -1 S 10 	1 S -1 	2 55 -1 
+destroy	1	1	9	0 	0 	1 -1 
+setmedia	1	1	10	4 S 3 S 4 S 5 S 6 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+3 
+Run_ConstantString	1	1	-1	0 	1 S 9 	0 
+END
+BEGIN DevmanPlayer 0
+NULL NULL 2 1 0 1 
+startchecking	1	1	1	0 	1 S -1 	2 40 -1 
+trackchanged	1	1	11	7 I -1 S 11 S 12 I -1 S -1 I 1 S -1 	0 	0 
+out	1	1	-1	0 	13 S 13 S 17 S -1 S -1 S -1 I -1 B -1 I -1 S -1 S 56 S -1 S -1 S -1 	11 104 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 
+END
+BEGIN UrlGet 0
+NULL NULL NULL 0 1 0 0 60 1 NULL NULL NULL NULL NULL 3 0 1 
+getpost	1	1	12	14 S 13 S -1 S 14 I -1 I -1 B -1 S -1 S -1 S -1 S -1 S -1 B -1 B -1 B -1 	6 S -1 S -1 S -1 I -1 S 31 I -1 	4 -1 -1 18 102 
+abort	1	1	13	0 	0 	1 12 
+END
+BEGIN Constant_String1 0
+playlist.smil 
+Run_ConstantString	1	1	-1	0 	1 S 14 	0 
+END
+BEGIN PlayManager 0
+0 1 60 
+Played	1	1	14	1 I 2 	0 	0 
+Next_URL	1	1	15	0 	3 S 15 S 16 I 3 	3 -1 39 70 
+Got	1	1	16	3 S 15 S 16 I 3 	2 S -1 S -1 	1 15 
+Set_Paths	1	1	13	3 S 17 S 18 I -1 	2 S -1 S -1 	1 -1 
+Started	1	1	17	1 I 2 	0 	0 
+Tick	1	1	-1	0 	12 S 4 S -1 S 5 S 3 I 2 S 62 S 63 S 21 S -1 S 20 I -1 I -1 	5 21 20 -1 26 22 
+END
+BEGIN EventTwoInputOr 0
+*
+Or2	1	1	18	0 	0 	1 -1 
+END
+BEGIN TextCaseDemultiplexer_Event 0
+NULL NULL NULL NULL NULL NULL NULL NULL 
+Run	1	1	19	9 S 19 S 1 S 7 S 9 S -1 S -1 S -1 S -1 S -1 	0 	9 85 86 87 -1 -1 -1 -1 -1 -1 
+END
+BEGIN stringfn_scan8 0
+RegionId_%[^_]_%s 
+run	1	1	17	2 S -1 S 20 	8 S 29 S 19 S -1 S -1 S -1 S -1 S -1 S -1 	2 19 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	20	0 	0 	1 17 
+Or2	1	1	21	0 	0 	1 17 
+END
+BEGIN Constant_String1 0
+media/ 
+Run_ConstantString	1	1	-1	0 	1 S 18 	0 
+END
+BEGIN JSONObject 0
+*
+reset	1	1	22	0 	0 	1 23 
+read	1	1	23	1 S 21 	0 	1 24 
+query	1	1	24	8 S 22 S 23 S 24 S -1 S -1 S -1 S -1 S -1 	8 S 8 S 10 S 2 S -1 S -1 S -1 S -1 S -1 	2 61 60 
+END
+BEGIN Constant_String1 0
+[zones][0] 
+Run_ConstantString	1	1	-1	0 	1 S 22 	0 
+END
+BEGIN Constant_String1 0
+[zones][1] 
+Run_ConstantString	1	1	-1	0 	1 S 23 	0 
+END
+BEGIN Constant_String1 0
+[zones][2] 
+Run_ConstantString	1	1	-1	0 	1 S 24 	0 
+END
+BEGIN Constant_String1 0
+{} 
+Run_ConstantString	1	1	-1	0 	1 S 6 	0 
+END
+BEGIN TextCaseDemultiplexer_Event 0
+1 2 3 4 5 6 7 8 
+Run	1	1	25	9 S 25 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	0 	9 27 28 29 30 31 32 33 34 38 
+END
+BEGIN stringfn_scan8 0
+RegionId_%[^_]_%s 
+run	1	1	26	2 S -1 S 20 	8 S 30 S 25 S -1 S -1 S -1 S -1 S -1 S -1 	2 25 35 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	27	0 	0 	1 36 
+Or2	1	1	28	0 	0 	1 36 
+Or3	1	1	29	0 	0 	1 36 
+Or4	1	1	30	0 	0 	1 36 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	31	0 	0 	1 37 
+Or2	1	1	32	0 	0 	1 37 
+Or3	1	1	33	0 	0 	1 37 
+Or4	1	1	34	0 	0 	1 37 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	35	0 	0 	1 45 
+Or2	1	1	36	0 	0 	1 45 
+Or3	1	1	37	0 	0 	1 45 
+Or4	1	1	38	0 	0 	1 45 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	39	1 B 1 	0 	2 101 41 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	18	0 	1 B 1 	1 -1 
+Reset	1	1	40	0 	1 B 1 	1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	41	0 	0 	1 16 
+Or2	1	1	42	0 	0 	1 16 
+END
+BEGIN FILE_ReadOnly_String 0
+playlist.smil 0 (\n) 0 
+Run_OpenFILE_ReadOnly_String	1	1	43	1 S -1 	1 I -1 	2 44 -1 
+Run_CloseFILE_ReadOnly_String	1	1	44	0 	1 I -1 	2 -1 -1 
+END
+BEGIN time_clock 0
+100000 0 1 
+start	1	1	45	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 99 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	27	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	46	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 74 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	47	0 	0 	1 4 
+Or2	1	1	48	0 	0 	1 4 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	49	0 	1 B 2 	1 -1 
+Reset	1	1	50	0 	1 B 2 	1 -1 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	51	1 B 2 	0 	2 50 -1 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	50	0 	0 	1 7 
+Or2	1	1	52	0 	0 	1 7 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	53	0 	1 B 3 	1 -1 
+Reset	1	1	54	0 	1 B 3 	1 -1 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	55	1 B 3 	0 	2 54 -1 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	54	0 	0 	1 10 
+Or2	1	1	56	0 	0 	1 10 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	57	0 	0 	1 -1 
+Or2	1	1	58	0 	0 	1 -1 
+Or3	1	1	59	0 	0 	1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	60	0 	0 	1 -1 
+Or2	1	1	61	0 	0 	1 -1 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	62	1 S 8 	1 I 4 	1 63 
+END
+BEGIN ComparatorGreaterEqualInt1 0
+2 
+Run_ComparatorGreaterEqualInt	1	1	63	2 I 4 I -1 	1 B -1 	2 129 5 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	64	1 S 2 	1 I 5 	1 65 
+END
+BEGIN ComparatorGreaterEqualInt1 0
+2 
+Run_ComparatorGreaterEqualInt	1	1	65	2 I 5 I -1 	1 B -1 	2 84 2 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	66	1 S 10 	1 I 6 	1 67 
+END
+BEGIN ComparatorGreaterEqualInt1 0
+2 
+Run_ComparatorGreaterEqualInt	1	1	67	2 I 6 I -1 	1 B -1 	2 130 8 
+END
+BEGIN FileSystemDirCreateRemove 0
+media 1 
+create	1	1	1	1 S -1 	0 	2 68 69 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	68	0 	0 	1 43 
+Or2	1	1	69	0 	0 	1 43 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	70	0 	0 	1 -1 
+Or2	1	1	13	0 	0 	1 -1 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	4	0 	0 	1 71 
+Or2	1	1	2	0 	0 	1 71 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	5	0 	0 	1 72 
+Or2	1	1	7	0 	0 	1 72 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	8	0 	0 	1 73 
+Or2	1	1	10	0 	0 	1 73 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	71	0 	0 	1 46 
+Or2	1	1	72	0 	0 	1 46 
+Or3	1	1	73	0 	0 	1 46 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	28	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	46	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 75 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	29	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	46	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 76 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	74	0 	0 	1 77 
+Or2	1	1	75	0 	0 	1 77 
+Or3	1	1	76	0 	0 	1 77 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	2	0 	1 B 5 	1 105 
+Reset	1	1	77	0 	1 B 5 	1 105 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	5	0 	1 B 6 	1 106 
+Reset	1	1	77	0 	1 B 6 	1 106 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	8	0 	1 B 4 	1 107 
+Reset	1	1	77	0 	1 B 4 	1 107 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	78	0 	0 	1 64 
+Or2	1	1	79	0 	0 	1 64 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	78	0 	0 	1 62 
+Or2	1	1	49	0 	0 	1 62 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	78	0 	0 	1 66 
+Or2	1	1	53	0 	0 	1 66 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	80	1 B 4 	0 	2 56 53 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	81	1 B 5 	0 	2 48 79 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	82	1 B 6 	0 	2 52 49 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	79	0 	1 B 7 	1 -1 
+Reset	1	1	47	0 	1 B 7 	1 -1 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	83	1 B 7 	0 	2 47 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	84	0 	0 	1 126 
+Or2	1	1	77	0 	0 	1 126 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	85	0 	0 	1 135 
+Or2	1	1	86	0 	0 	1 135 
+Or3	1	1	87	0 	0 	1 135 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	27	0 	0 	1 144 
+Or2	1	1	28	0 	0 	1 144 
+Or3	1	1	29	0 	0 	1 144 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	1	1 S 26 	1 S 50 	1 137 
+Run_Input2	1	1	88	1 S 27 	1 S 50 	1 137 
+END
+BEGIN Constant_String1 0
+ 
+Run_ConstantString	1	1	-1	0 	1 S 26 	0 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	89	1 S -1 	1 S -1 	1 -1 
+Run_Input2	1	1	90	1 S -1 	1 S -1 	1 -1 
+Run_Input3	1	1	91	1 S -1 	1 S -1 	1 -1 
+Run_Input4	1	1	92	1 S 28 	1 S -1 	1 -1 
+END
+BEGIN FILE_ReadOnly_String 0
+../../devman/core/config/DEVMANURL.000 0 (\n) 1 
+Run_OpenFILE_ReadOnly_String	1	1	1	1 S -1 	1 I -1 	2 94 95 
+Run_CloseFILE_ReadOnly_String	1	1	93	0 	1 I -1 	2 -1 -1 
+Run_ReadFILE_ReadOnly_String	1	1	94	0 	2 S 83 I -1 	2 97 96 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	95	0 	0 	1 98 
+Or2	1	1	96	0 	0 	1 98 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	97	0 	0 	1 93 
+Or2	1	1	98	0 	0 	1 93 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	99	0 	0 	1 14 
+Or2	1	1	92	0 	0 	1 14 
+END
+BEGIN UrlGet 0
+NULL NULL NULL 0 1 0 0 60 1 NULL NULL NULL NULL NULL 3 0 0 
+getpost	1	1	100	14 S 15 S -1 S 16 I -1 I -1 B -1 S -1 S -1 S -1 S -1 S -1 B -1 B -1 B -1 	6 S -1 S -1 S -1 I -1 S 32 I -1 	4 -1 -1 42 103 
+abort	1	1	101	0 	0 	1 100 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	102	1 S 31 	1 S 27 	1 88 
+Run_Input2	1	1	103	1 S 32 	1 S 27 	1 88 
+Run_Input3	1	1	17	1 S 4 	1 S 27 	1 88 
+Run_Input4	1	1	70	1 S 33 	1 S 27 	1 88 
+END
+BEGIN Constant_String1 0
+Download OK 
+Run_ConstantString	1	1	-1	0 	1 S 33 	0 
+END
+BEGIN EventTwoInputOr 0
+*
+Or2	1	1	104	0 	0 	1 13 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	105	0 	0 	1 81 
+Or2	1	1	85	0 	0 	1 81 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	106	0 	0 	1 82 
+Or2	1	1	86	0 	0 	1 82 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	107	0 	0 	1 80 
+Or2	1	1	87	0 	0 	1 80 
+END
+BEGIN RuntimeInfo 0
+*
+getstat	1	1	1	1 S -1 	6 S 38 I -1 I -1 S -1 S -1 S -1 	1 110 
+END
+BEGIN time_clock 0
+1000000 0 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 111 
+END
+BEGIN unity2 0
+*
+create	1	1	108	3 S 34 S -1 S 35 	1 S -1 	2 -1 -1 
+setmedia	1	1	109	4 S 36 S -1 S 37 S -1 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+1 
+Run_ConstantString	1	1	-1	0 	1 S 34 	0 
+END
+BEGIN Constant_String1 0
+{"id":"1","cmd":"create","type":"","parameters":{"id":"1","type":"background","top":"0%","left":"0%","bottom":"100%","right":"100%","bgrColor":"255.0.0.0","textConfig":{"color":"255.255.255.255","fontScale":1}, "updateAnimationConfig":{"type":"noanimation"}}} 
+Run_ConstantString	1	1	-1	0 	1 S 35 	0 
+END
+BEGIN Constant_String1 0
+media 
+Run_ConstantString	1	1	-1	0 	1 S 43 	0 
+END
+BEGIN Constant_String1 0
+Hello MQTT Demo... 
+Run_ConstantString	1	1	-1	0 	1 S 39 	0 
+END
+BEGIN MultiplexThreeInputString 0
+*
+Run_Input1	1	1	110	1 S 38 	1 S -1 	1 -1 
+Run_Input2	1	1	111	1 S 39 	1 S -1 	1 -1 
+Run_Input3	1	1	112	1 S 40 	1 S -1 	1 -1 
+END
+BEGIN Constant_String1 0
+Thanks... 
+Run_ConstantString	1	1	-1	0 	1 S 40 	0 
+END
+BEGIN unity2 0
+*
+create	1	1	113	3 S 41 S -1 S 42 	1 S -1 	2 116 -1 
+destroy	1	1	114	0 	0 	1 118 
+setmedia	1	1	115	4 S 43 S -1 S 44 S -1 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+2 
+Run_ConstantString	1	1	-1	0 	1 S 41 	0 
+END
+BEGIN Constant_String1 0
+{"id": "2","top": "20%","left": "20%","bottom": "80%","right": "80%","textType" : "title","fgrColor":"255.255.255.255","bgrColor":"255.0.0.255","type":"quad","textConfig":{"color":"230.0.230.255","margin":0.1,"fontScale":0.1,"alignment":"middle"}} 
+Run_ConstantString	1	1	-1	0 	1 S 42 	0 
+END
+BEGIN MultiplexThreeInputString 0
+*
+Run_Input1	1	1	116	1 S 45 	1 S 44 	1 115 
+END
+BEGIN time_clock 0
+5000000 0 1 
+tick	1	1	-1	0 	0 	1 114 
+END
+BEGIN Constant_String1 0
+Stop It!!! 
+Run_ConstantString	1	1	-1	0 	1 S 45 	0 
+END
+BEGIN EventTwoInputOr 0
+*
+Or2	1	1	117	0 	0 	1 108 
+END
+BEGIN time_clock 0
+1000000 0 1 
+start	1	1	118	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 112 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	116	0 	1 B 8 	1 -1 
+Reset	1	1	114	0 	1 B 8 	1 -1 
+END
+BEGIN time_clock 0
+5000000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 120 
+END
+BEGIN IndexedDemultiplexer_Event 0
+1 
+Run	1	1	119	1 I 7 	1 I -1 	10 122 123 124 125 -1 -1 -1 -1 -1 -1 
+END
+BEGIN EventCounterVersatile1 0
+1 0 1 4 0 
+Run_CountEventCounter	1	1	120	4 I -1 I -1 I -1 I -1 	1 I 7 	2 119 121 
+Run_ResetEventCounter	1	1	121	4 I -1 I -1 I -1 I -1 	1 I 7 	1 -1 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	122	1 S 46 	1 S 37 	1 109 
+Run_Input2	1	1	123	1 S 47 	1 S 37 	1 109 
+Run_Input3	1	1	124	1 S 48 	1 S 37 	1 109 
+Run_Input4	1	1	125	1 S 49 	1 S 37 	1 109 
+END
+BEGIN Constant_String1 0
+Four 4444 Four Four 
+Run_ConstantString	1	1	-1	0 	1 S 49 	0 
+END
+BEGIN Constant_String1 0
+Three 3333 Three three 
+Run_ConstantString	1	1	-1	0 	1 S 48 	0 
+END
+BEGIN Constant_String1 0
+Two 2222 Two Two 
+Run_ConstantString	1	1	-1	0 	1 S 47 	0 
+END
+BEGIN Constant_String1 0
+One 1111 one one 
+Run_ConstantString	1	1	-1	0 	1 S 46 	0 
+END
+BEGIN Constant_String1 0
+https://tekeye.uk/html/images/Joren_Falls_Izu_Jap.mp4 
+Run_ConstantString	1	1	-1	0 	1 S -1 	0 
+END
+BEGIN Constant_String1 0
+20200402_164858.jpg 
+Run_ConstantString	1	1	-1	0 	1 S -1 	0 
+END
+BEGIN Constant_String1 0
+smilText 
+Run_ConstantString	1	1	-1	0 	1 S 36 	0 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 128 
+tick	1	1	-1	0 	0 	1 117 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	126	0 	0 	1 3 
+Or3	1	1	127	0 	0 	1 3 
+END
+BEGIN EventTwoInputOr 0
+*
+Or2	1	1	128	0 	0 	1 127 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	127	0 	0 	1 6 
+Or2	1	1	129	0 	0 	1 6 
+Or3	1	1	77	0 	0 	1 6 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	130	0 	0 	1 9 
+Or2	1	1	77	0 	0 	1 9 
+Or3	1	1	127	0 	0 	1 9 
+END
+BEGIN Constant_String1 0
+n/a 
+Run_ConstantString	1	1	-1	0 	1 S 67 	0 
+END
+BEGIN string_format8 0
+{ "Player":{"devmanMusicOperation":"%s","devmanPriorityOperation":"%s","playingMusic":"%s","playingPriority":"%s","playMode":"%s","muteState":"%s","musicScheduleName":"%s","priorityScheduleName":"%s"}, 
+run	1	1	131	9 S 50 S 51 S 52 S 53 S 54 S 55 S 56 S 57 S -1 	1 S 65 	1 133 
+END
+BEGIN string_format8 0
+%s "Region":[{"currentMediaFileName":"%s","currentMediaMetaData":"%s","currentMediaStartTime":"%s","lastMediaEndTime":"%s","nextMediaStartTime":"%s","nextMediaEndTime":"%s", "currentMediaStatus":%s}]} 
+run	1	1	132	9 S 58 S 59 S 60 S 12 S 61 S 62 S 63 S 64 S -1 	1 S 11 	1 142 
+END
+BEGIN string_format8 0
+%s"Priority":{"currentMediaFilename":"%s","currentMediaMetaName":"%s","currentMediaStartTime":"%s","lastMediaEndTIme":"%s","nextMediaStartTime":"%s","nextMediaEndTime":"%s"}, 
+run	1	1	133	9 S 65 S 66 S 67 S 67 S 67 S 67 S 67 S -1 S -1 	1 S 58 	1 132 
+END
+BEGIN Constant_String1 0
+ 
+Run_ConstantString	1	1	-1	0 	1 S 66 	0 
+END
+BEGIN Constant_String1 0
+No Priority Playlist 
+Run_ConstantString	1	1	-1	0 	1 S 51 	0 
+END
+BEGIN Constant_String1 0
+False 
+Run_ConstantString	1	1	-1	0 	1 S 52 	0 
+END
+BEGIN Constant_String1 0
+Schedule 
+Run_ConstantString	1	1	-1	0 	1 S 54 	0 
+END
+BEGIN Constant_String1 0
+-- 
+Run_ConstantString	1	1	-1	0 	1 S 55 	0 
+END
+BEGIN Constant_String1 0
+ 
+Run_ConstantString	1	1	-1	0 	1 S 57 	0 
+END
+BEGIN Constant_String1 0
+New Playlist: nothing scheduled yet 
+Run_ConstantString	1	1	-1	0 	1 S 69 	0 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	134	1 S 68 	1 S 59 	1 139 
+END
+BEGIN Constant_String1 0
+ 
+Run_ConstantString	1	1	-1	0 	1 S 60 	0 
+END
+BEGIN Constant_String1 0
+{"track_position_p":"--","track_position_t":"--","track_length":"--"} 
+Run_ConstantString	1	1	-1	0 	1 S 64 	0 
+END
+BEGIN Constant_String1 0
+ 
+Run_ConstantString	1	1	-1	0 	1 S 53 	0 
+END
+BEGIN wall_clock 0
+0 
+get	1	1	135	0 	11 S 12 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	1 136 
+END
+BEGIN stringfn_scan8 0
+%*[^:_]%*[^/]%*c%[^?] 
+run	1	1	136	2 S -1 S 4 	8 S 68 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	2 134 -1 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	13	0 	0 	1 131 
+Or2	1	1	137	0 	0 	1 131 
+Or3	1	1	138	0 	0 	1 131 
+Or4	1	1	139	0 	0 	1 131 
+END
+BEGIN MultiplexTwoInputInt 0
+*
+Run_Input1	1	1	140	1 I 8 	1 I 1 	1 143 
+Run_Input2	1	1	141	1 I 9 	1 I 1 	1 143 
+END
+BEGIN Constant_Int1 0
+1 
+Run_ConstantInt	1	1	-1	0 	1 I 8 	0 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	142	0 	0 	1 11 
+Or2	1	1	143	0 	0 	1 11 
+END
+BEGIN Constant_Int1 0
+0 
+Run_ConstantInt	1	1	-1	0 	1 I 9 	0 
+END
+BEGIN wall_clock 0
+0 
+get	1	1	144	0 	11 S 61 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	1 138 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	139	0 	0 	1 140 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	138	0 	0 	1 141 
+END
+BEGIN RuntimeInfo 0
+*
+getstat	1	1	145	1 S -1 	6 S 73 I -1 I -1 S -1 S -1 S -1 	1 149 
+END
+BEGIN netSocket 0
+NULL 8000 0 
+open	1	1	146	2 I 10 S 70 	3 I -1 S 78 I -1 	7 151 -1 89 153 172 150 -1 
+close	1	1	147	0 	1 I -1 	2 151 150 
+send	1	1	148	2 S 71 I -1 	1 I -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+CONNECT# 
+Run_ConstantString	1	1	-1	0 	1 S 72 	0 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	149	2 S 72 S 73 	1 S 71 	1 148 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	150	0 	0 	1 90 
+Or2	1	1	151	0 	0 	1 90 
+END
+BEGIN Constant_Int1 0
+9000 
+Run_ConstantInt	1	1	-1	0 	1 I 10 	0 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	89	0 	1 B 9 	1 -1 
+Reset	1	1	152	0 	1 B 9 	1 -1 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	153	0 	0 	1 152 
+Or2	1	1	90	0 	0 	1 152 
+Or4	1	1	1	0 	0 	1 152 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	154	0 	0 	1 145 
+Or2	1	1	89	0 	0 	1 145 
+END
+BEGIN EventTwoInputManRstAnd 0
+*
+And1	1	1	155	0 	0 	1 146 
+And2	1	1	156	0 	0 	1 146 
+Reset	1	1	152	0 	0 	1 156 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	157	1 B 9 	0 	2 154 158 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	158	0 	0 	1 155 
+Or2	1	1	159	0 	0 	1 155 
+END
+BEGIN time_clock 0
+5000000 1 1 
+start	1	1	160	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	89	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 161 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	161	0 	0 	1 157 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	153	0 	0 	1 160 
+Or2	1	1	90	0 	0 	1 160 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	162	2 S 74 S 75 	1 S 79 	1 164 
+END
+BEGIN Constant_String1 0
+SERVERACK# 
+Run_ConstantString	1	1	-1	0 	1 S 74 	0 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	162	2 S 76 S 75 	1 S 77 	1 163 
+END
+BEGIN Constant_String1 0
+PING# 
+Run_ConstantString	1	1	-1	0 	1 S 76 	0 
+END
+BEGIN CmpString 0
+ 
+Run_CmpString	1	1	163	2 S 77 S 78 	1 B 11 	1 166 
+END
+BEGIN CmpString 0
+ 
+Run_CmpString	1	1	164	2 S 79 S 78 	1 B 10 	1 165 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	165	1 B 10 	0 	2 167 168 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	166	1 B 11 	0 	2 91 169 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	167	0 	0 	1 170 
+Or2	1	1	91	0 	0 	1 170 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	168	0 	0 	1 -1 
+Or2	1	1	169	0 	0 	1 -1 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	170	0 	0 	1 171 
+Or2	1	1	89	0 	0 	1 171 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	171	3 I 11 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 147 
+END
+BEGIN RuntimeInfo 0
+*
+getstat	1	1	172	1 S -1 	6 S 75 I -1 I -1 S -1 S -1 S -1 	1 162 
+END
+BEGIN Constant_Int1 0
+10000000 
+Run_ConstantInt	1	1	-1	0 	1 I 11 	0 
+END
+BEGIN Constant_String1 0
+NEXT#%s 
+Run_ConstantString	1	1	-1	0 	1 S 80 	0 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	173	1 S 28 	1 I 13 	1 174 
+END
+BEGIN ComparatorGreaterInt1 0
+0 
+Run_ComparatorGreaterInt	1	1	174	2 I 12 I 13 	1 B -1 	2 -1 -1 
+END
+BEGIN Constant_Int1 0
+0 
+Run_ConstantInt	1	1	-1	0 	1 I 12 	0 
+END
+BEGIN CmpString 0
+ 
+Run_CmpString	1	1	175	2 S 81 S 82 	1 B 12 	1 176 
+END
+BEGIN Constant_String1 0
+NEXT# 
+Run_ConstantString	1	1	-1	0 	1 S 82 	0 
+END
+BEGIN SubString 0
+0 5 
+Run_SubString	1	1	172	3 S 78 I -1 I -1 	1 S 81 	1 175 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	176	1 B 12 	0 	2 92 -1 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	177	1 S 83 	1 S 70 	1 159 
+Run_Input2	1	1	178	1 S 84 	1 S 70 	1 159 
+END
+BEGIN stringfn_scan8 0
+%*[^/]%*[/]%[^/] 
+run	1	1	97	2 S -1 S 83 	8 S 84 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	2 179 -1 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	179	1 S 84 	1 I 14 	1 180 
+END
+BEGIN ComparatorEqualInt1 0
+0 
+Run_ComparatorEqualInt	1	1	180	2 I 14 I -1 	1 B -1 	2 177 178 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

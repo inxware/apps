@@ -1,0 +1,179 @@
+#V:2.0.0
+#B:125
+#D:Y2024M9d3h11m43s19
+#N:traffic_light_state_machine
+1
+1	100000	90000
+BEGIN GUI_Image_File 0
+%%%_widgetTrafficRed g0000000.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	2	0 	0 	1 -1 
+hide	1	1	3	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_widgetTrafficAmbRed g0000000.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	4	0 	0 	1 -1 
+hide	1	1	5	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_widgetTrafficGreen g0000000.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	6	0 	0 	1 -1 
+hide	1	1	7	0 	0 	1 -1 
+update	1	1	8	5 I -1 I -1 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_widgetDontWalk g0000000.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	9	0 	0 	1 -1 
+hide	1	1	10	0 	0 	1 -1 
+END
+BEGIN GUI_Image_File 0
+%%%_widgetWalk g0000000.gui 0 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	11	0 	0 	1 10 
+hide	1	1	12	0 	0 	1 9 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	7	0 	0 	1 4 
+Or2	1	1	13	0 	0 	1 4 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	11	0 	0 	1 5 
+Or2	1	1	14	0 	0 	1 5 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	6	0 	0 	1 8 
+Or2	1	1	15	0 	0 	1 8 
+END
+BEGIN time_clock 0
+6000000 0 1 
+start	1	1	16	3 I -1 B -1 B -1 	0 	1 6 
+stop	1	1	17	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 15 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	17	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	15	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 25 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	18	3 I -1 B -1 B -1 	0 	1 7 
+tick	1	1	-1	0 	0 	1 11 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	19	3 I -1 B -1 B -1 	0 	1 13 
+tick	1	1	-1	0 	0 	1 14 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	20	3 I -1 B -1 B -1 	0 	1 32 
+tick	1	1	-1	0 	0 	1 21 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	21	3 I -1 B -1 B -1 	0 	1 27 
+tick	1	1	-1	0 	0 	1 22 
+END
+BEGIN time_clock 0
+2000000 0 1 
+start	1	1	22	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 31 
+END
+BEGIN state_debug 0
+*
+Run	1	1	-1	1 I 1 	0 	0 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	23	0 	0 	1 16 
+Or2	1	1	24	0 	0 	1 16 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	25	0 	0 	1 18 
+Or2	1	1	26	0 	0 	1 18 
+END
+BEGIN Constant_String1 0
+Init 
+Run_ConstantString	1	1	-1	0 	1 S 1 	0 
+END
+BEGIN Constant_String1 0
+off 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN Constant_String1 0
+on 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	6	0 	0 	1 28 
+Or2	1	1	27	0 	0 	1 28 
+END
+BEGIN MultiplexThreeInputString 0
+*
+Run_Input1	1	1	1	1 S 1 	1 S 4 	1 33 
+Run_Input2	1	1	28	1 S 2 	1 S 4 	1 33 
+Run_Input3	1	1	17	1 S 3 	1 S 4 	1 33 
+END
+BEGIN state_condition 0
+104 108 
+doCondition	1	1	29	1 U 1 	0 	1 23 
+END
+BEGIN state_condition 0
+105 108 
+doCondition	1	1	14	1 U 1 	0 	1 24 
+END
+BEGIN state_condition 0
+108 111 
+doCondition	1	1	15	1 U 1 	0 	1 26 
+END
+BEGIN state_condition 0
+108 111 
+doCondition	1	1	30	1 U 1 	0 	1 17 
+END
+BEGIN state_condition 0
+111 113 
+doCondition	1	1	11	1 U 1 	0 	1 20 
+END
+BEGIN state_condition 0
+113 105 
+doCondition	1	1	31	1 U 1 	0 	1 19 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	23	0 	0 	1 12 
+Or2	1	1	19	0 	0 	1 12 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	7	0 	0 	1 2 
+Or2	1	1	32	0 	0 	1 2 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	11	0 	0 	1 3 
+Or2	1	1	31	0 	0 	1 3 
+END
+BEGIN state_manager 0
+104 
+enabled	1	1	1	0 	2 U 1 I 1 	2 29 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_button_ui g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 30 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	33	2 B -1 S 4 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

@@ -1,0 +1,7 @@
+Version 1.4
+widgetTrafficAmbRed,GUI_Bitmap,86,272,150,150,1,255,Amber.png,0
+widgetTrafficGreen,GUI_Bitmap,85,436,150,150,1,255,Green.png,0
+widgetDontWalk,GUI_Bitmap,563,350,200,200,1,255,Dontwalk.png,0
+widgetTrafficRed,GUI_Bitmap,87,106,150,150,2,255,redLight.png,0
+widgetWalk,GUI_Bitmap,564,136,200,200,2,255,Walk.png,0
+button_ui,GUI_BoolBox2,354,346,107,46,3,255,255,255,255,255,0,128,255,arial10,5,5,5,5,18,1,0,5,0

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>Blynk MQTT</Name>
+  <CommercialName>Blynk MQTT connectivity Demo</CommercialName>
+  <Version>1.0</Version>
+  <Description>Demonstrates authenticating with the blynk.io and sending and receiving simple data.</Description>
+</root>

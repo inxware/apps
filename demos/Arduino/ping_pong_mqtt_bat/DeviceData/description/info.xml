@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>ping_pong_mqtt_bat</Name>
+  <CommercialName>Arduino nano-connect MQTT ping pong app</CommercialName>
+  <Version>1.4</Version>
+  <Description>This app converts an Arduino nano-connect into a ping pong bat that uses MQTT to communicate with the UI.</Description>
+</root>

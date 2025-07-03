@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>Web Server</Name>
+  <CommercialName>Web Server Tutorial</CommercialName>
+  <Version>1.0</Version>
+  <Description>How to make a simple -non secure web server from a socket for educational purposes on how web servers work.</Description>
+</root>

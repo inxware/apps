@@ -1,0 +1,149 @@
+<LucidProject>
+<Version>1.4</Version>
+<ProjectName>LLM testing</ProjectName>
+<Toolboxes/>
+<LastTransferToTarget>2024-11-16 16:13:44:000</LastTransferToTarget>
+<GroupSet>
+<Group>
+<ID>1</ID>
+<Name>Default</Name>
+<Period>100000</Period>
+<Allocation>90000</Allocation>
+</Group>
+</GroupSet>
+<ExternalFiles>
+<GuiFileSet>
+<GuiFile>
+<HostFileName>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</HostFileName>
+<Description>Auto-generated default layout</Description>
+<Screen>default</Screen>
+</GuiFile>
+</GuiFileSet>
+<PngFileSet>
+<PngFile>
+<HostFileName>placeholder.png</HostFileName>
+<Description/>
+<TargetFileName>p0000000.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Traffic Light Green.png</HostFileName>
+<Description/>
+<TargetFileName>p0000001.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Traffic Light Amber.png</HostFileName>
+<Description/>
+<TargetFileName>p0000002.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Traffic Light Red.png</HostFileName>
+<Description/>
+<TargetFileName>p0000003.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Pedestrian Go.png</HostFileName>
+<Description/>
+<TargetFileName>p0000004.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Pedestrian Stop.png</HostFileName>
+<Description/>
+<TargetFileName>p0000005.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Pedestrian Light Blank.png</HostFileName>
+<Description/>
+<TargetFileName>p0000006.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Pedestrian Light Blank 1.png</HostFileName>
+<Description/>
+<TargetFileName>p0000007.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Traffic Light Button on.png</HostFileName>
+<Description/>
+<TargetFileName>p0000008.png</TargetFileName>
+</PngFile>
+<PngFile>
+<HostFileName>Traffic Light Button off.png</HostFileName>
+<Description/>
+<TargetFileName>p0000009.png</TargetFileName>
+</PngFile>
+</PngFileSet>
+<BmpFileSet/>
+<DataFileSet/>
+<BdfFileSet/>
+<ResourceFileSet/>
+</ExternalFiles>
+<ScreenSet>
+<Screen>
+<Tag>default</Tag>
+<Description>Auto-generated default layout</Description>
+<TargetFileName>g0000001.gui</TargetFileName>
+<ActiveHostLayout>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</ActiveHostLayout>
+</Screen>
+</ScreenSet>
+<WidgetSet>
+<Widget>
+<WidgetTag>TrafficGreen</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>TrafficAmber</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>TrafficRed</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>PedGreen</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>PedRed</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>ButtonOff</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>ButtonOn</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>PedBlank</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+</WidgetSet>
+<ExternalDataFileMetas>
+<NumberOfHighestGuiFile>10</NumberOfHighestGuiFile>
+<NumberOfHighestPngFile>10</NumberOfHighestPngFile>
+<NumberOfHighestBmpFile>0</NumberOfHighestBmpFile>
+<NumberOfHighestDatFile>0</NumberOfHighestDatFile>
+<NumberOfHighestBdfFile>0</NumberOfHighestBdfFile>
+</ExternalDataFileMetas>
+<Transferrables>
+<DataFileSet/>
+<ImageFileSet>
+<Location>Pedestrian Go.png</Location>
+<Location>Pedestrian Light Blank 1.png</Location>
+<Location>Pedestrian Stop.png</Location>
+<Location>Traffic Light Amber.png</Location>
+<Location>Traffic Light Button off.png</Location>
+<Location>Traffic Light Button on.png</Location>
+<Location>Traffic Light Green.png</Location>
+<Location>Traffic Light Red.png</Location>
+</ImageFileSet>
+<LayoutFileSet>
+<Location>DEFAULT_LAYOUT_FOR_WIDGET_GROUP_default</Location>
+</LayoutFileSet>
+<ResourceFileSet/>
+<MiscFileSet>
+<Location>t.sdl</Location>
+</MiscFileSet>
+<FontFileSet/>
+</Transferrables>
+</LucidProject>

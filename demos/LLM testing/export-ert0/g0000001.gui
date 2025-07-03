@@ -1,0 +1,9 @@
+Version 1.4
+PedGreen,GUI_Bitmap,214,26,154,370,0,255,p0000004.png
+PedRed,GUI_Bitmap,214,26,154,370,0,255,p0000005.png
+PedBlank,GUI_Bitmap,213,26,154,370,0,255,p0000007.png
+TrafficGreen,GUI_Bitmap,49,25,111,386,1,255,p0000001.png
+TrafficAmber,GUI_Bitmap,49,25,111,386,1,255,p0000002.png
+TrafficRed,GUI_Bitmap,49,25,111,386,1,255,p0000003.png
+ButtonOff,GUI_Bitmap,213,378,163,147,9,255,p0000009.png
+ButtonOn,GUI_Bitmap,213,378,163,147,9,255,p0000008.png

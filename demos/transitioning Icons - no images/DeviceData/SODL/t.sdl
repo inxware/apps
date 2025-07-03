@@ -1,0 +1,442 @@
+#V:2.0.0
+#B:111
+#D:Y2024M3d23h12m5s2
+#N:transitioning Icons - no images
+1
+1	100000	90000
+BEGIN time_clock 0
+200000 1 1 
+start	1	1	2	3 I -1 B -1 B -1 	0 	1 -1 
+stop	1	1	3	0 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 35 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2)*A)/30 
+run	1	1	4	1 I 1 	1 I 7 	1 7 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2)*A)/100 
+run	1	1	4	1 I 1 	1 I 8 	1 8 
+END
+BEGIN EventCounterVersatile1 0
+1 0 1 20 0 
+Run_CountEventCounter	1	1	5	4 I -1 I -1 I -1 I -1 	1 I 1 	2 33 37 
+Run_DecrementEventCounter	1	1	6	4 I -1 I -1 I -1 I -1 	1 I 1 	2 34 38 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	7	0 	0 	1 43 
+And2	1	1	8	0 	0 	1 43 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+60)*A)/30 
+run	1	1	4	1 I 1 	1 I 3 	1 9 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+60)*A)/30 
+run	1	1	4	1 I 1 	1 I 4 	1 10 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	9	0 	0 	1 41 
+And2	1	1	10	0 	0 	1 41 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+120)*A)/30 
+run	1	1	4	1 I 1 	1 I 11 	1 11 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+120)*A)/30 
+run	1	1	4	1 I 1 	1 I 12 	1 12 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	11	0 	0 	1 45 
+And2	1	1	12	0 	0 	1 45 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+180)*A)/30 
+run	1	1	4	1 I 1 	1 I 9 	1 13 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+180)*A)/100 
+run	1	1	4	1 I 1 	1 I 10 	1 14 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	13	0 	0 	1 44 
+And2	1	1	14	0 	0 	1 44 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+240)*A)/30 
+run	1	1	4	1 I 1 	1 I 5 	1 15 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+240)*A)/30 
+run	1	1	4	1 I 1 	1 I 6 	1 16 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	15	0 	0 	1 42 
+And2	1	1	16	0 	0 	1 42 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+300)*A)/30 
+run	1	1	4	1 I 1 	1 I 13 	1 17 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+300)*A)/100 
+run	1	1	4	1 I 1 	1 I 14 	1 18 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	17	0 	0 	1 46 
+And2	1	1	18	0 	0 	1 46 
+END
+BEGIN gui_text_int2 0
+%%%_IntengerX g0000000.gui 0 0 
+create	1	1	19	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	4 -1 -1 -1 -1 
+destroy	1	1	20	0 	0 	1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	21	2 I 2 S -1 	2 I -1 S -1 	1 -1 
+END
+BEGIN ui_spinner 0
+%%%_Spinner g0000000.gui 500 180 
+create	1	1	22	0 	4 I -1 I -1 I -1 I -1 	1 -1 
+destroy	1	1	20	0 	0 	1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_BooleanX g0000000.gui 0 0 
+create	1	1	23	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	4 -1 -1 -1 -1 
+destroy	1	1	20	0 	0 	1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	24	2 B 1 S 1 	2 B -1 S -1 	1 -1 
+END
+BEGIN EventCounterVersatile1 0
+1 0 1 33 0 
+Run_CountEventCounter	1	1	25	4 I -1 I -1 I -1 I -1 	1 I 16 	2 30 27 
+Run_DecrementEventCounter	1	1	26	4 I -1 I -1 I -1 I -1 	1 I 16 	2 31 28 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	27	0 	1 B 1 	1 49 
+Reset	1	1	28	0 	1 B 1 	1 49 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	29	1 B 1 	0 	2 26 25 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	30	0 	0 	1 59 
+Or2	1	1	31	0 	0 	1 59 
+END
+BEGIN ICalc_1 0
+(A)/4+20 
+run	1	1	21	1 I 2 	1 I 23 	1 72 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	32	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 53 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	33	0 	0 	1 4 
+Or2	1	1	34	0 	0 	1 4 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	35	1 B 2 	0 	2 5 6 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	36	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 54 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	37	0 	0 	1 3 
+Or2	1	1	38	0 	0 	1 3 
+END
+BEGIN gui_text_bool2 0
+%%%_bool1 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	41	5 I 3 I 4 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_bool2 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	42	5 I 5 I 6 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+END
+BEGIN gui_text_int2 0
+%%%_Number1 g0000000.gui 0 0 
+create	1	1	39	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	4 -1 -1 -1 -1 
+destroy	1	1	40	0 	0 	1 -1 
+show	1	1	1	0 	0 	1 -1 
+update	1	1	43	5 I 7 I 8 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	21	2 I 2 S -1 	2 I -1 S -1 	1 -1 
+END
+BEGIN gui_text_int2 0
+%%%_Number2 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	44	5 I 9 I 10 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	21	2 I 2 S -1 	2 I -1 S -1 	1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_text1 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	45	5 I 11 I 12 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	1	2 S 2 S 3 	2 S -1 S -1 	1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_text2 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	46	5 I 13 I 14 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	1	2 S 4 S 3 	2 S -1 S -1 	1 -1 
+END
+BEGIN Constant_String1 0
+Choose life 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN Constant_String1 0
+Choose Lucid 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN Constant_String1 0
+Item 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN time_clock 0
+80000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 29 
+END
+BEGIN Constant_String1 0
+Go 
+Run_ConstantString	1	1	-1	0 	1 S 5 	0 
+END
+BEGIN Constant_String1 0
+Stop 
+Run_ConstantString	1	1	-1	0 	1 S 6 	0 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	47	1 S 5 	1 S 1 	1 48 
+Run_Input2	1	1	28	1 S 6 	1 S 1 	1 48 
+END
+BEGIN EventTwoInputOr 0
+*
+Or2	1	1	27	0 	0 	1 47 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	48	0 	0 	1 24 
+And2	1	1	49	0 	0 	1 24 
+END
+BEGIN EventFourInputOr 0
+*
+Or4	1	1	50	0 	0 	1 20 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	32	0 	0 	1 75 
+END
+BEGIN state_condition 0
+3173 3183 
+doCondition	1	1	38	1 U 1 	0 	1 36 
+END
+BEGIN state_condition 0
+3175 3184 
+doCondition	1	1	37	1 U 1 	0 	1 32 
+END
+BEGIN state_debug 0
+*
+Run	1	1	-1	1 I 15 	0 	0 
+END
+BEGIN state_manager 0
+3187 
+enabled	1	1	51	0 	2 U 1 I 15 	2 55 -1 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	52	0 	1 B 2 	1 -1 
+Reset	1	1	50	0 	1 B 2 	1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	52	0 	0 	1 74 
+Or2	1	1	50	0 	0 	1 74 
+END
+BEGIN time_clock 0
+3000000 0 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 51 
+END
+BEGIN state_condition 0
+3184 3173 
+doCondition	1	1	53	1 U 1 	0 	1 57 
+END
+BEGIN state_condition 0
+3183 3175 
+doCondition	1	1	54	1 U 1 	0 	1 56 
+END
+BEGIN state_condition 0
+3187 3173 
+doCondition	1	1	55	1 U 1 	0 	1 58 
+END
+BEGIN EventFourInputOr 0
+*
+Or2	1	1	56	0 	0 	1 52 
+END
+BEGIN EventFourInputOr 0
+*
+Or3	1	1	57	0 	0 	1 50 
+Or4	1	1	58	0 	0 	1 50 
+END
+BEGIN ICalc_1 0
+A*3 
+run	1	1	59	1 I 16 	1 I 2 	1 21 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+180)*A)/30 
+run	1	1	4	1 I 1 	1 I 20 	1 60 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+180)*A)/100 
+run	1	1	4	1 I 1 	1 I 19 	1 61 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	60	0 	0 	1 67 
+And2	1	1	61	0 	0 	1 67 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+240)*A)/30 
+run	1	1	4	1 I 1 	1 I 18 	1 62 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+240)*A)/30 
+run	1	1	4	1 I 1 	1 I 17 	1 63 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	62	0 	0 	1 66 
+And2	1	1	63	0 	0 	1 66 
+END
+BEGIN ICalc_1 0
+(sin(250,A*2+300)*A)/30 
+run	1	1	4	1 I 1 	1 I 22 	1 64 
+END
+BEGIN ICalc_1 0
+(cos(250,A*2+300)*A)/100 
+run	1	1	4	1 I 1 	1 I 21 	1 65 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	64	0 	0 	1 68 
+And2	1	1	65	0 	0 	1 68 
+END
+BEGIN gui_text_bool2 0
+%%%_bool3 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	66	5 I 17 I 18 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+END
+BEGIN gui_text_int2 0
+%%%_Number3 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	67	5 I 19 I 20 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	21	2 I 2 S -1 	2 I -1 S -1 	1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_text3 g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	4 -1 -1 -1 -1 
+show	1	1	39	0 	0 	1 -1 
+hide	1	1	40	0 	0 	1 -1 
+update	1	1	68	5 I 21 I 22 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
+data	1	1	1	2 S 2 S 4 	2 S -1 S -1 	1 -1 
+END
+BEGIN ui_chart 0
+%%%_widget7 g0000000.gui Chart 20 20 10 0 100 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	1 -1 
+show	1	1	69	0 	0 	1 71 
+hide	1	1	70	0 	0 	1 -1 
+data	1	1	71	4 S 7 S 8 F -1 F -1 	0 	1 -1 
+END
+BEGIN ICalc_1 0
+A/-2 
+run	1	1	72	1 I 23 	1 I -1 	1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	73	0 	0 	1 23 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	73	0 	0 	1 19 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	73	0 	0 	1 69 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	73	0 	0 	1 22 
+END
+BEGIN Constant_String1 0
+10 60 50 60 70 80 90 70 80 90 50 60 40 45 20 30 40 10 60  90 70 80 90   
+Run_ConstantString	1	1	-1	0 	1 S 7 	0 
+END
+BEGIN Constant_String1 0
+60 40 45 20 30 40 10 60  90 70 80 90 10 60 50 60 70 80 90 70 80 90 50 60 40 45 20 30 40 10 60  90 70 80 90 
+Run_ConstantString	1	1	-1	0 	1 S 8 	0 
+END
+BEGIN time_clock 0
+1000000 0 1 
+start	1	1	20	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 39 
+END
+BEGIN time_clock 0
+1000000 0 1 
+start	1	1	40	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 73 
+END
+BEGIN time_clock 0
+1000000 0 1 
+start	1	1	74	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 2 
+END
+BEGIN time_clock 0
+100000 0 1 
+start	1	1	75	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 40 
+END
+BEGIN time_clock 0
+100000 0 1 
+start	1	1	76	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 77 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	20	0 	0 	1 70 
+Or2	1	1	77	0 	0 	1 70 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END
