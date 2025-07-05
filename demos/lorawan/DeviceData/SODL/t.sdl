@@ -1,0 +1,46 @@
+#V:2.0.0
+#B:40
+#D:Y2024M10d29h14m17s50
+#N:esp32s3-test21
+1
+1	100000	90000
+BEGIN lorawan 0
+0 0 EU868 1 3 
+connect	1	1	2	5 S 1 S 2 S -1 S -1 S -1 	1 S 4 	2 -1 6 
+send_msg	1	1	3	2 S 3 B 1 	1 I -1 	2 -1 7 
+get_statusData	1	1	1	0 	2 S -1 S -1 	1 2 
+END
+BEGIN Constant_String1 0
+6928B79EF7A2CF024DDFCA4B3E40E003 
+Run_ConstantString	1	1	-1	0 	1 S23 1 	0 
+END
+BEGIN Constant_String1 0
+8000000000000006 
+Run_ConstantString	1	1	-1	0 	1 S23 2 	0 
+END
+BEGIN Constant_Bool1 0
+0 
+Run_ConstantBool	1	1	-1	0 	1 B 1 	0 
+END
+BEGIN EventCounter 0
+*
+Count	1	1	4	0 	1 I 1 	1 8 
+END
+BEGIN time_clock 0
+10000000 0 1 
+start	1	1	5	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 4 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	6	0 	0 	1 5 
+Or2	1	1	7	0 	0 	1 5 
+END
+BEGIN Int2HexString 0
+*
+convert	1	1	8	1 I 1 	1 S 3 	1 3 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

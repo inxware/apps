@@ -1,0 +1,69 @@
+#V:2.0.0
+#B:25
+#D:Y2025M2d17h9m58s55
+#N:RGB LED MQTT
+1
+1	100000	90000
+BEGIN json_parser_int 0
+default.js rs gs bs rb gb bb NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
+parse	1	1	2	17 S 1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	17 I -1 I 1 I 2 I 3 I 4 I 5 I 6 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	2 3 -1 
+END
+BEGIN Constant_String1 0
+{"rs":1,"gs":0,"bs":0,"rb":100,"gb":0,"bb":0} 
+Run_ConstantString	1	1	-1	0 	1 S -1 	0 
+END
+BEGIN ConvertorIntToBool 0
+*
+Run_ConvertorIntToBool	1	1	3	1 I 1 	1 B 1 	1 4 
+END
+BEGIN ConvertorIntToBool 0
+*
+Run_ConvertorIntToBool	1	1	3	1 I 2 	1 B 2 	1 5 
+END
+BEGIN ConvertorIntToBool 0
+*
+Run_ConvertorIntToBool	1	1	3	1 I 3 	1 B 3 	1 6 
+END
+BEGIN led 0
+0 0 100 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	4	2 B 1 I 4 	0 	1 -1 
+END
+BEGIN led 0
+1 0 100 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	5	2 B 2 I 5 	0 	1 -1 
+END
+BEGIN led 0
+2 0 100 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	6	2 B 3 I 6 	0 	1 -1 
+END
+BEGIN mqtt_client 0
+test.mosquitto.org 1883 NULL NULL NULL 0 NULL NULL NULL 
+connect	1	1	7	6 S -1 B -1 S -1 S 2 I -1 S -1 	1 S -1 	3 -1 -1 -1 
+END
+BEGIN Constant_String1 0
+inxArduino 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	8	2 S 3 S 4 	1 S 2 	1 7 
+END
+BEGIN ConvertorIntToString 0
+*
+Run_ConvertorIntToString	1	1	9	1 I 7 	1 S 4 	1 8 
+END
+BEGIN rng 0
+44 100000 999999 
+run	1	1	1	1 I -1 	1 I 7 	1 9 
+END
+BEGIN mqtt_subscribe 0
+inx/arduino/rgb_data 0 
+subscribe	1	1	1	2 S -1 I -1 	2 S 1 I -1 	2 -1 2 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

@@ -1,0 +1,134 @@
+#V:2.0.0
+#B:96
+#D:Y2025M2d21h9m23s53
+#N:socket_webserver
+1
+1	100000	90000
+BEGIN netsocketsrvr 0
+localhost 8000 0 
+open	1	1	1	2 S -1 I 1 	3 S 2 I -1 S 7 	7 -1 -1 3 -1 -1 -1 -1 
+sendData	1	1	2	2 S 1 I -1 	0 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_Queryreceived g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	3	2 S 2 S 3 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_QueryResponse g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	2	2 S 1 S 4 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_ClientIPAddress g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	4	2 S 5 S 6 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+Client IP Address 
+Run_ConstantString	1	1	-1	0 	1 S 6 	0 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	3	2 S -1 S 7 	1 S 5 	1 4 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	5	1 S 8 	1 I 2 	1 6 
+END
+BEGIN ConvertorIntToString 0
+*
+Run_ConvertorIntToString	1	1	6	1 I 2 	1 S 15 	1 14 
+END
+BEGIN Constant_String1 0
+Query Received 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN Constant_String1 0
+Query Response 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN string_format 0
+<!DOCTYPE html><html><head><title>Simple Page</title><link rel="icon" href="data:,"></head><body><h1>Saying Hi to Bob %s</h1></body></html> 
+run	1	1	7	2 S 9 S -1 	1 S 8 	1 5 
+END
+BEGIN stringfn_scan8 0
+GET /?%s%s%s%s%s%s%s%s 
+run	1	1	3	2 S -1 S 2 	8 S 12 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	2 11 -1 
+END
+BEGIN Constant_Int1 0
+8000 
+Run_ConstantInt	1	1	-1	0 	1 I 1 	0 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	8	1 S 10 	1 S 9 	1 7 
+Run_Input2	1	1	9	1 S 11 	1 S 9 	1 7 
+END
+BEGIN Constant_String1 0
+Mystery (404?) 
+Run_ConstantString	1	1	-1	0 	1 S 11 	0 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	10	1 B 1 	0 	2 8 9 
+END
+BEGIN FindString 0
+0 NULL 
+Run_FindString	1	1	11	2 S 12 S 13 	3 S -1 B 1 I -1 	1 10 
+END
+BEGIN Constant_String1 0
+bob 
+Run_ConstantString	1	1	-1	0 	1 S 13 	0 
+END
+BEGIN Constant_String1 0
+Mortimer (200!) 
+Run_ConstantString	1	1	-1	0 	1 S 10 	0 
+END
+BEGIN MultiplexTwoInputInt 0
+*
+Run_Input1	1	1	8	1 I 3 	1 I 5 	1 12 
+Run_Input2	1	1	9	1 I 4 	1 I 5 	1 12 
+END
+BEGIN Constant_Int1 0
+200 
+Run_ConstantInt	1	1	-1	0 	1 I 3 	0 
+END
+BEGIN Constant_Int1 0
+404 
+Run_ConstantInt	1	1	-1	0 	1 I 4 	0 
+END
+BEGIN ConvertorIntToString 0
+*
+Run_ConvertorIntToString	1	1	12	1 I 5 	1 S 14 	1 15 
+END
+BEGIN string_format8 0
+HTTP/1.1 %s OK\nServer: Apache\nConnection: Keep-Alive\nContent-Type: text/html\nContent-Length: %s\n\n%s\n 
+run	1	1	13	9 S 14 S 15 S 8 S -1 S -1 S -1 S -1 S -1 S -1 	1 S 1 	1 2 
+END
+BEGIN EventSelfResetTwoInputLatchingAnd 0
+*
+And1	1	1	14	0 	0 	1 13 
+And2	1	1	15	0 	0 	1 13 
+END
+BEGIN gui_text_string2 0
+%%%_Instructions. g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	16	2 S 16 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN RuntimeInfo2 0
+*
+getdyn	1	1	1	0 	10 S 17 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	2 17 -1 
+END
+BEGIN string_format 0
+Point a browser to %s:8000 (or localhost:8000?xxx) and guess the maghic query string. 
+run	1	1	17	2 S 17 S -1 	1 S 16 	1 16 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

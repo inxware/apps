@@ -1,0 +1,394 @@
+#V:2.0.0
+#B:73
+#D:Y2025M2d21h10m5s21
+#N:ping_pong_controller
+1
+1	100000	90000
+BEGIN gui_text_string2 0
+%%%_data_id_widget g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	2	2 S 1 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_enter_data_id_widget g0000000.gui 0 0 
+create	1	1	3	0 	6 I -1 I -1 I -1 I -1 S 6 S -1 	5 12 -1 -1 -1 11 
+destroy	1	1	4	0 	0 	1 13 
+show	1	1	5	0 	0 	1 14 
+hide	1	1	6	0 	0 	1 15 
+data	1	1	5	2 S -1 S 2 	2 S 6 S -1 	2 -1 11 
+END
+BEGIN gui_text_string2 0
+%%%_data_id_widget_label g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 S 3 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_enter_data_id_panel g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 3 -1 -1 -1 -1 
+show	1	1	7	0 	0 	1 5 
+hide	1	1	8	0 	0 	1 6 
+data	1	1	5	2 S 4 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+game id: 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN Constant_String1 0
+pair controller with game 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	2	0 	0 	1 8 
+Or3	1	1	9	0 	0 	1 8 
+END
+BEGIN EventFourInputOr 0
+*
+Or1	1	1	10	0 	0 	1 7 
+Or4	1	1	1	0 	0 	1 7 
+END
+BEGIN Constant_String1 0
+enter game id 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN gui_text_bool2 0
+%%%_pair_button_widget g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 10 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 B -1 S 5 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+pair controller 
+Run_ConstantString	1	1	-1	0 	1 S 5 	0 
+END
+BEGIN MultiplexOneInputString 0
+*
+Run_Input1	1	1	11	1 S 6 	1 S 1 	1 2 
+END
+BEGIN gui_text_bool2 0
+%%%_enter_data_id_cancel g0000000.gui 0 0 
+create	1	1	12	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 16 9 -1 -1 -1 
+destroy	1	1	13	0 	0 	1 -1 
+show	1	1	14	0 	0 	1 -1 
+hide	1	1	15	0 	0 	1 -1 
+data	1	1	16	2 B -1 S 7 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+cancel 
+Run_ConstantString	1	1	-1	0 	1 S 7 	0 
+END
+BEGIN gui_text_bool2 0
+%%%_left_up_button g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 19 -1 45 -1 -1 
+show	1	1	17	0 	0 	1 20 
+hide	1	1	18	0 	0 	1 21 
+END
+BEGIN gui_text_bool2 0
+%%%_left_down_button g0000000.gui 0 0 
+create	1	1	19	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 -1 46 -1 -1 
+show	1	1	20	0 	0 	1 -1 
+hide	1	1	21	0 	0 	1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_right_up_button g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 24 -1 43 -1 -1 
+show	1	1	22	0 	0 	1 25 
+hide	1	1	23	0 	0 	1 26 
+END
+BEGIN gui_text_bool2 0
+%%%_right_down_button g0000000.gui 0 0 
+create	1	1	24	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 -1 44 -1 -1 
+show	1	1	25	0 	0 	1 -1 
+hide	1	1	26	0 	0 	1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_game_pad_area g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 S 8 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+game pad 
+Run_ConstantString	1	1	-1	0 	1 S 8 	0 
+END
+BEGIN gui_text_int2 0
+%%%_controller_mode_list g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I 2 S -1 	5 -1 -1 -1 29 28 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 I 1 S 9 	2 I 2 S -1 	2 29 28 
+END
+BEGIN Constant_String1 0
+mode: left and right,mode: left only,mode: right only 
+Run_ConstantString	1	1	-1	0 	1 S 9 	0 
+END
+BEGIN Constant_Int1 0
+0 
+Run_ConstantInt	1	1	-1	0 	1 I 1 	0 
+END
+BEGIN ComparatorEqualInt1 0
+0 
+Run_ComparatorEqualInt	1	1	27	2 I 2 I -1 	1 B -1 	2 30 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	28	0 	0 	1 27 
+Or2	1	1	29	0 	0 	1 27 
+END
+BEGIN ComparatorEqualInt1 0
+1 
+Run_ComparatorEqualInt	1	1	27	2 I 2 I -1 	1 B -1 	2 31 -1 
+END
+BEGIN ComparatorEqualInt1 0
+2 
+Run_ComparatorEqualInt	1	1	27	2 I 2 I -1 	1 B -1 	2 32 -1 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	30	0 	0 	1 17 
+Or2	1	1	31	0 	0 	1 17 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	30	0 	0 	1 22 
+Or3	1	1	32	0 	0 	1 22 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	32	0 	0 	1 18 
+END
+BEGIN EventThreeInputOr 0
+*
+Or1	1	1	31	0 	0 	1 23 
+END
+BEGIN gui_text_string2 0
+%%%_game_state_label g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	33	2 S 10 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	1	1 S 11 	1 S 10 	1 33 
+Run_Input2	1	1	2	1 S 12 	1 S 10 	1 33 
+END
+BEGIN Constant_String1 0
+unpaired 
+Run_ConstantString	1	1	-1	0 	1 S 11 	0 
+END
+BEGIN Constant_String1 0
+connected 
+Run_ConstantString	1	1	-1	0 	1 S 16 	0 
+END
+BEGIN Constant_String1 0
+stop 
+Run_ConstantString	1	1	-1	0 	1 S 13 	0 
+END
+BEGIN Constant_String1 0
+game on 
+Run_ConstantString	1	1	-1	0 	1 S 14 	0 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	34	1 S 15 	1 S 32 	1 52 
+Run_Input2	1	1	35	1 S 16 	1 S 32 	1 52 
+END
+BEGIN Constant_String1 0
+disconnected 
+Run_ConstantString	1	1	-1	0 	1 S 15 	0 
+END
+BEGIN gui_text_string2 0
+%%%_score_left_widget g0000000.gui 0 0 
+data	1	1	36	2 S 17 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_score_right_widget g0000000.gui 0 0 
+data	1	1	37	2 S 18 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_bool2 0
+%%%_new_game_button g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 59 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 B -1 S 19 	2 B -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+new game 
+Run_ConstantString	1	1	-1	0 	1 S 19 	0 
+END
+BEGIN mqtt_client 0
+192.168.88.253 1883 NULL NULL NULL 0 NULL NULL NULL 
+connect	1	1	38	6 S -1 B -1 S -1 S 20 I -1 S -1 	1 S 33 	3 35 53 34 
+END
+BEGIN mqtt_publish 0
+default 0 
+publish	1	1	39	3 S 21 S 22 I -1 	0 	1 -1 
+END
+BEGIN string_format 0
+topic/%s/inx_pong_ctrl_right 
+run	1	1	40	2 S 1 S -1 	1 S 21 	1 39 
+END
+BEGIN mqtt_publish 0
+default 0 
+publish	1	1	41	3 S 23 S 24 I -1 	0 	1 -1 
+END
+BEGIN string_format 0
+topic/%s/inx_pong_ctrl_left 
+run	1	1	42	2 S 1 S -1 	1 S 23 	1 41 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	43	1 S 25 	1 S 22 	1 40 
+Run_Input2	1	1	44	1 S 26 	1 S 22 	1 40 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	45	1 S 25 	1 S 24 	1 42 
+Run_Input2	1	1	46	1 S 26 	1 S 24 	1 42 
+END
+BEGIN Constant_String1 0
+up 
+Run_ConstantString	1	1	-1	0 	1 S 25 	0 
+END
+BEGIN Constant_String1 0
+down 
+Run_ConstantString	1	1	-1	0 	1 S 26 	0 
+END
+BEGIN string_format 0
+topic/%s/inx_pong_score 
+run	1	1	2	2 S 1 S -1 	1 S -1 	1 -1 
+END
+BEGIN string_format 0
+score: %s 
+run	1	1	47	2 S 27 S -1 	1 S 17 	1 36 
+END
+BEGIN string_format 0
+score: %s 
+run	1	1	48	2 S 28 S -1 	1 S 18 	1 37 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	49	1 S 29 	1 S 28 	1 48 
+Run_Input2	1	1	50	1 S 30 	1 S 28 	1 48 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	51	1 S 29 	1 S 27 	1 47 
+Run_Input2	1	1	50	1 S 31 	1 S 27 	1 47 
+END
+BEGIN Constant_String1 0
+0 
+Run_ConstantString	1	1	-1	0 	1 S 29 	0 
+END
+BEGIN Constant_String1 0
+paired 
+Run_ConstantString	1	1	-1	0 	1 S 12 	0 
+END
+BEGIN MultiplexThreeInputString 0
+*
+Run_Input1	1	1	52	1 S 32 	1 S 34 	1 54 
+Run_Input2	1	1	53	1 S 33 	1 S 34 	1 54 
+END
+BEGIN gui_text_string2 0
+%%%_mqtt_status_widget g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	54	2 S 34 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_mqtt_status_label_widget g0000000.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	1	2 S 35 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+mqtt status: 
+Run_ConstantString	1	1	-1	0 	1 S 35 	0 
+END
+BEGIN JSONObject 0
+*
+reset	1	1	50	0 	0 	1 -1 
+read	1	1	55	1 S 36 	0 	1 56 
+query	1	1	56	8 S 37 S 38 S -1 S -1 S -1 S -1 S -1 S -1 	8 S 30 S -1 S 31 S -1 S -1 S -1 S -1 S -1 	2 -1 50 
+END
+BEGIN Constant_String1 0
+r 
+Run_ConstantString	1	1	-1	0 	1 S 38 	0 
+END
+BEGIN Constant_String1 0
+l 
+Run_ConstantString	1	1	-1	0 	1 S 37 	0 
+END
+BEGIN mqtt_publish 0
+default 0 
+publish	1	1	57	3 S 39 S 40 I -1 	0 	1 -1 
+END
+BEGIN string_format 0
+topic/%s/inx_pong_ctrl_game 
+run	1	1	58	2 S 1 S -1 	1 S 39 	1 57 
+END
+BEGIN MultiplexFourInputString 0
+*
+Run_Input1	1	1	59	1 S 41 	1 S 40 	1 58 
+END
+BEGIN Constant_String1 0
+newgame 
+Run_ConstantString	1	1	-1	0 	1 S 41 	0 
+END
+BEGIN Constant_String1 0
+inx_pong_ 
+Run_ConstantString	1	1	-1	0 	1 S 43 	0 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	60	1 S 42 	1 S 20 	1 38 
+END
+BEGIN string_format 0
+%s%s 
+run	1	1	61	2 S 43 S 44 	1 S 42 	1 60 
+END
+BEGIN CharAtString 0
+*
+Run_CharAtString	1	1	62	2 S 45 I 3 	1 S 46 	1 67 
+END
+BEGIN LenString 0
+*
+Run_LenString	1	1	63	1 S 45 	1 I 4 	1 71 
+END
+BEGIN EventCounterVersatile1 0
+1 0 1 1000 0 
+Run_CountEventCounter	1	1	64	4 I 4 I -1 I -1 I -1 	1 I 3 	2 62 69 
+END
+BEGIN AbsInt 0
+*
+Run_AbsInt	1	1	65	1 I 5 	1 I 8 	1 70 
+END
+BEGIN rng 0
+44 
+run	1	1	66	1 I 6 	1 I 5 	1 65 
+END
+BEGIN ConvertorStringToInt 0
+*
+Run_ConvertorStringToInt	1	1	67	1 S 46 	1 I 7 	1 68 
+END
+BEGIN AdditionTwoInputInt 0
+*
+Run_AdditionTwoInputInt	1	1	68	2 I 7 I 5 	1 I 6 	1 66 
+END
+BEGIN ConvertorIntToString 0
+*
+Run_ConvertorIntToString	1	1	69	1 I 8 	1 S 44 	1 61 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	70	0 	0 	1 64 
+Or2	1	1	71	0 	0 	1 64 
+END
+BEGIN RuntimeInfo2 0
+*
+getstat	1	1	1	1 S -1 	6 S 45 I -1 I -1 S -1 S -1 S -1 	1 63 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

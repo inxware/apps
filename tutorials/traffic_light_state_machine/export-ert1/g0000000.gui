@@ -1,0 +1,7 @@
+Version 1.4
+button_ui,GUI_BoolBox2,354,346,107,46,3,255,255,255,255,255,0,128,255,f0000001.bdf,5,5,5,5,18,1,0,5,0
+widgetTrafficAmbRed,GUI_Bitmap,86,272,150,150,1,255,p0000002.png
+widgetTrafficGreen,GUI_Bitmap,85,436,150,150,1,255,p0000003.png
+widgetDontWalk,GUI_Bitmap,563,350,200,200,1,255,p0000005.png
+widgetTrafficRed,GUI_Bitmap,87,106,150,150,2,255,p0000001.png
+widgetWalk,GUI_Bitmap,564,136,200,200,2,255,p0000004.png

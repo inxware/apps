@@ -1,0 +1,153 @@
+#V:2.0.0
+#B:85
+#D:Y2025M2d21h11m26s20
+#N:ping_pong_mqtt_bat
+1
+1	100000	90000
+BEGIN mqtt_client 0
+test.mosquitto.org 1883 NULL NULL NULL 0 NULL NULL NULL 
+connect	1	1	2	6 S -1 B -1 S -1 S 1 I 1 S 2 	1 S -1 	3 7 -1 8 
+END
+BEGIN led 0
+0 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	3	2 B 1 I -1 	0 	1 -1 
+END
+BEGIN led 0
+1 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	4	2 B 2 I -1 	0 	1 -1 
+END
+BEGIN led 0
+2 0 50 
+EnableFunc	1	1	1	0 	1 I -1 	1 -1 
+SetFunc	1	1	5	2 B 3 I -1 	0 	1 -1 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	6	0 	1 B 1 	1 3 
+Reset	1	1	7	0 	1 B 1 	1 3 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 6 
+Or2	1	1	8	0 	0 	1 6 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	7	0 	1 B 2 	1 4 
+Reset	1	1	8	0 	1 B 2 	1 4 
+END
+BEGIN EventSetReset 0
+*
+Reset	1	1	1	0 	1 B 3 	1 5 
+END
+BEGIN console_print 0
+1 
+PrintFunc	1	1	9	1 S 3 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+192.168.88.253 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN Constant_Int1 0
+1883 
+Run_ConstantInt	1	1	-1	0 	1 I 1 	0 
+END
+BEGIN RuntimeInfo2 0
+*
+getstat	1	1	1	1 S -1 	6 S 11 I -1 I -1 S -1 S -1 S -1 	1 22 
+getdyn	1	1	10	0 	10 S 4 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	2 11 -1 
+END
+BEGIN time_clock 0
+5000000 0 1 
+start	1	1	2	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 10 
+END
+BEGIN string_format 0
+id : %s     ip : %s 
+run	1	1	11	2 S 1 S 4 	1 S 3 	1 9 
+END
+BEGIN accel_gyro 0
+*
+EnableFunc	1	1	1	0 	1 I -1 	1 13 
+ReadAccelFunc	1	1	12	0 	3 F 2 F -1 F -1 	1 19 
+END
+BEGIN time_clock 0
+200000 1 1 
+start	1	1	13	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 12 
+END
+BEGIN mqtt_publish 0
+default 0 
+publish	1	1	14	3 S 5 S 6 I -1 	0 	1 -1 
+END
+BEGIN string_format 0
+inx/%s/arduino/pong-bat 
+run	1	1	15	2 S 1 S -1 	1 S 5 	1 14 
+END
+BEGIN ConvertorBoolToString 0
+*
+Run_ConvertorBoolToString	1	1	16	1 B 4 	1 S 6 	1 15 
+END
+BEGIN MultiplexTwoInputBool 0
+*
+Run_Input1	1	1	17	1 B 5 	1 B 4 	1 20 
+Run_Input2	1	1	18	1 B 6 	1 B 4 	1 20 
+END
+BEGIN ComparatorGreaterEqualReal1 0
+0.0 
+Run_ComparatorGreaterEqualReal	1	1	19	2 F 1 F 2 	1 B -1 	2 17 -1 
+END
+BEGIN ComparatorGreaterEqualReal1 0
+0.0 
+Run_ComparatorGreaterEqualReal	1	1	19	2 F 2 F 3 	1 B -1 	2 18 -1 
+END
+BEGIN Constant_Real1 0
+0.2 
+Run_ConstantReal	1	1	-1	0 	1 F 1 	0 
+END
+BEGIN Constant_Real1 0
+-0.2 
+Run_ConstantReal	1	1	-1	0 	1 F 3 	0 
+END
+BEGIN Constant_Bool1 0
+0 
+Run_ConstantBool	1	1	-1	0 	1 B 5 	0 
+END
+BEGIN Constant_Bool1 0
+1 
+Run_ConstantBool	1	1	-1	0 	1 B 6 	0 
+END
+BEGIN EventEdgeDetect 0
+0 
+Test	1	1	20	1 B 4 	0 	1 16 
+END
+BEGIN string_format8 0
+INX-%s%s%s%s 
+run	1	1	21	9 S 7 S 8 S 9 S 10 S -1 S -1 S -1 S -1 S -1 	1 S 1 	1 2 
+END
+BEGIN ToUpperString 0
+*
+Run_ToUpperString	1	1	22	1 S 11 	1 S 12 	1 23 
+END
+BEGIN SubString 0
+15 2 
+Run_SubString	1	1	23	3 S 12 I -1 I -1 	1 S 7 	1 24 
+END
+BEGIN SubString 0
+12 2 
+Run_SubString	1	1	24	3 S 12 I -1 I -1 	1 S 8 	1 25 
+END
+BEGIN SubString 0
+9 2 
+Run_SubString	1	1	25	3 S 12 I -1 I -1 	1 S 9 	1 26 
+END
+BEGIN SubString 0
+6 2 
+Run_SubString	1	1	26	3 S 12 I -1 I -1 	1 S 10 	1 21 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END
