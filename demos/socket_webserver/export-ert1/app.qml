@@ -22,7 +22,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         x: 50
         y: 20
-        width: 210
+        width: 110
         height: 60
 
         text: "Not Set"
@@ -39,7 +39,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         }
 
         contentItem: Text {
-            text: clientIPAddress.text
+            text: ClientIPAddress.text
             color: "white"
             font.pixelSize: 16
             horizontalAlignment: Text.AlignHCenter
@@ -55,7 +55,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         x: 50
         y: 100
-        width: 210
+        width: 110
         height: 60
 
         text: "Not Set"
@@ -72,7 +72,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         }
 
         contentItem: Text {
-            text: queryResponce.text
+            text: QueryResponse.text
             color: "white"
             font.pixelSize: 16
             horizontalAlignment: Text.AlignHCenter
@@ -88,8 +88,8 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         x: 50
         y: 180
-        width: 310
-        height: 80
+        width: 110
+        height: 60
 
         text: "Not Set"
 
@@ -105,9 +105,9 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         }
 
         contentItem: Text {
-            text: instructions.text
+            text: Instructions.text
             color: "white"
-            font.pixelSize: 22
+            font.pixelSize: 16
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
@@ -120,7 +120,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         objectName: "Queryreceived"
 
         x: 50
-        y: 280
+        y: 260
         width: 210
         height: 60
 
@@ -138,7 +138,7 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         }
 
         contentItem: Text {
-            text: quryReceived.text
+            text: Queryreceived.text
             color: "white"
             font.pixelSize: 16
             horizontalAlignment: Text.AlignHCenter
