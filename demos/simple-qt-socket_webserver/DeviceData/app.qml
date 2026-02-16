@@ -4,10 +4,10 @@ import QtQuick.Layouts 1.15
 
 ApplicationWindow {
     id: window
-    width: 620
-    height: 840
+    width: 1024
+    height: 1600
     visible: true
-    title: "Demo"
+    title: "QML and Inxware"
 
 /*
 From the .gui file
@@ -23,10 +23,10 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         x: 50
         y: 20
-        width: 210
-        height: 60
+        width: 810
+        height: 100
 
-        text: "Not Set"
+        text: "QML 2 !!!! "
 
         // Simple click handler
         onClicked: {
@@ -35,14 +35,14 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         // Custom colours
         background: Rectangle {
-            color: "green"
-            radius: 4
+            color: "#A0A000"
+            radius: 8
         }
 
         contentItem: Text {
             text: clientIPAddress.text
             color: "white"
-            font.pixelSize: 16
+            font.pointSize: 40
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
@@ -55,11 +55,11 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         objectName: "QueryResponse"
 
         x: 50
-        y: 100
-        width: 210
-        height: 60
+        y: 300
+        width: 800
+        height: 120
 
-        text: "Not Set"
+        text: "QML Default"
 
         // Simple click handler
         onClicked: {
@@ -68,13 +68,13 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         // Custom colours
         background: Rectangle {
-            color: "green"
-            radius: 4
+            color: "yellow"
+            radius: 10
         }
 
         contentItem: Text {
             text: queryResponce.text
-            color: "white"
+            color: "black"
             font.pixelSize: 16
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -88,9 +88,9 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         objectName: "Instructions."
 
         x: 50
-        y: 180
-        width: 310
-        height: 80
+        y: 480
+        width: 1100
+        height: 200
 
         text: "Not Set"
 
@@ -101,15 +101,15 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
 
         // Custom colours
         background: Rectangle {
-            color: "blue"
-            radius: 4
+            color: "#F0F0F0"
+            radius: 8
         }
 
         contentItem: Text {
             text: instructions.text
-            color: "white"
-            font.pixelSize: 22
-            horizontalAlignment: Text.AlignHCenter
+            color: "black"
+            font.pointSize: 25
+            horizontalAlignment: Text.AlignHLeft
             verticalAlignment: Text.AlignVCenter
             anchors.fill: parent
             elide: Text.ElideRight
@@ -121,9 +121,9 @@ Instructions.,GUI_TextBox2,15,504,608,43,6,255,255,255,255,255,100,100,100,f0000
         objectName: "Queryreceived"
 
         x: 50
-        y: 280
-        width: 210
-        height: 60
+        y: 880
+        width: 610
+        height: 120
 
         text: "Not Set"
 
