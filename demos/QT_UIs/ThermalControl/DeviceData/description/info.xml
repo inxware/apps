@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>ThermalControl</Name>
+  <CommercialName>Domestic Heating System UI</CommercialName>
+  <Version>1.0</Version>
+  <Description>A base UI for a boiler remote control.</Description>
+</root>

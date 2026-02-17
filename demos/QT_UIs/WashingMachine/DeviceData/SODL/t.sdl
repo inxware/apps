@@ -1,0 +1,35 @@
+#V:2.0.0
+#B:3
+#D:Y2026M1d17h1m14s56
+#N:WashingMachine
+1
+1	100000	90000
+BEGIN gui_patch 0
+%%%_startWashing g0000001.gui 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN gui_patch 0
+%%%_sportWash g0000001.gui 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN gui_patch 0
+%%%_hotWash g0000001.gui 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN gui_patch 0
+%%%_normalWash g0000001.gui 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN gui_patch 0
+%%%_ecoWash g0000001.gui 0 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END
