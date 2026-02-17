@@ -1,16 +1,8 @@
 <LucidProject>
 <Version>1.4</Version>
 <ProjectName>simple-qt-socket_webserver</ProjectName>
-<Toolboxes>
-<Toolbox hash="0x1ab0">core</Toolbox>
-<Toolbox hash="0x1ab1">AV</Toolbox>
-<Toolbox hash="0x1ab3">peripherals</Toolbox>
-<Toolbox hash="0x1ab4">networking</Toolbox>
-<Toolbox hash="0x1ab5">gui</Toolbox>
-<Toolbox hash="0x1ab6">media</Toolbox>
-<Toolbox hash="0x1ab7">user</Toolbox>
-</Toolboxes>
-<LastTransferToTarget>2026-01-16 10:30:23:000</LastTransferToTarget>
+<Toolboxes/>
+<LastTransferToTarget>2026-01-16 14:19:47:000</LastTransferToTarget>
 <GroupSet>
 <Group>
 <ID>1</ID>
@@ -48,6 +40,11 @@
 <HostFileName>icon128x128.png</HostFileName>
 <Description/>
 <TargetFileName>icon128x128.png</TargetFileName>
+</ResourceFile>
+<ResourceFile>
+<HostFileName>app.qml</HostFileName>
+<Description/>
+<TargetFileName>app.qml</TargetFileName>
 </ResourceFile>
 </ResourceFileSet>
 </ExternalFiles>
@@ -92,6 +89,7 @@
 </LayoutFileSet>
 <ResourceFileSet>
 <Location>icon128x128.png</Location>
+<Location>app.qml</Location>
 </ResourceFileSet>
 <MiscFileSet>
 <Location>ert1.sdl</Location>
