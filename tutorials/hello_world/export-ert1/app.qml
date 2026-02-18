@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 ApplicationWindow {
     id: window
     width: 320
-    height: 640
+    height: 320
     visible: true
     title: "Demo"
 
