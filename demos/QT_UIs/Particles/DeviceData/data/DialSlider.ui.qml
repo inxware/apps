@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Studio.Components 1.0
-import QtQuick.Studio.LogicHelper 1.0
+//import QtQuick.Studio.Components 1.0
+//import QtQuick.Studio.LogicHelper 1.0
 
 Item {
     width: 400
@@ -14,7 +14,7 @@ Item {
         x: 165
         y: 94
     }
-
+/*
     ArcItem {
         id: arc
         x: 41
@@ -50,7 +50,7 @@ Item {
         inputMinimum: customSlider.from
         input: customSlider.value
     }
-
+*/
     Text {
         id: label
         x: 170

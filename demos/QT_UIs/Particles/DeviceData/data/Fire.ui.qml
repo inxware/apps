@@ -101,15 +101,16 @@ Rectangle {
 
         DialSlider {
             id: slider
+            objectName: "slider"
             text: "Direction"
-            value: 0
+//            value: slider.value
             to: 90
             from: -90
         }
 
         CustomCheckbox {
             id: checkbox
-            text: "Running"
+            objectName: "instructions"
             anchors.right: parent.right
             font.pixelSize: 24
             anchors.rightMargin: 38
