@@ -1,5 +1,64 @@
 import QtQuick
+import QtQuick.Controls 
 import QtQuick.Shapes
+
+ApplicationWindow {
+    id: window
+    width: 1200
+    height: 800
+    visible: true
+    title: "QML and inxware : LaundriQ"
+
+    Program_selection_1024x600 {
+        id: programSelection
+        anchors.fill: parent
+        visible: false
+
+        onProgramSelected: function(name) {
+            programSelection.visible = false
+            if      (name === "Cotton") cottonPage.visible  = true
+            else if (name === "Silk")   silkPage.visible    = true
+            else if (name === "Sports") sportsPage.visible  = true
+            else if (name === "Wool")   woolPage.visible    = true
+        }
+    }
+
+    Program_settings_Cotton_1024x600 {
+        id: cottonPage
+        anchors.fill: parent
+        visible: false
+        onBackToSelection: { cottonPage.visible = false; programSelection.visible = true }
+        onWashStarted:     { cottonPage.visible = false; ongoingPage.visible = true }
+    }
+    Program_settings_Silk_1024x600 {
+        id: silkPage
+        anchors.fill: parent
+        visible: false
+        onBackToSelection: { silkPage.visible = false; programSelection.visible = true }
+        onWashStarted:     { silkPage.visible = false; ongoingPage.visible = true }
+    }
+    Program_settings_Sports_1024x600 {
+        id: sportsPage
+        anchors.fill: parent
+        visible: false
+        onBackToSelection: { sportsPage.visible = false; programSelection.visible = true }
+        onWashStarted:     { sportsPage.visible = false; ongoingPage.visible = true }
+    }
+    Program_settings_Wool_1024x600 {
+        id: woolPage
+        anchors.fill: parent
+        visible: false
+        onBackToSelection: { woolPage.visible = false; programSelection.visible = true }
+        onWashStarted:     { woolPage.visible = false; ongoingPage.visible = true }
+    }
+    Program_Ongoing_wash_1024x600 {
+        id: ongoingPage
+        anchors.fill: parent
+        visible: false
+        onBackToSelection: { ongoingPage.visible = false; programSelection.visible = true }
+    }
+    Program_Cancel_wash_1024x600  { id: cancelPage;  anchors.fill: parent; visible: false }
+ 
 
 Rectangle {
     id: splash_Screen_1024x600
@@ -9,7 +68,12 @@ Rectangle {
 
     clip: true
     color: "#000000"
+    visible: !programSelection.visible && !cottonPage.visible && !silkPage.visible
+             && !sportsPage.visible && !woolPage.visible
+             && !ongoingPage.visible && !cancelPage.visible
 
+   
+   
     Image {
         id: page_bg
 
@@ -420,33 +484,38 @@ Rectangle {
 
         Text {
             id: clock
+            objectName: "timeofday"
 
-            x: 904
+            x: 875
             y: 19
 
             height: 33
-            width: 73
+            width: 83
 
             color: "#ffffff"
             font.family: "Open Sans"
             font.pixelSize: 24
             font.weight: Font.Normal
             horizontalAlignment: Text.AlignRight
-            text: "08:13"
+            text: "00:00:00"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
         }
         Item {
             id: wifi_icon
+            objectName: "wifiEnabled"
 
-            x: 848
+            property int value: 100
+
+            x: 838
             y: 22
 
             height: 28
             width: 28
 
             clip: true
+            opacity: value / 100
 
             Shape {
                 id: wifi_icon_1
@@ -477,6 +546,9 @@ Rectangle {
         }
         Item {
             id: bluetooth_icon
+            objectName: "bluetoothEnabled"
+
+            property int value: 100
 
             x: 790
             y: 22
@@ -485,6 +557,7 @@ Rectangle {
             width: 28
 
             clip: true
+            opacity: value / 100
 
             Shape {
                 id: bluetooth_icon_1
@@ -541,6 +614,7 @@ Rectangle {
         }
         Text {
             id: title
+            objectName: "abcdefg"
 
             x: 392
             y: 19
@@ -556,8 +630,45 @@ Rectangle {
             text: "Program selection"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
-            visible: false
+            visible: true
             wrapMode: Text.WordWrap
+
+            //signal clicked()
+            MouseArea {
+                anchors.fill: parent
+                //onClicked: title.clicked()
+            }
+        }
+        Button {
+            id: ijk_button
+            objectName: "ijk"
+
+            x: 245
+            y: 16
+
+            height: 40
+            width: 90
+
+            //color: "#2b6d9e"
+            //radius: 6
+
+            //signal clicked()
+
+            Text {
+                anchors.centerIn: parent
+                color: "#ffffff"
+                font.family: "Inter"
+                font.pixelSize: 26
+                text: "GO!"
+            }
+            onClicked: {
+            splash_Screen_1024x600.visible = false
+            programSelection.visible = true
+            }
+            //MouseArea {
+             //   anchors.fill: parent
+              //  onClicked: ijk_button.clicked()
+            //}
         }
         Item {
             id: navigation
@@ -568,7 +679,7 @@ Rectangle {
             height: 28
             width: 191
 
-            visible: false
+            visible: true
 
             Text {
                 id: program_selection
@@ -591,4 +702,12 @@ Rectangle {
             }
         }
     }
+    //MouseArea {
+    //    anchors.fill: parent
+    //    onClicked: {
+    //        splash_Screen_1024x600.visible = false
+    //        programSelection.visible = true
+    //    }
+   // }
+}
 }

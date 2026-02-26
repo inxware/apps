@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Shapes
 
 Rectangle {
@@ -10,6 +11,8 @@ Rectangle {
     clip: true
     color: "transparent"
     radius: 24
+
+    signal programSelected(string programName)
 
     Image {
         id: page_bg
@@ -42,13 +45,31 @@ Rectangle {
 
             color: "#ffffff"
             radius: 2
+
+            x: cardsFlickable.contentX / Math.max(1, cardsFlickable.contentWidth - cardsFlickable.width) * (scroll_bar.width - width)
+
+            Behavior on x { NumberAnimation { duration: 150; easing.type: Easing.OutQuad } }
         }
     }
+
+    Flickable {
+        id: cardsFlickable
+
+        x: 0
+        y: 72
+        width: 1024
+        height: 480
+
+        contentWidth: 1200
+        contentHeight: 480
+        flickableDirection: Flickable.HorizontalFlick
+        clip: true
+
     Rectangle {
         id: custom
 
         x: 48
-        y: 72
+        y: 0
 
         height: 480
         width: 260
@@ -325,7 +346,6 @@ Rectangle {
 
             Text {
                 id: min
-
                 y: 49
 
                 height: 44
@@ -371,7 +391,7 @@ Rectangle {
         id: wool_1
 
         x: 890
-        y: 72
+        y: 0
 
         height: 480
         width: 260
@@ -912,12 +932,13 @@ Rectangle {
                 wrapMode: Text.WordWrap
             }
         }
+        MouseArea { anchors.fill: parent; onClicked: program_selection_1024x600.programSelected("Wool") }
     }
     Rectangle {
         id: cotton_2
 
         x: 50
-        y: 72
+        y: 0
 
         height: 480
         width: 260
@@ -1143,12 +1164,13 @@ Rectangle {
                 y: 30
             }
         }
+        MouseArea { anchors.fill: parent; onClicked: program_selection_1024x600.programSelected("Cotton") }
     }
     Rectangle {
         id: silk_1
 
         x: 330
-        y: 72
+        y: 0
 
         height: 480
         width: 260
@@ -1383,12 +1405,13 @@ Rectangle {
 
             source: Qt.resolvedUrl("assets/title_3.png")
         }
+        MouseArea { anchors.fill: parent; onClicked: program_selection_1024x600.programSelected("Silk") }
     }
     Rectangle {
         id: sports_1
 
         x: 610
-        y: 73
+        y: 1
 
         height: 480
         width: 260
@@ -1639,5 +1662,8 @@ Rectangle {
 
             source: Qt.resolvedUrl("assets/title_4.png")
         }
+        MouseArea { anchors.fill: parent; onClicked: program_selection_1024x600.programSelected("Sports") }
     }
+    } // Flickable
+
 }

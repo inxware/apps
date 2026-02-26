@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Shapes
 
 Item {
@@ -8,6 +9,9 @@ Item {
     width: 1024
 
     clip: true
+
+    signal backToSelection()
+    signal washStarted()
 
     Shape {
         id: colorBG
@@ -49,14 +53,10 @@ Item {
                 }
             }
 
-            PathRectangle {
+            PathSvg {
                 id: colorBGPathRectangle
 
-                x: 0
-                y: 0
-
-                height: 600
-                width: 1024
+                path: "M 0 0 L 1024 0 L 1024 600 L 0 600 Z"
             }
         }
     }
@@ -369,6 +369,7 @@ Item {
                     }
                 }
             }
+            MouseArea { anchors.fill: parent; onClicked: program_settings_Wool_1024x600.backToSelection() }
         }
         Text {
             id: program_time
@@ -474,6 +475,7 @@ Item {
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
         }
+        MouseArea { anchors.fill: parent; onClicked: program_settings_Wool_1024x600.washStarted() }
     }
     Item {
         id: row_1

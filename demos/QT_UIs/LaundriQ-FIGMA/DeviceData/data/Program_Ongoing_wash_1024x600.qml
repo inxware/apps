@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Shapes
 
 Rectangle {
@@ -10,6 +11,36 @@ Rectangle {
     clip: true
     color: "#000000"
 
+    signal backToSelection()
+    signal drumClicked()
+    signal pauseClicked()
+
+    property int washMinutes: 2
+    property int washSeconds: 23
+
+    QtObject {
+        id: drumDurationCtrl
+        objectName: "drumRotationDuration"
+        property real value: 4000
+    }
+
+    Timer {
+        id: countdownTimer
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: {
+            if (washSeconds > 0) {
+                washSeconds--
+            } else if (washMinutes > 0) {
+                washMinutes--
+                washSeconds = 59
+            } else {
+                stop()
+            }
+        }
+    }
+
     Image {
         id: page_bg
 
@@ -17,11 +48,26 @@ Rectangle {
     }
     Image {
         id: laundriQ_logoTest1_1
+        objectName: "drumRotation"
 
         x: 311
         y: 98
 
         source: Qt.resolvedUrl("assets/laundriQ_logoTest1_2.png")
+        transformOrigin: Item.Center
+
+        RotationAnimation on rotation {
+            loops: Animation.Infinite
+            from: 0
+            to: 360
+            duration: drumDurationCtrl.value
+            running: true
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: program_Ongoing_wash_1024x600.drumClicked()
+        }
     }
     Item {
         id: header
@@ -33,19 +79,19 @@ Rectangle {
 
         Text {
             id: clock
-
-            x: 904
+            objectName: "washCycleClock"
+            x: 874
             y: 19
 
             height: 33
-            width: 73
+            width: 83
 
             color: "#ffffff"
             font.family: "Open Sans"
             font.pixelSize: 24
             font.weight: Font.Normal
             horizontalAlignment: Text.AlignRight
-            text: "08:13"
+            text: "00:00:00"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
@@ -53,7 +99,7 @@ Rectangle {
         Item {
             id: wifi_icon
 
-            x: 848
+            x: 838
             y: 22
 
             height: 28
@@ -179,6 +225,7 @@ Rectangle {
 
                     source: Qt.resolvedUrl("assets/layer02_13.png")
                 }
+                MouseArea { anchors.fill: parent; onClicked: program_Ongoing_wash_1024x600.backToSelection() }
             }
             Text {
                 id: program_selection
@@ -324,7 +371,6 @@ Rectangle {
         }
         Item {
             id: spin_speed
-
             y: 108
 
             height: 28
@@ -372,23 +418,32 @@ Rectangle {
 
                         source: Qt.resolvedUrl("assets/layer02_14.png")
                     }
+                    RotationAnimation on rotation {
+                        loops: Animation.Infinite
+                        from: 0
+                        to: 360
+                        duration: drumDurationCtrl.value
+                        running: true
+                    }
                 }
             }
             Text {
                 id: rpm
-
+                objectName: "rpmValue"  
                 x: 44
                 y: 4.50
 
                 height: 19
                 width: 73
 
+                property int value: 1200
+
                 color: "#ffffff"
                 font.family: "Inter"
                 font.pixelSize: 16
                 font.weight: Font.Normal
                 horizontalAlignment: Text.AlignLeft
-                text: "1200 rpm"
+                text: value + " rpm"
                 textFormat: Text.PlainText
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.WordWrap
@@ -721,14 +776,29 @@ Rectangle {
             horizontalAlignment: Text.AlignHCenter
             lineHeight: 48
             lineHeightMode: Text.FixedHeight
-            text: "02:23"
+            text: (washMinutes < 10 ? "0" + washMinutes : "" + washMinutes) + ":" + (washSeconds < 10 ? "0" + washSeconds : "" + washSeconds)
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
         }
+        Button {
+          id: slowDown
+          objectName: "slowDown"
+          y: 150
+          //color: "#ffffff"
+          height: 48
+          width: 200
+
+          font.family: "Inter"
+          font.pixelSize: 36
+          //font.weight: Font.Bold
+          text: "Speed"
+        }
+
     }
     Item {
         id: button_round
+        objectName: "pauseDrumButton"
 
         x: 488
         y: 276
@@ -769,5 +839,10 @@ Rectangle {
                 source: Qt.resolvedUrl("assets/layer02_18.png")
             }
         }
+
+        //MouseArea {
+        //    anchors.fill: parent
+        //    onClicked: program_Ongoing_wash_1024x600.pauseClicked()
+        //}
     }
 }

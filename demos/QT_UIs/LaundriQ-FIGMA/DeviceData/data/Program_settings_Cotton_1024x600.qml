@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Shapes
 
 Rectangle {
@@ -9,6 +10,9 @@ Rectangle {
 
     clip: true
     color: "#000000"
+
+    signal backToSelection()
+    signal washStarted()
 
     Image {
         id: page_bg
@@ -72,14 +76,10 @@ Rectangle {
                         }
                     }
 
-                    PathRectangle {
+                    PathSvg {
                         id: colorBGPathRectangle
 
-                        x: 0
-                        y: 0
-
-                        height: 600
-                        width: 1024
+                        path: "M 0 0 L 1024 0 L 1024 600 L 0 600 Z"
                     }
                 }
             }
@@ -126,14 +126,10 @@ Rectangle {
                         }
                     }
 
-                    PathRectangle {
+                    PathSvg {
                         id: contrast_overlay_gradientPathRectangle
 
-                        x: 0
-                        y: 0
-
-                        height: 600
-                        width: 1024
+                        path: "M 0 0 L 1024 0 L 1024 600 L 0 600 Z"
                     }
                 }
             }
@@ -456,6 +452,7 @@ Rectangle {
                     }
                 }
             }
+            MouseArea { anchors.fill: parent; onClicked: program_settings_Cotton_1024x600.backToSelection() }
         }
     }
     Rectangle {
@@ -542,6 +539,7 @@ Rectangle {
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
         }
+        MouseArea { anchors.fill: parent; onClicked: program_settings_Cotton_1024x600.washStarted() }
     }
     Item {
         id: row_1

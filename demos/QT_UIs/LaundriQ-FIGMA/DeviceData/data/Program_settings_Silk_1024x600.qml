@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Shapes
 
 Rectangle {
@@ -9,6 +10,9 @@ Rectangle {
 
     clip: true
     color: "#000000"
+
+    signal backToSelection()
+    signal washStarted()
 
     Image {
         id: page_bg
@@ -324,6 +328,7 @@ Rectangle {
                     }
                 }
             }
+            MouseArea { anchors.fill: parent; onClicked: program_settings_Silk_1024x600.backToSelection() }
         }
     }
     Rectangle {
@@ -410,6 +415,7 @@ Rectangle {
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
         }
+        MouseArea { anchors.fill: parent; onClicked: program_settings_Silk_1024x600.washStarted() }
     }
     Item {
         id: row_1

@@ -5,9 +5,11 @@ import QmlProject
 Project {
     qt6Project: true
     importPaths: [ "." ]
-    mainFile: "Program_Cancel_wash_1024x600.qml"
+   // mainFile: "Program_Cancel_wash_1024x600.qml"
+    mainFile: "app.qml"
     QmlFiles {
         files: [
+            "app.qml",
             "Program_Cancel_wash_1024x600.qml",
             "Program_Ongoing_wash_1024x600.qml",
             "Program_settings_Wool_1024x600.qml",
