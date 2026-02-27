@@ -2,7 +2,7 @@
 <Version>1.4</Version>
 <ProjectName>Thermo</ProjectName>
 <Toolboxes/>
-<LastTransferToTarget>2026-01-25 08:30:11:000</LastTransferToTarget>
+<LastTransferToTarget>2026-01-27 10:08:16:000</LastTransferToTarget>
 <GroupSet>
 <Group>
 <ID>1</ID>
@@ -53,11 +53,31 @@
 </ScreenSet>
 <WidgetSet>
 <Widget>
-<WidgetTag>temperature2</WidgetTag>
+<WidgetTag>livingRoom</WidgetTag>
 <ScreenTag>default</ScreenTag>
 </Widget>
 <Widget>
 <WidgetTag>outsideTemperature</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>diningRoom</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>kidsRoom</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>kids2Room</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>kitchenRoom</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>bedRoom</WidgetTag>
 <ScreenTag>default</ScreenTag>
 </Widget>
 </WidgetSet>

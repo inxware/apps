@@ -16,8 +16,8 @@ import Thermo 1.0
 
 ApplicationWindow {
     id: window
-    width: 1200
-    height: 800
+    width: 480
+    height: 272
     visible: true
     title: "QML and inxware : Thermo"
 
@@ -29,7 +29,7 @@ ApplicationWindow {
 
     Room {
         id: livingRoomData
-        objectName: "temperature1"
+        objectName: "livingRoom"
         name: qsTr("Living room X")
         text: "NEw Text"
         floor: qsTr(text)
@@ -41,7 +41,7 @@ ApplicationWindow {
 
     Room {
         id: diningRoomData
-        objectName: "temperature2"
+        objectName: "diningRoom"
         name: qsTr("Dining room")
         floor: qsTr("First floor")
         temperature: value
@@ -51,7 +51,7 @@ ApplicationWindow {
 
     Room {
         id: kitchenRoomData
-        objectName: "temperature3"
+        objectName: "kitcheRoom"
         name: qsTr("Kitchen")
         floor: qsTr("First floor")
         power: false
@@ -61,7 +61,7 @@ ApplicationWindow {
 
     Room {
         id: kidsRoomData
-        objectName: "temperature4"
+        objectName: "kidsRoom"
         name: qsTr("Kids bedroom")
         floor: qsTr("Second floor")
         temperature: Units.fahrenheitToTemperatureUnit(65)
@@ -70,7 +70,7 @@ ApplicationWindow {
 
     Room {
         id: kids2RoomData
-        objectName: "temperature5"
+        objectName: "kids2Room"
         name: qsTr("Kids bedroom 2")
         floor: qsTr("Second floor")
         temperature: Units.fahrenheitToTemperatureUnit(71)
@@ -80,7 +80,7 @@ ApplicationWindow {
 
     Room {
         id: bedRoomData
-        objectName: "temperature6"
+        objectName: "bedRoom"
         name: qsTr("Master bedroom")
         floor: qsTr("Second floor")
         temperature: Units.fahrenheitToTemperatureUnit(68)

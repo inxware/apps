@@ -61,7 +61,7 @@ QtObject {
         name: qsTr("Kitchen")
         floor: qsTr("First floor")
         power: false
-        temperature: Units.fahrenheitToTemperatureUnit(68)
+//        temperature: Units.fahrenheitToTemperatureUnit(68)
         status: Room.Off
     }
 
@@ -69,7 +69,7 @@ QtObject {
         id: kidsRoom
         name: qsTr("Kids bedroom")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(65)
+//        temperature: Units.fahrenheitToTemperatureUnit(65)
         status: Room.Cooling
     }
 
@@ -77,7 +77,7 @@ QtObject {
         id: kids2Room
         name: qsTr("Kids bedroom 2")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(71)
+//        temperature: Units.fahrenheitToTemperatureUnit(71)
         status: Room.Heating
         fan: Room.FanFull
     }
@@ -86,7 +86,7 @@ QtObject {
         id: bedRoom
         name: qsTr("Master bedroom")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(68)
+//        temperature: Units.fahrenheitToTemperatureUnit(68)
         status: Room.Heating
     }
 }
