@@ -2,7 +2,7 @@
 <Version>1.4</Version>
 <ProjectName>Thermo</ProjectName>
 <Toolboxes/>
-<LastTransferToTarget>2026-01-27 10:08:16:000</LastTransferToTarget>
+<LastTransferToTarget>2026-02-02 00:05:46:000</LastTransferToTarget>
 <GroupSet>
 <Group>
 <ID>1</ID>
@@ -57,10 +57,6 @@
 <ScreenTag>default</ScreenTag>
 </Widget>
 <Widget>
-<WidgetTag>outsideTemperature</WidgetTag>
-<ScreenTag>default</ScreenTag>
-</Widget>
-<Widget>
 <WidgetTag>diningRoom</WidgetTag>
 <ScreenTag>default</ScreenTag>
 </Widget>
@@ -78,6 +74,10 @@
 </Widget>
 <Widget>
 <WidgetTag>bedRoom</WidgetTag>
+<ScreenTag>default</ScreenTag>
+</Widget>
+<Widget>
+<WidgetTag>weatherIcon</WidgetTag>
 <ScreenTag>default</ScreenTag>
 </Widget>
 </WidgetSet>
@@ -98,7 +98,7 @@
 <Location>app.qml</Location>
 </ResourceFileSet>
 <MiscFileSet>
-<Location>ert1.sdl</Location>
+<Location>t.sdl</Location>
 </MiscFileSet>
 <FontFileSet>
 <Location>arial10.bdf</Location>

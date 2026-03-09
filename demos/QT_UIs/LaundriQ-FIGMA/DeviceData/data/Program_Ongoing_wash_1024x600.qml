@@ -756,7 +756,7 @@ Rectangle {
             font.pixelSize: 20
             font.weight: Font.Light
             horizontalAlignment: Text.AlignHCenter
-            text: "Remaining time"
+            text: "Remaining"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
@@ -764,7 +764,7 @@ Rectangle {
         Text {
             id: element_1
 
-            y: 28
+            y: 40
 
             height: 48
             width: 145
@@ -788,6 +788,10 @@ Rectangle {
           //color: "#ffffff"
           height: 48
           width: 200
+           background: Rectangle {
+                color: "#2b6d9e"
+                radius: 9
+            }
 
           font.family: "Inter"
           font.pixelSize: 36

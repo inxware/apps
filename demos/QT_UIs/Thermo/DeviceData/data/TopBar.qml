@@ -83,11 +83,11 @@ Item {
         }
     }
 
-/*    ColorizedImage {
+    Image {
         id: buttonImage
         x: 14
         visible: opacity > 0
-        color: ColorStyle.greyDark4
+        //color: ColorStyle.greyDark4
         anchors.verticalCenter: parent.verticalCenter
         source: "assets/change-language.png"
         opacity: topBar.showBackButton ? 0 : 1
@@ -108,14 +108,14 @@ Item {
         }
     }
 
-    ColorizedImage {
+    Image {
         id: qtLogo
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         source: "assets/qt-logo.png"
-        color: ColorStyle.greyDark4
+    //    color: ColorStyle.greyDark4
     }
-*/
+
     Row {
         height: parent.height
         anchors.right: parent.right
@@ -131,23 +131,29 @@ Item {
 
             Text {
                 id: outTemp
+                objectName: "temperature"
                 anchors.verticalCenter: parent.verticalCenter
                 width: 20
                 horizontalAlignment: Text.AlignRight
                 font.family: "Roboto"
                 font.pixelSize: Theme.topBarFontSize
                 color: ColorStyle.greyDark4
+                /*
                 Timer {
                     running: true
                     repeat: true
                     interval: 5000
                     onTriggered: {
                         if (Math.random() < 0.3) {
-                            outTemp.text = Units.fahrenheitToTemperatureUnit(Math.random() * 99).toFixed(0)
+                            //outTemp.text = Units.fahrenheitToTemperatureUnit(Math.random() * 99).toFixed(0)
+                            //outTemp.text = outTemp.text
                         }
                     }
                 }
-                Component.onCompleted: outTemp.text = Units.fahrenheitToTemperatureUnit(Math.random() * 99).toFixed(0)
+                */
+                Component.onCompleted: outTemp.text = text 
+                //Units.fahrenheitToTemperatureUnit(value).toFixed(0)
+                
             }
 
             Text {

@@ -489,12 +489,12 @@ Rectangle {
             x: 875
             y: 19
 
-            height: 33
+            height: 30
             width: 83
 
             color: "#ffffff"
             font.family: "Open Sans"
-            font.pixelSize: 24
+            font.pixelSize: 28
             font.weight: Font.Normal
             horizontalAlignment: Text.AlignRight
             text: "00:00:00"
@@ -508,7 +508,7 @@ Rectangle {
 
             property int value: 100
 
-            x: 838
+            x: 688
             y: 22
 
             height: 28
@@ -550,7 +550,7 @@ Rectangle {
 
             property int value: 100
 
-            x: 790
+            x: 740
             y: 22
 
             height: 28
@@ -616,11 +616,11 @@ Rectangle {
             id: title
             objectName: "abcdefg"
 
-            x: 392
+            x: 332
             y: 19
 
             height: 34
-            width: 241
+            width: 280
 
             color: "#ffffff"
             font.family: "Inter"
@@ -643,17 +643,29 @@ Rectangle {
             id: ijk_button
             objectName: "ijk"
 
-            x: 245
+            x: 225
             y: 16
 
             height: 40
-            width: 90
-
-            //color: "#2b6d9e"
-            //radius: 6
+            width: 120
+            // Custom colours
+            background: Rectangle {
+                color: "#2b6d9e"
+                radius: 6
+            }
 
             //signal clicked()
-
+        /*
+            contentItem: Text {
+                text: widget1.text
+                color: "white"
+                font.pixelSize: 16
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                anchors.fill: parent
+                elide: Text.ElideRight
+            }
+        */
             Text {
                 anchors.centerIn: parent
                 color: "#ffffff"

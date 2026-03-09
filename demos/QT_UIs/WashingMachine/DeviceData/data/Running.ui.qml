@@ -146,7 +146,7 @@ Item {
         id: remaintimelabel
         y: 233
         color: "#B8B8B8"
-        text: "Remaining Time: " + (logic.minutesLeft + " min")
+        text: "Remaining: " + (logic.minutesLeft + " min")
         font.pixelSize: 16
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter

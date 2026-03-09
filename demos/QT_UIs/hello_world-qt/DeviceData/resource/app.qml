@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.15
 ApplicationWindow {
     id: window
     width: 320
-    height: 640
+    height: 320
     visible: true
     title: "Demo"
 
@@ -18,7 +18,7 @@ ApplicationWindow {
         width: 200
         height: 60
 
-        text: "Hello World ORIG"
+        text: "Hello from QML"
 
         // Simple click handler
         onClicked: {
@@ -41,4 +41,40 @@ ApplicationWindow {
             elide: Text.ElideRight
         }
     }
+    // Add some other useful widgets for Hello Worlders
+    Text {
+        id: ipdadress
+        objectName: "ipaddress"
+        visible: true
+
+       font.weight: Font.Medium
+       font.family: "Helvetica"
+       color: ColorStyle.greyDark4
+       
+        x: 30
+        y: 230
+        width: 100
+        height: 40
+
+        font.pixelSize: 12
+        text: "N/A"
+    }
+    Text {
+        id: datetime
+        objectName: "datetime"
+        visible: true
+
+        font.weight: Font.Medium
+        font.family: "Helvetica"
+        color: ColorStyle.greyDark4
+
+        x: 30
+        y: 260
+        width: 100
+        height: 40
+
+        font.pixelSize: 12
+        text: "N/A"
+    }
+
 }

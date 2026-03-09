@@ -1322,7 +1322,7 @@ Rectangle {
             font.pixelSize: 20
             font.weight: Font.Light
             horizontalAlignment: Text.AlignHCenter
-            text: "Remaining time"
+            text: "Remaining"
             textFormat: Text.PlainText
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
@@ -1330,7 +1330,7 @@ Rectangle {
         Text {
             id: element_1
 
-            y: 28
+            y: 40
 
             height: 48
             width: 145

@@ -28,10 +28,10 @@ Image {
     Timer {
         running: true
         repeat: true
-        interval: 5000
+        interval: 200
         onTriggered: {
-            if (Math.random() < 0.3) {
-                switch (Math.floor(Math.random() * 7)) {
+            //if (Math.random() < 0.3) {
+                switch (Math.floor(inValue.value/10)) {
                     case 0: weatherIcon.source = "assets/weather/w_01.png"; break;
                     case 1: weatherIcon.source = "assets/weather/w_02.png"; break;
                     case 2: weatherIcon.source = "assets/weather/w_03.png"; break;
@@ -40,7 +40,12 @@ Image {
                     case 5: weatherIcon.source = "assets/weather/w_06.png"; break;
                     case 6: weatherIcon.source = "assets/weather/w_07.png"; break;
                 }
-            }
+           // }
         }
+    }
+    QtObject {
+        id:inValue
+        objectName: "weatherIcon"
+        property int value : 0 
     }
 }

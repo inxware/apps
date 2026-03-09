@@ -152,23 +152,23 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 22
 
-            IconImage {
+            Image {
                 source: "assets/dryer-on-small.png"
-                color: root.room.dryer ? ColorStyle.blue : ColorStyle.greyMedium3
+            //    color: root.room.dryer ? ColorStyle.blue : ColorStyle.greyMedium3
             }
 
             Image {
                 source: root.room.smallFanImage
             }
 
-            IconImage {
+            Image {
                 source: "assets/eco-on-small.png"
-                color: root.room.eco ? ColorStyle.blue : ColorStyle.greyMedium3
+            //    color: root.room.eco ? ColorStyle.blue : ColorStyle.greyMedium3
             }
 
-            IconImage {
+            Image {
                 source: "assets/streamer-on-small.png"
-                color: root.room.streamer ? ColorStyle.blue : ColorStyle.greyMedium3
+            //    color: root.room.streamer ? ColorStyle.blue : ColorStyle.greyMedium3
             }
         }
 

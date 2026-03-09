@@ -36,7 +36,7 @@ QtObject {
     }
     property Room livingRoom: Room {
         id: livingRoom
-        name: qsTr("Living room X")
+        name: qsTr("Living room")
         text: "NEw Text"
         floor: qsTr(text)
         value: 89

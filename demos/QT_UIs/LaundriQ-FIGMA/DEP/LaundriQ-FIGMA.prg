@@ -1,7 +1,7 @@
 #V:2.1.2
 
 CanvasSizeXY
-2050	1385
+1690	1395
 
 IconData
 BEGIN_BLOCK
@@ -264,8 +264,8 @@ BEGIN_LINE
 1	466507	2	2	-1	0
 -825	-525
 -825	-590
--950	-590
--950	-550
+-955	-590
+-955	-550
 END_LINE
 startport
 
@@ -351,7 +351,7 @@ This widget displays an integer to the GUI output. It can also be configured as 
 gui_text_int2
 0
 _
--440	-1110	-325	-895
+-540	-1110	-425	-895
 1	0
 blockattr
 BEGIN_BA
@@ -389,7 +389,7 @@ allows a widget to register a mouse click event when it is hidden behind another
 
 inputport
 
-0	1	coords= -441 -953 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -541 -953 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -398,7 +398,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -441 -943 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -541 -943 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -407,7 +407,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -441 -933 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -541 -933 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -416,7 +416,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -441 -923 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -541 -923 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -425,7 +425,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -441 -913 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -541 -913 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -434,18 +434,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -441 -993 0	5	0	1	mandatory= 0	0	1
+0	1	coords= -541 -993 0	5	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	466781	0	0	-1	0
--680	-1065
--680	-993
+-685	-1065
+-685	-993
 END_LINE
 inputport
 
-0	3	coords= -441 -983 0	6	0	1	mandatory= 0	0	1
+0	3	coords= -541 -983 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -454,7 +454,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -325 -953 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -425 -953 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -463,7 +463,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -325 -943 0	1	0	1	mandatory= 0	0	1
+1	1	coords= -425 -943 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -472,7 +472,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -325 -933 0	2	0	1	mandatory= 0	0	1
+1	1	coords= -425 -933 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -481,7 +481,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -325 -923 0	3	0	1	mandatory= 0	0	1
+1	1	coords= -425 -923 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -490,7 +490,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -325 -993 0	4	0	1	mandatory= 0	0	1
+1	1	coords= -425 -993 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -499,7 +499,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= -325 -983 0	5	0	1	mandatory= 0	0	1
+1	3	coords= -425 -983 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -508,7 +508,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -441 -1085 0	0	1	0	mandatory= 1	0	1
+2	0	coords= -541 -1085 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -517,7 +517,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -441 -1075 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -541 -1075 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -526,7 +526,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -441 -1060 0	2	1	0	mandatory= 0	0	1
+2	0	coords= -541 -1060 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -535,7 +535,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -441 -1050 0	3	0	0	mandatory= 0	0	1
+2	0	coords= -541 -1050 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -544,7 +544,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -441 -965 0	4	0	0	mandatory= 0	0	1
+2	0	coords= -541 -965 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -553,18 +553,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -441 -1005 0	5	0	0	mandatory= 0	0	1
+2	1	coords= -541 -1005 0	5	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	466820	0	2	-1	0
--595	-1064
--595	-1005
+-585	-1064
+-585	-1005
 END_LINE
 finishport
 
-3	1	coords= -325 -1085 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1085 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -573,7 +573,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1075 0	1	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1075 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -582,7 +582,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1060 0	2	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1060 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -591,7 +591,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1050 0	3	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1050 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -600,7 +600,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -965 0	4	0	1	mandatory= 0	0	1
+3	1	coords= -425 -965 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -609,7 +609,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1035 0	6	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1035 0	6	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -618,7 +618,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1025 0	5	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1025 0	5	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -627,7 +627,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -325 -1005 0	7	0	1	mandatory= 0	0	1
+3	1	coords= -425 -1005 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -636,7 +636,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= -325 -1015 0	8	0	1	mandatory= 0	0	1
+3	3	coords= -425 -1015 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -1753,7 +1753,7 @@ i1
 
 funcName= run 1	1	EndOfFunc
 BEGIN_LINE
-1	466657	7	0	-1	0
+1	466657	7	0	-1	1
 -1236	-55
 -1236	-138
 END_LINE
@@ -1764,7 +1764,7 @@ i2
 
 funcName= run 1	2	EndOfFunc
 BEGIN_LINE
-1	466657	8	0	-1	0
+1	466657	8	0	-1	1
 -1236	-45
 -1236	-128
 END_LINE
@@ -1775,7 +1775,7 @@ i3
 
 funcName= run 1	3	EndOfFunc
 BEGIN_LINE
-1	466657	9	0	-1	0
+1	466657	9	0	-1	1
 -1236	-35
 -1236	-118
 END_LINE
@@ -2204,7 +2204,7 @@ This is a boolean that can be set and reset by events.
 EventSetReset
 0
 _
--630	-1140	-590	-1095
+-620	-1165	-580	-1120
 1	0
 blockattr
 BEGIN_BA
@@ -2218,7 +2218,7 @@ End_Instance
 END_BA
 outputport
 
-1	0	coords= -590 -1105 0	0	0	1	mandatory= 0	0	1
+1	0	coords= -580 -1130 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Reset 1	1	funcName= Set 2	1	EndOfFunc
@@ -2227,29 +2227,29 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -631 -1115 0	3	0	0	mandatory= 0	0	1
+2	1	coords= -621 -1140 0	3	0	0	mandatory= 0	0	1
 set
 
 funcName= Set 2	0	EndOfFunc
 BEGIN_LINE
 1	466781	2	2	-1	0
--705	-1105
--705	-1115
+-685	-1105
+-685	-1140
 END_LINE
 startport
 
-2	0	coords= -631 -1105 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -621 -1130 0	1	0	0	mandatory= 0	0	1
 rst
 
 funcName= Reset 1	0	EndOfFunc
 BEGIN_LINE
 1	466781	3	2	-1	0
--686	-1080
--686	-1105
+-676	-1080
+-676	-1130
 END_LINE
 finishport
 
-3	0	coords= -590 -1115 0	0	0	1	mandatory= 0	0	1
+3	0	coords= -580 -1140 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Reset 1	2	funcName= Set 2	2	EndOfFunc
@@ -2287,9 +2287,9 @@ inputport
 funcName= Update 1	1	EndOfFunc
 BEGIN_LINE
 1	466784	0	0	-1	0
--565	-1105
--565	-1170
--875	-1170
+-560	-1130
+-560	-1185
+-875	-1185
 -875	-1090
 END_LINE
 startport
@@ -2596,8 +2596,8 @@ update
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	466936	0	2	-1	0
--615	-774
--615	-735
+-590	-774
+-590	-735
 END_LINE
 finishport
 
@@ -3022,7 +3022,7 @@ This is a boolean that can be set and reset by events.
 EventSetReset
 0
 _
--630	-850	-590	-805
+-640	-870	-600	-825
 1	0
 blockattr
 BEGIN_BA
@@ -3036,7 +3036,7 @@ End_Instance
 END_BA
 outputport
 
-1	0	coords= -590 -815 0	0	0	1	mandatory= 0	0	1
+1	0	coords= -600 -835 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Reset 1	1	funcName= Set 2	1	EndOfFunc
@@ -3045,29 +3045,29 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -631 -825 0	3	0	0	mandatory= 0	0	1
+2	1	coords= -641 -845 0	3	0	0	mandatory= 0	0	1
 set
 
 funcName= Set 2	0	EndOfFunc
 BEGIN_LINE
 1	466933	2	2	-1	0
--705	-815
--705	-825
+-712	-815
+-712	-845
 END_LINE
 startport
 
-2	0	coords= -631 -815 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -641 -835 0	1	0	0	mandatory= 0	0	1
 rst
 
 funcName= Reset 1	0	EndOfFunc
 BEGIN_LINE
 1	466933	3	2	-1	0
--686	-790
--686	-815
+-696	-790
+-696	-835
 END_LINE
 finishport
 
-3	0	coords= -590 -825 0	0	0	1	mandatory= 0	0	1
+3	0	coords= -600 -845 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Reset 1	2	funcName= Set 2	2	EndOfFunc
@@ -3105,10 +3105,10 @@ inputport
 funcName= Update 1	1	EndOfFunc
 BEGIN_LINE
 1	466934	0	0	-1	0
--565	-815
--565	-880
--875	-880
--875	-800
+-575	-835
+-575	-890
+-880	-890
+-880	-800
 END_LINE
 startport
 
@@ -3206,7 +3206,7 @@ _
 xcomment
 0
 _
--1095	-1155	-964	-1124
+-1095	-1155	-919	-1124
 1	0
 blockattr
 BEGIN_BA
@@ -3218,7 +3218,7 @@ Instance_Info	_
 End_Instance
 END_BA
 parameter
-Text	3	0	0	0	0	0	0	1.2	Fade the WiFi Icon
+Text	3	0	0	0	0	0	0	1.2	Fade the WiFi Icon for fun
 EndOfValues
 EndOfLabels
 _
@@ -3247,7 +3247,7 @@ _
 xcomment
 0
 _
--1100	-895	-938	-864
+-1100	-895	-913	-864
 1	0
 blockattr
 BEGIN_BA
@@ -3259,7 +3259,7 @@ Instance_Info	_
 End_Instance
 END_BA
 parameter
-Text	3	0	0	0	0	0	0	1.2	Fade the Bluetooth icon
+Text	3	0	0	0	0	0	0	1.2	Fade the Bluetooth icon too
 EndOfValues
 EndOfLabels
 _
@@ -5287,5 +5287,87 @@ funcName= create 1	11	funcName= data 6	6	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
 END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+xcomment
+_
+471934	0	0	0
+_
+_
+<nl?>        
+xcomment
+0
+_
+-695	30	-216	134
+1	0
+blockattr
+BEGIN_BA
+type	Comment_Block
+trans	2	0	0	0
+offset	0	0
+hash	0xCEA8
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+Text	3	0	0	0	0	0	0	1.2	Slower Faster Button (Added to Figma UI) for changing the \nspeed of of the drum animation and the spin speed icon.\n\nTODO - Use the RPM icon instead of a new button to change the speed.
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Text Color	3	0	0	0	0	0	0	1.2	#000000
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Backgound Color	3	0	0	0	0	0	0	1.2	#9DFF00#
+EndOfValues
+EndOfLabels
+_
+
+END_BLOCK
+BEGIN_BLOCK
+
+xcomment
+_
+471981	0	0	0
+_
+_
+<nl?>        
+xcomment
+0
+_
+-1560	45	-1165	82
+1	0
+blockattr
+BEGIN_BA
+type	Comment_Block
+trans	2	0	0	0
+offset	0	0
+hash	0xCEA8
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+Text	3	0	0	0	0	0	0	1.2	Set the Time with the actual Device time (hh:mm:ss) format
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Text Color	3	0	0	0	0	0	0	1.2	#000000
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Backgound Color	3	0	0	0	0	0	0	1.2	#9DFF9C
+EndOfValues
+EndOfLabels
+_
+
 END_BLOCK
 END_OF_BLOCKS

@@ -30,7 +30,7 @@ ApplicationWindow {
     Room {
         id: livingRoomData
         objectName: "livingRoom"
-        name: qsTr("Living room X")
+        name: qsTr("Living room")
         text: "NEw Text"
         floor: qsTr(text)
         value: 89
@@ -55,7 +55,8 @@ ApplicationWindow {
         name: qsTr("Kitchen")
         floor: qsTr("First floor")
         power: false
-        temperature: Units.fahrenheitToTemperatureUnit(68)
+        temperature: value
+//        temperature: Units.fahrenheitToTemperatureUnit(68)
         status: Room.Off
     }
 
@@ -64,7 +65,8 @@ ApplicationWindow {
         objectName: "kidsRoom"
         name: qsTr("Kids bedroom")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(65)
+        temperature: value
+//        temperature: Units.fahrenheitToTemperatureUnit(65)
         status: Room.Cooling
     }
 
@@ -73,7 +75,8 @@ ApplicationWindow {
         objectName: "kids2Room"
         name: qsTr("Kids bedroom 2")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(71)
+        temperature: value
+//       temperature: Units.fahrenheitToTemperatureUnit(71)
         status: Room.Heating
         fan: Room.FanFull
     }
@@ -83,7 +86,8 @@ ApplicationWindow {
         objectName: "bedRoom"
         name: qsTr("Master bedroom")
         floor: qsTr("Second floor")
-        temperature: Units.fahrenheitToTemperatureUnit(68)
+         temperature: value
+//       temperature: Units.fahrenheitToTemperatureUnit(68)
         status: Room.Heating
     }
 
