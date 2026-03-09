@@ -1,7 +1,7 @@
 #V:2.1.2
 
 CanvasSizeXY
-1655	1065
+1770	1065
 
 IconData
 BEGIN_BLOCK
@@ -28,13 +28,13 @@ Instance_Info	_
 End_Instance
 END_BA
 parameter
-camera_id	3	_	_	0	0	0	0	1.2	0
+camera_id	3	_	_	0	0	0	0	1.2	_
 EndOfValues
 EndOfLabels
 Camera ID
 
 parameter
-fps	1	0	1000	0	0	0	0	1.2	20
+fps	1	0	1000	0	0	0	0	1.2	10
 EndOfValues
 EndOfLabels
 frame rate
@@ -76,7 +76,9 @@ id
 
 funcName= startCamera 1	1	EndOfFunc
 BEGIN_LINE
-0	-1	0	0	-1	0
+1	476207	0	0	-1	0
+-54	-99
+-54	-23
 END_LINE
 inputport
 
@@ -121,7 +123,7 @@ stream_id
 
 funcName= grabFrame 3	4	EndOfFunc
 BEGIN_LINE
-0	474422	0	1	-1	0
+0	475390	0	1	-1	0
 END_LINE
 startport
 
@@ -159,7 +161,7 @@ finishport
 
 funcName= startCamera 1	3	EndOfFunc
 BEGIN_LINE
-0	-1	0	3	-1	0
+0	474401	0	3	-1	0
 END_LINE
 finishport
 
@@ -259,12 +261,16 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -196 -50 0	0	1	0	mandatory= 0	0	1
+2	0	coords= -196 -50 0	0	0	0	mandatory= 0	0	1
 start
 
 funcName= start 1	0	EndOfFunc
 BEGIN_LINE
-0	-1	0	2	-1	0
+1	474397	0	2	-1	0
+165	-33
+165	-115
+-276	-115
+-276	-50
 END_LINE
 startport
 
@@ -370,7 +376,7 @@ Show the frame in a pop window with given frame ID input.
 frame_show
 0
 _
-335	210	445	260
+345	300	455	350
 1	0
 blockattr
 BEGIN_BA
@@ -390,29 +396,29 @@ Title of the pop window.
 
 inputport
 
-0	1	coords= 334 245 0	0	0	1	mandatory= 1	0	1
+0	1	coords= 344 335 0	0	0	1	mandatory= 1	0	1
 frame id
 
 funcName= show 1	1	EndOfFunc
 BEGIN_LINE
 1	475390	1	0	-1	1
-306	32
-306	245
+308	32
+308	335
 END_LINE
 startport
 
-2	3	coords= 334 235 0	0	0	0	mandatory= 0	0	1
+2	3	coords= 344 325 0	0	0	0	mandatory= 0	0	1
 show
 
 funcName= show 1	0	EndOfFunc
 BEGIN_LINE
 1	475390	0	2	-1	0
-306	22
-306	235
+316	22
+316	325
 END_LINE
 finishport
 
-3	3	coords= 445 235 0	0	0	1	mandatory= 0	0	1
+3	3	coords= 455 325 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= show 1	2	EndOfFunc
@@ -421,7 +427,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 445 245 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 455 335 0	1	0	1	mandatory= 0	0	1
 error
 
 funcName= show 1	3	EndOfFunc
@@ -440,7 +446,7 @@ This is a string constant.
 Constant_String1
 0
 _
-335	-45	475	-24
+365	60	505	81
 1	0
 blockattr
 BEGIN_BA
@@ -459,7 +465,7 @@ string constant
 
 outputport
 
-1	3	coords= 475 -34 0	0	0	1	mandatory= 0	0	1
+1	3	coords= 505 71 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantString 1	1	EndOfFunc
@@ -814,9 +820,9 @@ startport
 
 funcName= Or1 1	0	EndOfFunc
 BEGIN_LINE
-1	474831	0	2	-1	0
-739	-63
-739	-45
+1	476598	0	2	-1	0
+731	110
+731	-45
 END_LINE
 startport
 
@@ -825,9 +831,9 @@ startport
 
 funcName= Or2 2	0	EndOfFunc
 BEGIN_LINE
-1	474831	1	2	-1	0
-739	-53
-739	-25
+1	476598	1	2	-1	0
+731	120
+731	-25
 END_LINE
 finishport
 
@@ -1255,7 +1261,7 @@ This widget displays an string to the GUI output.
 gui_text_string2
 0
 _
-705	10	820	225
+775	15	890	230
 1	0
 blockattr
 BEGIN_BA
@@ -1293,7 +1299,7 @@ allows a widget to register a mouse click event when it is hidden behind another
 
 inputport
 
-0	1	coords= 704 167 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 774 172 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -1302,7 +1308,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 704 177 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 774 182 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -1311,7 +1317,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 704 187 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 774 192 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -1320,7 +1326,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 704 197 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 774 202 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -1329,7 +1335,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 704 207 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 774 212 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -1338,18 +1344,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	3	coords= 704 127 0	5	0	1	mandatory= 0	0	1
+0	3	coords= 774 132 0	5	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
-1	474831	2	0	-1	1
-684	-10
-684	127
+1	476598	2	0	-1	1
+720	180
+720	132
 END_LINE
 inputport
 
-0	3	coords= 704 137 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 774 142 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -1358,7 +1364,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 820 167 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 890 172 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -1367,7 +1373,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 820 177 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 890 182 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -1376,7 +1382,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 820 187 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 890 192 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -1385,7 +1391,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 820 197 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 890 202 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -1394,7 +1400,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 820 127 0	4	0	1	mandatory= 0	0	1
+1	3	coords= 890 132 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -1403,7 +1409,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 820 137 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 890 142 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -1412,7 +1418,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 704 35 0	0	1	0	mandatory= 1	0	1
+2	0	coords= 774 40 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -1421,7 +1427,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 704 45 0	1	0	0	mandatory= 0	0	1
+2	0	coords= 774 50 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -1430,20 +1436,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 704 60 0	2	0	0	mandatory= 0	0	1
+2	0	coords= 774 65 0	2	0	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474725	0	2	-1	0
-1020	35
-1020	-130
-504	-130
-504	60
+1090	40
+1090	-125
+574	-125
+574	65
 END_LINE
 startport
 
-2	0	coords= 704 70 0	3	0	0	mandatory= 0	0	1
+2	0	coords= 774 75 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -1452,7 +1458,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 704 155 0	4	0	0	mandatory= 0	0	1
+2	0	coords= 774 160 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -1461,18 +1467,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= 704 115 0	5	0	0	mandatory= 0	0	1
+2	1	coords= 774 120 0	5	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
-1	474831	2	2	-1	1
-684	-20
-684	115
+1	476598	2	2	-1	1
+680	150
+680	120
 END_LINE
 finishport
 
-3	1	coords= 820 35 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 890 40 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -1481,7 +1487,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 45 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 890 50 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -1490,7 +1496,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 60 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 890 65 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -1499,7 +1505,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 70 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 890 75 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -1508,7 +1514,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 155 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 890 160 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -1517,7 +1523,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 85 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 890 90 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -1526,7 +1532,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 95 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 890 100 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -1535,7 +1541,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 820 115 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 890 120 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -1544,7 +1550,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 820 105 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 890 110 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -1651,9 +1657,9 @@ data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
-1	474831	1	0	-1	0
-994	-33
-994	-13
+1	476600	0	0	-1	0
+525	-54
+525	-13
 END_LINE
 inputport
 
@@ -1858,174 +1864,6 @@ data change
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
-END_LINE
-END_BLOCK
-BEGIN_BLOCK
-
-tf_lite_frame
-_
-474831	0	0	0
-_
-_
-Pass image frame to machine learning Tensorflow Lite model. Supports yolov5 ...
-TF_Lite_from_frame
-0
-_
-565	-90	665	35
-1	0
-blockattr
-BEGIN_BA
-type	Undefined
-text	25	5	1.25	0	ML_TFLite
-trans	-1	0	0	0
-offset	0	-15
-hash	0xFB15
-Instance_Info	_
-End_Instance
-END_BA
-parameter
-Model Type	1	0	99999999	0	0	0	0	1.2	1003
-EndOfValues
-EndOfLabels
-Model Type
-
-parameter
-Conf Thres	2	0.0	1.0	0	0	0	0	1.2	0.2
-EndOfValues
-EndOfLabels
-Confidence Threshold
-
-parameter
-Thread Count	1	0	20	0	0	0	0	1.2	2
-EndOfValues
-EndOfLabels
-Number of model processing  threads
-
-parameter
-Flat JSON	0	0	1	0	0	0	0	1.2	0
-EndOfValues
-EndOfLabels
-Use a flat JSON output format
-
-parameter
-Use Application Dir	0	0	1	0	0	0	0	1.2	1
-EndOfValues
-EndOfLabels
-Load model in Application Directory rather than the user data directory
-
-inputport
-
-0	3	coords= 564 -53 0	0	0	1	mandatory= 0	0	1
-model
-
-funcName= load_model 1	1	EndOfFunc
-BEGIN_LINE
-1	474456	0	0	-1	0
-536	-34
-536	-53
-END_LINE
-inputport
-
-0	1	coords= 564 -8 0	1	0	1	mandatory= 0	0	1
-stream_id
-
-funcName= do_inference 2	1	EndOfFunc
-BEGIN_LINE
-1	474671	1	0	-1	1
-508	142
-508	-8
-END_LINE
-outputport
-
-1	1	coords= 665 -43 0	0	0	1	mandatory= 0	0	1
-errno
-
-funcName= load_model 1	2	EndOfFunc
-BEGIN_LINE
-0	474503	5	1	-1	0
-END_LINE
-outputport
-
-1	3	coords= 665 -33 0	1	0	1	mandatory= 0	0	1
-info
-
-funcName= load_model 1	3	EndOfFunc
-BEGIN_LINE
-0	476206	0	1	-1	0
-END_LINE
-outputport
-
-1	3	coords= 665 -10 0	2	0	1	mandatory= 0	0	1
-json
-
-funcName= do_inference 2	3	EndOfFunc
-BEGIN_LINE
-0	474725	5	1	-1	0
-END_LINE
-outputport
-
-1	1	coords= 665 10 0	3	0	1	mandatory= 0	0	1
-errno
-
-funcName= do_inference 2	2	EndOfFunc
-BEGIN_LINE
-0	474604	5	1	-1	0
-END_LINE
-startport
-
-2	0	coords= 564 -63 0	0	1	0	mandatory= 0	0	1
-load
-
-funcName= load_model 1	0	EndOfFunc
-BEGIN_LINE
-0	-1	0	2	-1	0
-END_LINE
-startport
-
-2	3	coords= 564 -18 0	1	0	0	mandatory= 0	0	1
-do
-
-funcName= do_inference 2	0	EndOfFunc
-BEGIN_LINE
-1	474671	0	2	-1	1
-500	132
-500	-18
-END_LINE
-finishport
-
-3	3	coords= 665 -63 0	0	0	1	mandatory= 0	0	1
---
-
-funcName= load_model 1	4	EndOfFunc
-BEGIN_LINE
-0	476204	0	3	-1	0
-END_LINE
-finishport
-
-3	3	coords= 665 -53 0	1	0	1	mandatory= 0	0	1
-err
-
-funcName= load_model 1	5	EndOfFunc
-BEGIN_LINE
-0	474505	1	3	-1	0
-END_LINE
-finishport
-
-3	3	coords= 665 -20 0	2	0	1	mandatory= 0	0	1
---
-
-funcName= do_inference 2	4	EndOfFunc
-BEGIN_LINE
-0	474962	1	3	-1	0
-END_LINE
-finishport
-
-3	1	coords= 665 0 0	3	0	1	mandatory= 0	0	1
-err
-
-funcName= do_inference 2	5	EndOfFunc
-BEGIN_LINE
-0	474604	5	3	-1	0
 END_LINE
 END_BLOCK
 BEGIN_BLOCK
@@ -2869,7 +2707,9 @@ stream_id
 
 funcName= resize 1	1	EndOfFunc
 BEGIN_LINE
-0	-1	3	0	-1	0
+1	474397	3	0	-1	0
+112	15
+112	32
 END_LINE
 inputport
 
@@ -2914,7 +2754,9 @@ run
 
 funcName= resize 1	0	EndOfFunc
 BEGIN_LINE
-0	-1	2	2	-1	1
+1	474397	2	2	-1	1
+120	5
+120	22
 END_LINE
 finishport
 
@@ -2933,215 +2775,6 @@ err
 funcName= resize 1	7	EndOfFunc
 BEGIN_LINE
 0	474503	5	3	-1	0
-END_LINE
-END_BLOCK
-BEGIN_BLOCK
-
-indexed_mux_str
-_
-475903	0	0	0
-_
-_
-Multiplex the string inputs according to the index.
-indexed_mux_str
-0
-_
-380	315	445	450
-1	0
-blockattr
-BEGIN_BA
-type	Undefined
-text	35	95	1.5	1	Str_Mux
-trans	-1	0	0	0
-offset	0	0
-hash	0xDADA
-Instance_Info	_
-End_Instance
-END_BA
-parameter
-in1	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in2	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in3	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in4	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in5	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in6	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in7	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-parameter
-in8	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-_
-
-inputport
-
-0	1	coords= 379 335 0	0	0	1	mandatory= 0	0	1
-index
-
-funcName= mux 1	1	EndOfFunc
-BEGIN_LINE
-1	474420	0	0	-1	0
-95	260
-95	335
-END_LINE
-inputport
-
-0	3	coords= 379 350 0	1	0	1	mandatory= 0	0	1
-1
-
-funcName= mux 1	2	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 360 0	2	0	1	mandatory= 0	0	1
-2
-
-funcName= mux 1	3	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 370 0	3	0	1	mandatory= 0	0	1
-3
-
-funcName= mux 1	4	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 380 0	4	0	1	mandatory= 0	0	1
-4
-
-funcName= mux 1	5	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 390 0	5	0	1	mandatory= 0	0	1
-5
-
-funcName= mux 1	6	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 400 0	6	0	1	mandatory= 0	0	1
-6
-
-funcName= mux 1	7	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 410 0	7	0	1	mandatory= 0	0	1
-7
-
-funcName= mux 1	8	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-inputport
-
-0	3	coords= 379 420 0	8	0	1	mandatory= 0	0	1
-8
-
-funcName= mux 1	9	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-outputport
-
-1	1	coords= 445 440 0	0	0	1	mandatory= 0	0	1
-ovf
-
-funcName= mux 1	10	EndOfFunc
-BEGIN_LINE
-0	-1	0	1	-1	0
-END_LINE
-outputport
-
-1	3	coords= 445 345 0	1	0	1	mandatory= 0	0	1
-out
-
-funcName= mux 1	11	EndOfFunc
-BEGIN_LINE
-0	-1	0	1	-1	0
-END_LINE
-startport
-
-2	3	coords= 379 325 0	0	0	0	mandatory= 0	0	1
---
-
-funcName= mux 1	0	EndOfFunc
-BEGIN_LINE
-0	-1	0	2	-1	0
-END_LINE
-finishport
-
-3	3	coords= 445 325 0	0	0	1	mandatory= 0	0	1
---
-
-funcName= mux 1	12	EndOfFunc
-BEGIN_LINE
-0	-1	0	3	-1	0
-END_LINE
-finishport
-
-3	1	coords= 445 430 0	1	0	1	mandatory= 0	0	1
-ovf
-
-funcName= mux 1	13	EndOfFunc
-BEGIN_LINE
-0	-1	0	3	-1	0
-END_LINE
-finishport
-
-3	1	coords= 445 335 0	2	0	1	mandatory= 0	0	1
-err
-
-funcName= mux 1	14	EndOfFunc
-BEGIN_LINE
-0	-1	0	3	-1	0
 END_LINE
 END_BLOCK
 BEGIN_BLOCK
@@ -3276,9 +2909,9 @@ inputport
 
 funcName= parse 1	1	EndOfFunc
 BEGIN_LINE
-1	474831	1	0	-1	0
-1011	-33
-1011	162
+1	476600	0	0	-1	0
+533	-54
+533	162
 END_LINE
 inputport
 
@@ -3584,9 +3217,9 @@ startport
 
 funcName= parse 1	0	EndOfFunc
 BEGIN_LINE
-1	474831	0	2	-1	0
-1011	-63
-1011	152
+1	476598	0	2	-1	0
+1003	110
+1003	152
 END_LINE
 finishport
 
@@ -3739,9 +3372,9 @@ inputport
 
 funcName= parse 1	1	EndOfFunc
 BEGIN_LINE
-1	474831	1	0	-1	0
-1011	-33
-1011	377
+1	476600	0	0	-1	0
+541	-54
+541	377
 END_LINE
 inputport
 
@@ -4047,9 +3680,9 @@ startport
 
 funcName= parse 1	0	EndOfFunc
 BEGIN_LINE
-1	474831	0	2	-1	0
-1011	-63
-1011	367
+1	476598	0	2	-1	0
+995	110
+995	367
 END_LINE
 finishport
 
@@ -4068,6 +3701,271 @@ err
 funcName= parse 1	36	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+const_s1
+_
+476207	0	0	0
+_
+_
+This is a string constant.
+Constant_String1
+0
+_
+-310	-110	-170	-89
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+trans	-1	0	0	0
+offset	0	5
+hash	0x1777
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+String Constant	3	0	100	1	5	4	0	1.2	1
+EndOfValues
+EndOfLabels
+string constant
+
+outputport
+
+1	3	coords= -170 -99 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	1	EndOfFunc
+BEGIN_LINE
+0	474397	0	1	-1	0
+END_LINE
+internalport
+
+4	-1	coords= 0 0 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	4	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+ml_image_inference
+_
+476598	0	0	0
+_
+_
+Inference of data input based on loaded model with vaiants like yolov8-seg. Hardware Acceleration is available for supported targets.
+ml_image_inference
+0
+_
+570	80	660	195
+1	0
+blockattr
+BEGIN_BA
+type	Undefined
+text	25	5	1.25	0	IMG_Infer
+trans	-1	0	0	0
+offset	0	-15
+hash	0xF512
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+Model Type	1	0	4001	0	0	0	0	1.2	1003
+EndOfValues
+EndOfLabels
+The type of model loaded. It is used to determine the inference output format.
+
+parameter
+Model File Ext	1	1	4	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+The file extension of the loaded model. 1 for `.tflite`, 2 for `.onnx`, 3 for `.pb`, 4 for `.hef`.
+
+parameter
+Data Type	1	0	4	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+The Data type of model input/ouput. 0 for auto-detection, 1 for 8-bit, 2 for 16-bit, 3 for 32-bit, 4 for 64-bit
+
+parameter
+HW Accelerate	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Whether to enable the hardware acceleration. Some platforms might not support it and error will occur when this is True. Some platforms require a specific Model file format, where this block would emit error if wrong model file format is loaded while this is True.
+
+parameter
+Conf Thres	2	0	1	0	0	0	0	1.2	0.2
+EndOfValues
+EndOfLabels
+The confidence Threshold for the output data. The range is from 0 to 1.
+
+parameter
+Thread Number	1	0	16	0	0	0	0	1.2	2
+EndOfValues
+EndOfLabels
+The number of threads for inference. If the platform does not support threading, this parameter will be ignored.
+
+parameter
+Use Application Dir	0	0	1	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+Whether to use application directory as the root of model path. If not, the User directory will be used.
+
+inputport
+
+0	3	coords= 569 120 0	0	0	1	mandatory= 0	0	1
+path
+
+funcName= load_model 1	1	EndOfFunc
+BEGIN_LINE
+1	474456	0	0	-1	0
+549	71
+549	120
+END_LINE
+inputport
+
+0	1	coords= 569 160 0	1	0	1	mandatory= 0	0	1
+stream_id
+
+funcName= inference 2	1	EndOfFunc
+BEGIN_LINE
+1	474671	1	0	-1	1
+500	142
+500	160
+END_LINE
+outputport
+
+1	1	coords= 660 130 0	0	0	1	mandatory= 0	0	1
+errno
+
+funcName= load_model 1	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	coords= 660 170 0	1	0	1	mandatory= 0	0	1
+errno
+
+funcName= inference 2	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	3	coords= 660 180 0	2	0	1	mandatory= 0	0	1
+json
+
+funcName= inference 2	3	EndOfFunc
+BEGIN_LINE
+0	474725	5	1	-1	0
+END_LINE
+startport
+
+2	0	coords= 569 110 0	0	1	0	mandatory= 0	0	1
+load
+
+funcName= load_model 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	3	coords= 569 150 0	1	0	0	mandatory= 0	0	1
+do
+
+funcName= inference 2	0	EndOfFunc
+BEGIN_LINE
+1	474671	0	2	-1	1
+549	132
+549	150
+END_LINE
+finishport
+
+3	3	coords= 660 110 0	0	0	1	mandatory= 0	0	1
+--
+
+funcName= load_model 1	3	EndOfFunc
+BEGIN_LINE
+0	476204	0	3	-1	0
+END_LINE
+finishport
+
+3	3	coords= 660 120 0	1	0	1	mandatory= 0	0	1
+err
+
+funcName= load_model 1	4	EndOfFunc
+BEGIN_LINE
+0	474505	1	3	-1	0
+END_LINE
+finishport
+
+3	3	coords= 660 150 0	2	0	1	mandatory= 0	0	1
+--
+
+funcName= inference 2	4	EndOfFunc
+BEGIN_LINE
+0	474962	1	3	-1	0
+END_LINE
+finishport
+
+3	1	coords= 660 160 0	3	0	1	mandatory= 0	0	1
+err
+
+funcName= inference 2	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+const_s1
+_
+476600	0	0	0
+_
+_
+This is a string constant.
+Constant_String1
+0
+_
+365	-65	505	-44
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+trans	-1	0	0	0
+offset	0	5
+hash	0x1777
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+String Constant	3	0	100	1	5	4	0	1.2	ML TODO
+EndOfValues
+EndOfLabels
+string constant
+
+outputport
+
+1	3	coords= 505 -54 0	1	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	1	EndOfFunc
+BEGIN_LINE
+0	476206	0	1	-1	0
+END_LINE
+internalport
+
+4	-1	coords= 0 0 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	4	-1	0
 END_LINE
 END_BLOCK
 END_OF_BLOCKS

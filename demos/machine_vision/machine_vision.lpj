@@ -2,7 +2,7 @@
 <Version>1.4</Version>
 <ProjectName>machine_vision</ProjectName>
 <Toolboxes/>
-<LastTransferToTarget>2026-02-09 03:20:09:000</LastTransferToTarget>
+<LastTransferToTarget>2026-02-09 18:18:25:000</LastTransferToTarget>
 <GroupSet>
 <Group>
 <ID>1</ID>
@@ -94,7 +94,7 @@
 <Location>coco640f16.tfl</Location>
 </ResourceFileSet>
 <MiscFileSet>
-<Location>ert1.sdl</Location>
+<Location>t.sdl</Location>
 </MiscFileSet>
 <FontFileSet>
 <Location>arial10.bdf</Location>
