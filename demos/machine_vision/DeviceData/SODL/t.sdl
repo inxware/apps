@@ -1,0 +1,92 @@
+#V:2.0.0
+#B:104
+#D:Y2026M2d9h3m19s42
+#N:machine_vision
+1
+1	100000	90000
+BEGIN Camera 0
+0 20 800 600 0 1 0 
+startCamera	1	1	1	1 S -1 	1 I -1 	2 -1 -1 
+grabFrame	1	1	2	1 B -1 	3 I -1 I -1 I -1 	1 -1 
+END
+BEGIN time_clock 0
+1000000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 2 
+END
+BEGIN Constant_Int1 0
+1 
+Run_ConstantInt	1	1	-1	0 	1 I 5 	0 
+END
+BEGIN frame_show 0
+frame 
+show	1	1	3	1 I 1 	0 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+coco640f16.tfl 
+Run_ConstantString	1	1	-1	0 	1 S 3 	0 
+END
+BEGIN gui_text_int2 0
+%%%_E2Etime g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 4 -1 -1 -1 -1 
+show	1	1	4	0 	0 	1 -1 
+data	1	1	5	2 I 2 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	6	0 	0 	1 13 
+Or2	1	1	7	0 	0 	1 13 
+END
+BEGIN gui_text_int2 0
+%%%_engineTime g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 8 -1 -1 -1 -1 
+show	1	1	8	0 	0 	1 -1 
+data	1	1	9	2 I 3 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN FrameFormatter 0
+3 
+format	1	1	3	2 I 1 I -1 	2 I -1 I 4 	2 14 -1 
+END
+BEGIN gui_text_string2 0
+%%%_InferenceJSON g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 10 -1 -1 -1 -1 
+show	1	1	10	0 	0 	1 -1 
+data	1	1	11	2 S 1 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_loadJSON g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 12 -1 -1 -1 -1 
+show	1	1	12	0 	0 	1 -1 
+data	1	1	13	2 S 2 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN TF_Lite_from_frame 0
+1003 0.2 2 0 1 
+load_model	1	1	1	1 S 3 	2 I -1 S 2 	2 6 7 
+do_inference	1	1	14	1 I 4 	2 I -1 S 1 	2 11 -1 
+END
+BEGIN gui_text_string2 0
+%%%_ModelLoadStatus g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 15 -1 -1 -1 -1 
+show	1	1	15	0 	0 	1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_infStatus g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 16 -1 -1 -1 -1 
+show	1	1	16	0 	0 	1 -1 
+END
+BEGIN Constant_String1 0
+OK 
+Run_ConstantString	1	1	-1	0 	1 S -1 	0 
+END
+BEGIN json_parser_real 0
+default.js NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
+parse	1	1	6	17 S 2 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	17 I -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 F -1 	2 -1 -1 
+END
+BEGIN json_parser_int 0
+default.js NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL NULL 
+parse	1	1	6	17 S 2 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 S -1 	17 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 I -1 	2 -1 -1 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END
