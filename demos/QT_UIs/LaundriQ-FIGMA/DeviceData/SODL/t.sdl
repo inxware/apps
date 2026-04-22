@@ -1,0 +1,194 @@
+#V:2.0.0
+#B:91
+#D:Y2026M2d1h23m26s19
+#N:LaundriQ-FIGMA
+1
+1	100000	90000
+BEGIN time_clock 0
+250000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 2 
+END
+BEGIN EventCounterVersatile1 0
+1 0 1 100 0 
+Run_CountEventCounter	1	1	2	4 I -1 I -1 I -1 I -1 	1 I 2 	2 6 3 
+Run_ResetEventCounter	1	1	3	4 I -1 I -1 I -1 I -1 	1 I 2 	1 -1 
+END
+BEGIN gui_text_int2 0
+%%%_wifiEnabled g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	4	2 I 1 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN gui_text_string2 0
+%%%_abcdefg g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	5	2 S 1 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN SubString 0
+0 14 
+Run_SubString	1	1	6	3 S 2 I 2 I -1 	1 S 1 	1 5 
+END
+BEGIN Constant_String1 0
+QT6+QML+inxware+Raspberry Pi + QT6+QML+inxware+Raspberry Pi +QT6+QML+inxware+Raspberry Pi + QT6+QML+inxware+Raspberry Pi + 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN gui_text_string2 0
+%%%_timeofday g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	7	2 S 3 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN wall_clock 0
+0 
+get	1	1	8	0 	12 S -1 I -1 I -1 I -1 I -1 I -1 I -1 I 3 I 4 I 5 I -1 I -1 	1 9 
+END
+BEGIN time_clock 0
+1000000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 8 
+END
+BEGIN string_format8_int 0
+%d:%d:%d 
+run	1	1	9	9 I 3 I 4 I 5 I -1 I -1 I -1 I -1 I -1 S -1 	1 S 3 	1 7 
+END
+BEGIN time_clock 0
+50000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 14 
+END
+BEGIN EventCounterVersatile1 0
+1 20 5 100 20 
+Run_CountEventCounter	1	1	10	4 I -1 I -1 I -1 I -1 	1 I 1 	2 15 12 
+Run_DecrementEventCounter	1	1	11	4 I -1 I -1 I -1 I -1 	1 I 1 	2 16 13 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	12	0 	1 B 1 	1 -1 
+Reset	1	1	13	0 	1 B 1 	1 -1 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	14	1 B 1 	0 	2 11 10 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	15	0 	0 	1 4 
+Or2	1	1	16	0 	0 	1 4 
+END
+BEGIN gui_text_int2 0
+%%%_bluetoothEnabled g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	17	2 I 6 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN time_clock 0
+50000 1 1 
+start	1	1	1	3 I -1 B -1 B -1 	0 	1 -1 
+tick	1	1	-1	0 	0 	1 22 
+END
+BEGIN EventCounterVersatile1 0
+1 20 8 100 20 
+Run_CountEventCounter	1	1	18	4 I -1 I -1 I -1 I -1 	1 I 6 	2 23 20 
+Run_DecrementEventCounter	1	1	19	4 I -1 I -1 I -1 I -1 	1 I 6 	2 24 21 
+END
+BEGIN EventSetReset 0
+*
+Set	1	1	20	0 	1 B 2 	1 -1 
+Reset	1	1	21	0 	1 B 2 	1 -1 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	22	1 B 2 	0 	2 19 18 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	23	0 	0 	1 17 
+Or2	1	1	24	0 	0 	1 17 
+END
+BEGIN gui_text_int2 0
+%%%_drumRotationDuration g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	25	2 I 7 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_Int1 0
+2000 
+Run_ConstantInt	1	1	-1	0 	1 I 9 	0 
+END
+BEGIN Constant_Int1 0
+500 
+Run_ConstantInt	1	1	-1	0 	1 I 8 	0 
+END
+BEGIN EventToggleBoolean 0
+*
+Toggle	1	1	26	0 	1 B 3 	1 27 
+END
+BEGIN EventBooleanControl 0
+*
+Update	1	1	27	1 B 3 	0 	2 29 30 
+END
+BEGIN MultiplexTwoInputInt 0
+*
+Run_Input1	1	1	28	1 I 8 	1 I 7 	1 25 
+Run_Input2	1	1	29	1 I 9 	1 I 7 	1 25 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 28 
+Or2	1	1	30	0 	0 	1 28 
+END
+BEGIN MultiplexTwoInputString 0
+*
+Run_Input1	1	1	29	1 S 4 	1 S 6 	1 31 
+Run_Input2	1	1	30	1 S 5 	1 S 6 	1 31 
+END
+BEGIN gui_text_string2 0
+%%%_slowDown g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 26 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	31	2 S 6 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_String1 0
+Slower... 
+Run_ConstantString	1	1	-1	0 	1 S 5 	0 
+END
+BEGIN Constant_String1 0
+Faster! 
+Run_ConstantString	1	1	-1	0 	1 S 4 	0 
+END
+BEGIN gui_text_int2 0
+%%%_rpmValue g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 I -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	32	2 I 10 S -1 	2 I -1 S -1 	2 -1 -1 
+END
+BEGIN Constant_Int1 0
+400 
+Run_ConstantInt	1	1	-1	0 	1 I 12 	0 
+END
+BEGIN Constant_Int1 0
+1200 
+Run_ConstantInt	1	1	-1	0 	1 I 11 	0 
+END
+BEGIN MultiplexTwoInputInt 0
+*
+Run_Input1	1	1	33	1 I 11 	1 I 10 	1 32 
+Run_Input2	1	1	29	1 I 12 	1 I 10 	1 32 
+END
+BEGIN EventTwoInputOr 0
+*
+Or1	1	1	1	0 	0 	1 33 
+Or2	1	1	30	0 	0 	1 33 
+END
+BEGIN gui_text_string2 0
+%%%_washCycleClock g0000001.gui 0 0 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 S -1 S -1 	5 -1 -1 -1 -1 -1 
+show	1	1	1	0 	0 	1 -1 
+data	1	1	7	2 S 3 S -1 	2 S -1 S -1 	2 -1 -1 
+END
+BEGIN Start
+*
+Run_Start	1	1	0	0 	0 	1 1
+END

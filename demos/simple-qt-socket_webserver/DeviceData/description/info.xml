@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <Name>simple-qt-socket_webserver</Name>
+  <CommercialName>Demonstration of building a web server</CommercialName>
+  <Version>1.4</Version>
+  <Description>socket_webserver</Description>
+</root>
