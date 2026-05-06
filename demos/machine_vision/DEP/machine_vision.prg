@@ -6,193 +6,6 @@ CanvasSizeXY
 IconData
 BEGIN_BLOCK
 
-camera
-_
-474397	0	0	0
-_
-_
-Run machine learning camera
-Camera
-0
-_
--25	-60	85	70
-1	0
-blockattr
-BEGIN_BA
-type	IO
-text	25	5	1.25	0	Camera
-trans	-1	0	0	0
-offset	0	-15
-hash	0xC05A
-Instance_Info	_
-End_Instance
-END_BA
-parameter
-camera_id	3	_	_	0	0	0	0	1.2	_
-EndOfValues
-EndOfLabels
-Camera ID
-
-parameter
-fps	1	0	1000	0	0	0	0	1.2	10
-EndOfValues
-EndOfLabels
-frame rate
-
-parameter
-width	1	0	10000	0	0	0	0	1.2	800
-EndOfValues
-EndOfLabels
-width
-
-parameter
-height	1	0	10000	0	0	0	0	1.2	600
-EndOfValues
-EndOfLabels
-height
-
-parameter
-asynchronous	0	0	1	0	0	0	0	1.2	0
-EndOfValues
-EndOfLabels
-camera outputs frames without capture event
-
-parameter
-show_frame	0	0	1	0	0	0	0	1.2	1
-EndOfValues
-EndOfLabels
-Display the image with given frame
-
-parameter
-greyscale	0	0	1	0	0	0	0	1.2	0
-EndOfValues
-EndOfLabels
-Make the camera output greyscale. Note that this has limited support on various devices. Devices with libcamera support generally support this feature.
-
-inputport
-
-0	3	coords= -26 -23 0	0	0	1	mandatory= 0	0	1
-id
-
-funcName= startCamera 1	1	EndOfFunc
-BEGIN_LINE
-1	476207	0	0	-1	0
--54	-99
--54	-23
-END_LINE
-inputport
-
-0	0	coords= -26 20 0	1	0	1	mandatory= 0	0	1
-show
-
-funcName= grabFrame 3	1	EndOfFunc
-BEGIN_LINE
-0	-1	0	0	-1	0
-END_LINE
-outputport
-
-1	1	coords= 85 -13 0	0	0	1	mandatory= 0	0	1
-errno
-
-funcName= startCamera 1	2	EndOfFunc
-BEGIN_LINE
-0	-1	0	1	-1	0
-END_LINE
-outputport
-
-1	1	coords= 85 25 0	3	0	1	mandatory= 0	0	1
-width
-
-funcName= grabFrame 3	2	EndOfFunc
-BEGIN_LINE
-0	475390	1	1	-1	0
-END_LINE
-outputport
-
-1	1	coords= 85 35 0	2	0	1	mandatory= 0	0	1
-height
-
-funcName= grabFrame 3	3	EndOfFunc
-BEGIN_LINE
-0	475390	2	1	-1	0
-END_LINE
-outputport
-
-1	1	coords= 85 15 0	1	0	1	mandatory= 0	0	1
-stream_id
-
-funcName= grabFrame 3	4	EndOfFunc
-BEGIN_LINE
-0	475390	0	1	-1	0
-END_LINE
-startport
-
-2	3	coords= -26 -33 0	0	1	0	mandatory= 0	0	1
-start
-
-funcName= startCamera 1	0	EndOfFunc
-BEGIN_LINE
-0	-1	0	2	-1	0
-END_LINE
-startport
-
-2	1	coords= -26 10 0	1	0	0	mandatory= 0	0	1
-capture
-
-funcName= grabFrame 3	0	EndOfFunc
-BEGIN_LINE
-1	474401	0	2	-1	0
--67	-20
--67	10
-END_LINE
-startport
-
-2	1	coords= -26 52 0	2	0	0	mandatory= 0	0	1
-stop
-
-funcName= stopCamera 2	0	EndOfFunc
-BEGIN_LINE
-0	-1	0	2	-1	0
-END_LINE
-finishport
-
-3	0	coords= 85 -33 0	0	0	1	mandatory= 0	0	1
---
-
-funcName= startCamera 1	3	EndOfFunc
-BEGIN_LINE
-0	474401	0	3	-1	0
-END_LINE
-finishport
-
-3	3	coords= 85 -23 0	1	0	1	mandatory= 0	0	1
-err
-
-funcName= startCamera 1	4	EndOfFunc
-BEGIN_LINE
-0	-1	0	3	-1	0
-END_LINE
-finishport
-
-3	1	coords= 85 5 0	0	0	1	mandatory= 0	0	1
---
-
-funcName= grabFrame 3	5	EndOfFunc
-BEGIN_LINE
-0	475390	0	3	-1	0
-END_LINE
-finishport
-
-3	1	coords= 85 52 0	3	0	1	mandatory= 0	0	1
---
-
-funcName= stopCamera 2	1	EndOfFunc
-BEGIN_LINE
-0	-1	0	3	-1	0
-END_LINE
-END_BLOCK
-BEGIN_BLOCK
-
 time_clock
 _
 474401	0	0	0
@@ -202,7 +15,7 @@ Creates periodic timed events.
 time_clock
 0
 _
--195	-75	-130	15
+-205	-50	-140	40
 1	0
 blockattr
 BEGIN_BA
@@ -234,7 +47,7 @@ Retriggerable if TRUE.
 
 inputport
 
-0	1	coords= -196 -40 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -206 -15 0	0	0	1	mandatory= 0	0	1
 period
 
 funcName= start 1	1	EndOfFunc
@@ -243,7 +56,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	0	coords= -196 -30 0	1	0	1	mandatory= 0	0	1
+0	0	coords= -206 -5 0	1	0	1	mandatory= 0	0	1
 rpt
 
 funcName= start 1	2	EndOfFunc
@@ -252,7 +65,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	0	coords= -196 -20 0	2	0	1	mandatory= 0	0	1
+0	0	coords= -206 5 0	2	0	1	mandatory= 0	0	1
 retrig
 
 funcName= start 1	3	EndOfFunc
@@ -261,20 +74,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= -196 -50 0	0	0	0	mandatory= 0	0	1
+2	0	coords= -206 -25 0	0	0	0	mandatory= 0	0	1
 start
 
 funcName= start 1	0	EndOfFunc
 BEGIN_LINE
-1	474397	0	2	-1	0
-165	-33
-165	-115
--276	-115
--276	-50
+1	476647	0	2	-1	0
+-48	-68
+-48	-47
+-110	-47
+-110	-25
 END_LINE
 startport
 
-2	0	coords= -196 0 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -206 25 0	1	0	0	mandatory= 0	0	1
 stop
 
 funcName= stop 3	0	EndOfFunc
@@ -283,7 +96,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	0	coords= -130 -20 0	0	0	1	mandatory= 0	0	1
+3	0	coords= -140 5 0	0	0	1	mandatory= 0	0	1
 clk
 
 funcName= tick 2	1	EndOfFunc
@@ -292,7 +105,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	0	coords= -130 -50 0	1	0	1	mandatory= 0	0	1
+3	0	coords= -140 -25 0	1	0	1	mandatory= 0	0	1
 
 
 funcName= start 1	4	EndOfFunc
@@ -301,7 +114,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	0	coords= -130 0 0	2	0	1	mandatory= 0	0	1
+3	0	coords= -140 25 0	2	0	1	mandatory= 0	0	1
 
 
 funcName= stop 3	1	EndOfFunc
@@ -493,7 +306,7 @@ This widget displays an integer to the GUI output. It can also be configured as 
 gui_text_int2
 0
 _
-485	-380	600	-165
+485	-385	600	-170
 1	0
 blockattr
 BEGIN_BA
@@ -531,7 +344,7 @@ allows a widget to register a mouse click event when it is hidden behind another
 
 inputport
 
-0	1	coords= 484 -223 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 484 -228 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -540,7 +353,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 484 -213 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 484 -218 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -549,7 +362,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 484 -203 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 484 -208 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -558,7 +371,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 484 -193 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 484 -198 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -567,7 +380,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 484 -183 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 484 -188 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -576,18 +389,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 484 -263 0	5	0	1	mandatory= 0	0	1
+0	1	coords= 484 -268 0	5	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	475390	0	0	-1	0
-295	62
-295	-263
+369	62
+369	-268
 END_LINE
 inputport
 
-0	3	coords= 484 -253 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 484 -258 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -596,7 +409,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 600 -223 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 600 -228 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -605,7 +418,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 600 -213 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 600 -218 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -614,7 +427,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 600 -203 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 600 -208 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -623,7 +436,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 600 -193 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 600 -198 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -632,7 +445,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 600 -263 0	4	0	1	mandatory= 0	0	1
+1	1	coords= 600 -268 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -641,7 +454,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 600 -253 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 600 -258 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -650,7 +463,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 484 -355 0	0	1	0	mandatory= 1	0	1
+2	0	coords= 484 -360 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -659,7 +472,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 484 -345 0	1	0	0	mandatory= 0	0	1
+2	0	coords= 484 -350 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -668,20 +481,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 484 -330 0	2	0	0	mandatory= 0	0	1
+2	0	coords= 484 -335 0	2	0	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474503	0	2	-1	0
-672	-355
-672	-415
-396	-415
-396	-330
+640	-360
+640	-425
+421	-425
+421	-335
 END_LINE
 startport
 
-2	0	coords= 484 -320 0	3	0	0	mandatory= 0	0	1
+2	0	coords= 484 -325 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -690,7 +503,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 484 -235 0	4	0	0	mandatory= 0	0	1
+2	0	coords= 484 -240 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -699,18 +512,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= 484 -275 0	5	0	0	mandatory= 0	0	1
+2	1	coords= 484 -280 0	5	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	475390	1	2	-1	1
-335	52
-335	-275
+361	52
+361	-280
 END_LINE
 finishport
 
-3	1	coords= 600 -355 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 600 -360 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -719,7 +532,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -345 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 600 -350 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -728,7 +541,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -330 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 600 -335 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -737,7 +550,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -320 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 600 -325 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -746,7 +559,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -235 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 600 -240 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -755,7 +568,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -305 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 600 -310 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -764,7 +577,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -295 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 600 -300 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -773,7 +586,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 600 -275 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 600 -280 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -782,7 +595,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 600 -285 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 600 -290 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -821,8 +634,8 @@ startport
 funcName= Or1 1	0	EndOfFunc
 BEGIN_LINE
 1	476598	0	2	-1	0
-731	110
-731	-45
+716	110
+716	-45
 END_LINE
 startport
 
@@ -832,8 +645,8 @@ startport
 funcName= Or2 2	0	EndOfFunc
 BEGIN_LINE
 1	476598	1	2	-1	0
-731	120
-731	-25
+732	120
+732	-25
 END_LINE
 finishport
 
@@ -856,7 +669,7 @@ This widget displays an integer to the GUI output. It can also be configured as 
 gui_text_int2
 0
 _
-820	-450	935	-235
+815	-450	930	-235
 1	0
 blockattr
 BEGIN_BA
@@ -894,7 +707,7 @@ allows a widget to register a mouse click event when it is hidden behind another
 
 inputport
 
-0	1	coords= 819 -293 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 814 -293 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -903,7 +716,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 819 -283 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 814 -283 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -912,7 +725,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 819 -273 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 814 -273 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -921,7 +734,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 819 -263 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 814 -263 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -930,7 +743,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 819 -253 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 814 -253 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -939,18 +752,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 819 -333 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 814 -333 0	1	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	474962	0	0	-1	0
-790	-245
-790	-333
+755	-295
+755	-333
 END_LINE
 inputport
 
-0	3	coords= 819 -323 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 814 -323 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -959,7 +772,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 935 -293 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 930 -293 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -968,7 +781,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 935 -283 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 930 -283 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -977,7 +790,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 935 -273 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 930 -273 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -986,7 +799,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 935 -263 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 930 -263 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -995,7 +808,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 935 -333 0	4	0	1	mandatory= 0	0	1
+1	1	coords= 930 -333 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -1004,7 +817,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 935 -323 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 930 -323 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -1013,7 +826,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 819 -425 0	0	1	0	mandatory= 1	0	1
+2	0	coords= 814 -425 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -1022,7 +835,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 819 -415 0	1	0	0	mandatory= 0	0	1
+2	0	coords= 814 -415 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -1031,20 +844,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 819 -400 0	2	0	0	mandatory= 0	0	1
+2	0	coords= 814 -400 0	2	0	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474604	0	2	-1	0
-1007	-425
-1007	-20
-731	-20
-731	-400
+970	-425
+970	-490
+775	-490
+775	-400
 END_LINE
 startport
 
-2	0	coords= 819 -390 0	3	0	0	mandatory= 0	0	1
+2	0	coords= 814 -390 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -1053,7 +866,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 819 -305 0	4	0	0	mandatory= 0	0	1
+2	0	coords= 814 -305 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -1062,18 +875,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	3	coords= 819 -345 0	0	0	0	mandatory= 0	0	1
+2	3	coords= 814 -345 0	0	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	474962	1	2	-1	0
-790	-255
-790	-345
+735	-305
+735	-345
 END_LINE
 finishport
 
-3	1	coords= 935 -425 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 930 -425 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -1082,7 +895,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -415 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 930 -415 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -1091,7 +904,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -400 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 930 -400 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -1100,7 +913,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -390 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 930 -390 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -1109,7 +922,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -305 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 930 -305 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -1118,7 +931,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -375 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 930 -375 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -1127,7 +940,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -365 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 930 -365 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -1136,7 +949,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 935 -345 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 930 -345 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -1145,7 +958,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 935 -355 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 930 -355 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -1261,7 +1074,7 @@ This widget displays an string to the GUI output.
 gui_text_string2
 0
 _
-775	15	890	230
+785	60	900	275
 1	0
 blockattr
 BEGIN_BA
@@ -1299,7 +1112,7 @@ allows a widget to register a mouse click event when it is hidden behind another
 
 inputport
 
-0	1	coords= 774 172 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 784 217 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -1308,7 +1121,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 774 182 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 784 227 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -1317,7 +1130,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 774 192 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 784 237 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -1326,7 +1139,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 774 202 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 784 247 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -1335,7 +1148,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= 774 212 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 784 257 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -1344,18 +1157,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	3	coords= 774 132 0	5	0	1	mandatory= 0	0	1
+0	3	coords= 784 177 0	5	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	476598	2	0	-1	1
-720	180
-720	132
+679	180
+681	177
 END_LINE
 inputport
 
-0	3	coords= 774 142 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 784 187 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -1364,7 +1177,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 890 172 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 900 217 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -1373,7 +1186,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 890 182 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 900 227 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -1382,7 +1195,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 890 192 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 900 237 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -1391,7 +1204,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 890 202 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 900 247 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -1400,7 +1213,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 890 132 0	4	0	1	mandatory= 0	0	1
+1	3	coords= 900 177 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -1409,7 +1222,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 890 142 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 900 187 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -1418,7 +1231,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 774 40 0	0	1	0	mandatory= 1	0	1
+2	0	coords= 784 85 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -1427,7 +1240,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 774 50 0	1	0	0	mandatory= 0	0	1
+2	0	coords= 784 95 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -1436,20 +1249,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 774 65 0	2	0	0	mandatory= 0	0	1
+2	0	coords= 784 110 0	2	0	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474725	0	2	-1	0
-1090	40
-1090	-125
-574	-125
-574	65
+940	85
+940	20
+750	20
+750	110
 END_LINE
 startport
 
-2	0	coords= 774 75 0	3	0	0	mandatory= 0	0	1
+2	0	coords= 784 120 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -1458,7 +1271,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	0	coords= 774 160 0	4	0	0	mandatory= 0	0	1
+2	0	coords= 784 205 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -1467,18 +1280,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= 774 120 0	5	0	0	mandatory= 0	0	1
+2	1	coords= 784 165 0	5	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	476598	2	2	-1	1
-680	150
-680	120
+673	150
+687	165
 END_LINE
 finishport
 
-3	1	coords= 890 40 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 900 85 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -1487,7 +1300,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 50 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 900 95 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -1496,7 +1309,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 65 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 900 110 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -1505,7 +1318,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 75 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 900 120 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -1514,7 +1327,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 160 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 900 205 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -1523,7 +1336,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 90 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 900 135 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -1532,7 +1345,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 100 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 900 145 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -1541,7 +1354,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 890 120 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 900 165 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -1550,7 +1363,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 890 110 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 900 155 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -1658,8 +1471,8 @@ data
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	476600	0	0	-1	0
-525	-54
-525	-13
+883	-64
+883	-13
 END_LINE
 inputport
 
@@ -1750,10 +1563,10 @@ show
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474830	0	2	-1	0
-1218	-105
-1218	-218
-926	-218
-926	-80
+1170	-105
+1170	-170
+951	-170
+951	-80
 END_LINE
 startport
 
@@ -1781,8 +1594,8 @@ update
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	474505	0	2	-1	0
-994	-34
-994	-25
+887	-34
+895	-25
 END_LINE
 finishport
 
@@ -1877,7 +1690,7 @@ This returns the elapsed time in microseconds between two event triggers.
 elapsed_timer
 0
 _
-255	-380	325	-310
+280	-375	350	-305
 1	0
 blockattr
 BEGIN_BA
@@ -1891,7 +1704,7 @@ End_Instance
 END_BA
 outputport
 
-1	1	coords= 325 -325 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 350 -320 0	0	0	1	mandatory= 0	0	1
 elapsed
 
 funcName= stop_elapsed 2	1	EndOfFunc
@@ -1900,7 +1713,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	-1	coords= 254 -355 0	0	0	0	mandatory= 0	0	1
+2	-1	coords= 279 -350 0	0	0	0	mandatory= 0	0	1
 start
 
 funcName= count_elasped 1	0	EndOfFunc
@@ -1909,7 +1722,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	-1	coords= 254 -335 0	1	0	0	mandatory= 0	0	1
+2	-1	coords= 279 -330 0	1	0	0	mandatory= 0	0	1
 stop
 
 funcName= stop_elapsed 2	0	EndOfFunc
@@ -1918,7 +1731,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	-1	coords= 325 -355 0	0	0	1	mandatory= 0	0	1
+3	-1	coords= 350 -350 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= count_elasped 1	1	EndOfFunc
@@ -1927,7 +1740,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	-1	coords= 325 -335 0	1	0	1	mandatory= 0	0	1
+3	-1	coords= 350 -330 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= stop_elapsed 2	2	EndOfFunc
@@ -1946,7 +1759,7 @@ This returns the elapsed time in microseconds between two event triggers.
 elapsed_timer
 0
 _
-700	-300	770	-230
+645	-350	715	-280
 1	0
 blockattr
 BEGIN_BA
@@ -1960,7 +1773,7 @@ End_Instance
 END_BA
 outputport
 
-1	1	coords= 770 -245 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 715 -295 0	0	0	1	mandatory= 0	0	1
 elapsed
 
 funcName= stop_elapsed 2	1	EndOfFunc
@@ -1969,7 +1782,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	-1	coords= 699 -275 0	0	0	0	mandatory= 0	0	1
+2	-1	coords= 644 -325 0	0	0	0	mandatory= 0	0	1
 start
 
 funcName= count_elasped 1	0	EndOfFunc
@@ -1978,7 +1791,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	-1	coords= 699 -255 0	1	0	0	mandatory= 0	0	1
+2	-1	coords= 644 -305 0	1	0	0	mandatory= 0	0	1
 stop
 
 funcName= stop_elapsed 2	0	EndOfFunc
@@ -1987,7 +1800,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	-1	coords= 770 -275 0	0	0	1	mandatory= 0	0	1
+3	-1	coords= 715 -325 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= count_elasped 1	1	EndOfFunc
@@ -1996,7 +1809,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	-1	coords= 770 -255 0	1	0	1	mandatory= 0	0	1
+3	-1	coords= 715 -305 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= stop_elapsed 2	2	EndOfFunc
@@ -2194,10 +2007,10 @@ show
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	474984	0	2	-1	0
-1660	35
-1660	-130
-1144	-130
-1144	60
+1500	35
+1500	-30
+1281	-30
+1281	60
 END_LINE
 startport
 
@@ -2498,10 +2311,10 @@ show
 funcName= show 3	0	EndOfFunc
 BEGIN_LINE
 1	475005	0	2	-1	0
-848	425
-848	388
-572	388
-572	450
+800	425
+800	360
+581	360
+581	450
 END_LINE
 startport
 
@@ -2707,9 +2520,9 @@ stream_id
 
 funcName= resize 1	1	EndOfFunc
 BEGIN_LINE
-1	474397	3	0	-1	0
-112	15
-112	32
+1	476647	3	0	-1	0
+100	-20
+100	32
 END_LINE
 inputport
 
@@ -2754,9 +2567,9 @@ run
 
 funcName= resize 1	0	EndOfFunc
 BEGIN_LINE
-1	474397	2	2	-1	1
-120	5
-120	22
+1	476647	2	2	-1	1
+100	-30
+100	22
 END_LINE
 finishport
 
@@ -2910,8 +2723,8 @@ inputport
 funcName= parse 1	1	EndOfFunc
 BEGIN_LINE
 1	476600	0	0	-1	0
-533	-54
-533	162
+988	-64
+988	162
 END_LINE
 inputport
 
@@ -3218,8 +3031,8 @@ startport
 funcName= parse 1	0	EndOfFunc
 BEGIN_LINE
 1	476598	0	2	-1	0
-1003	110
-1003	152
+996	110
+996	152
 END_LINE
 finishport
 
@@ -3373,8 +3186,8 @@ inputport
 funcName= parse 1	1	EndOfFunc
 BEGIN_LINE
 1	476600	0	0	-1	0
-541	-54
-541	377
+988	-64
+988	377
 END_LINE
 inputport
 
@@ -3681,8 +3494,8 @@ startport
 funcName= parse 1	0	EndOfFunc
 BEGIN_LINE
 1	476598	0	2	-1	0
-995	110
-995	367
+955	110
+955	367
 END_LINE
 finishport
 
@@ -3714,7 +3527,7 @@ This is a string constant.
 Constant_String1
 0
 _
--310	-110	-170	-89
+-225	-85	-85	-64
 1	0
 blockattr
 BEGIN_BA
@@ -3733,7 +3546,7 @@ string constant
 
 outputport
 
-1	3	coords= -170 -99 0	0	0	1	mandatory= 0	0	1
+1	3	coords= -85 -74 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantString 1	1	EndOfFunc
@@ -3932,7 +3745,7 @@ This is a string constant.
 Constant_String1
 0
 _
-365	-65	505	-44
+440	-75	580	-54
 1	0
 blockattr
 BEGIN_BA
@@ -3951,7 +3764,7 @@ string constant
 
 outputport
 
-1	3	coords= 505 -54 0	1	0	1	mandatory= 0	0	1
+1	3	coords= 580 -64 0	1	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantString 1	1	EndOfFunc
@@ -3966,6 +3779,208 @@ internalport
 funcName= Run_ConstantString 1	0	EndOfFunc
 BEGIN_LINE
 0	-1	0	4	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+camera
+_
+476647	0	0	0
+_
+_
+Run machine learning camera
+Camera
+0
+_
+-30	-95	80	45
+1	0
+blockattr
+BEGIN_BA
+type	IO
+text	25	5	1.25	0	Camera
+trans	-1	0	0	0
+offset	0	-15
+hash	0xC05A
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+camera_id	3	_	_	0	0	0	0	1.2	_
+EndOfValues
+EndOfLabels
+Camera ID
+
+parameter
+fps	1	0	1000	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+frame rate
+
+parameter
+width	1	0	10000	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+width
+
+parameter
+height	1	0	10000	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+height
+
+parameter
+asynchronous	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+camera outputs frames without capture event
+
+parameter
+show_frame	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Display the image with given frame
+
+parameter
+greyscale	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Make the camera output greyscale. Note that this has limited support on various devices. Devices with libcamera support generally support this feature.
+
+parameter
+OpenCL Acceleration	1	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+OpenCL GPU acceleration for MV pipeline operations: 0=disabled (cv::Mat, CPU default), 1=enabled (cv::UMat, OpenCL). When enabled, resize/crop/convert run on the OpenCL GPU. Call EhsCameraFrameEnsureCPU before ML inference (TFLite/Hailo). Not supported on Raspberry Pi VideoCore.
+
+inputport
+
+0	3	coords= -31 -58 0	0	0	1	mandatory= 0	0	1
+id
+
+funcName= startCamera 1	1	EndOfFunc
+BEGIN_LINE
+1	476207	0	0	-1	0
+-58	-74
+-42	-58
+END_LINE
+inputport
+
+0	1	coords= -31 -48 0	1	0	1	mandatory= 0	0	1
+OpenCL: 0=off 1=on
+
+funcName= startCamera 1	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	0	coords= -31 -15 0	2	0	1	mandatory= 0	0	1
+show
+
+funcName= grabFrame 3	1	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+outputport
+
+1	1	coords= 80 -48 0	0	0	1	mandatory= 0	0	1
+errno
+
+funcName= startCamera 1	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	coords= 80 -10 0	1	0	1	mandatory= 0	0	1
+width
+
+funcName= grabFrame 3	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	coords= 80 0 0	2	0	1	mandatory= 0	0	1
+height
+
+funcName= grabFrame 3	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	1	-1	0
+END_LINE
+outputport
+
+1	1	coords= 80 -20 0	1	0	1	mandatory= 0	0	1
+stream_id
+
+funcName= grabFrame 3	4	EndOfFunc
+BEGIN_LINE
+0	475390	0	1	-1	0
+END_LINE
+startport
+
+2	3	coords= -31 -68 0	0	0	0	mandatory= 0	0	1
+start
+
+funcName= startCamera 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	1	coords= -31 -25 0	1	0	0	mandatory= 0	0	1
+capture
+
+funcName= grabFrame 3	0	EndOfFunc
+BEGIN_LINE
+1	474401	0	2	-1	0
+-67	5
+-67	-25
+END_LINE
+startport
+
+2	1	coords= -31 17 0	2	0	0	mandatory= 0	0	1
+stop
+
+funcName= stopCamera 2	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+finishport
+
+3	0	coords= 80 -68 0	0	0	1	mandatory= 0	0	1
+--
+
+funcName= startCamera 1	4	EndOfFunc
+BEGIN_LINE
+0	474401	0	3	-1	0
+END_LINE
+finishport
+
+3	3	coords= 80 -58 0	1	0	1	mandatory= 0	0	1
+err
+
+funcName= startCamera 1	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	1	coords= 80 -30 0	0	0	1	mandatory= 0	0	1
+--
+
+funcName= grabFrame 3	5	EndOfFunc
+BEGIN_LINE
+0	475390	0	3	-1	0
+END_LINE
+finishport
+
+3	1	coords= 80 17 0	3	0	1	mandatory= 0	0	1
+--
+
+funcName= stopCamera 2	1	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
 END_LINE
 END_BLOCK
 END_OF_BLOCKS
