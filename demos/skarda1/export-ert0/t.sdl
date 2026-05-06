@@ -1,6 +1,6 @@
 #V:2.0.0
-#B:112
-#D:Y2024M3d22h17m7s54
+#B:136
+#D:Y2026M4d6h0m48s38
 #N:skarda1
 1
 1	100000	90000
@@ -25,11 +25,11 @@ Run_CountEventCounter	1	1	2	4 I -1 I -1 I -1 I -1 	1 I 1 	2 5 3
 Run_ResetEventCounter	1	1	3	4 I -1 I -1 I -1 I -1 	1 I 1 	1 -1 
 END
 BEGIN ui_chart 0
-%%%_widget2 g0000000.gui Chart 100 0 30 0 1050 -1050 
-create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	1 -1 
+%%%_widget2 g0000000.gui 30 50 0 1050 -1050 5 9 0 -32768 1 1 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
 show	1	1	1	0 	0 	1 -1 
 update	1	1	4	5 I -1 I -1 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
-data	1	1	4	4 S -1 S -1 F 1 F -1 	0 	1 -1 
+data	1	1	4	6 S -1 S -1 S -1 F 1 F -1 F -1 	0 	1 -1 
 END
 BEGIN ConvertorIntToReal 0
 *
@@ -40,11 +40,11 @@ BEGIN SineReal 0
 Run_SineReal	1	1	6	1 F 2 	1 F 13 	1 16 
 END
 BEGIN ui_chart 0
-%%%_widget4 g0000000.gui Chart 100 0 150 0 1050 -1050 
-create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	1 -1 
+%%%_widget4 g0000000.gui 50 150 0 1050 -1050 5 9 0 -32768 1 1 0 
+create	1	1	1	0 	4 I -1 I -1 I -1 I -1 	3 -1 -1 -1 
 show	1	1	1	0 	0 	1 -1 
 update	1	1	7	5 I -1 I -1 I -1 I -1 I -1 	4 I -1 I -1 I -1 I -1 	1 -1 
-data	1	1	7	4 S -1 S -1 F 3 F -1 	0 	1 -1 
+data	1	1	7	6 S -1 S -1 S -1 F 3 F -1 F -1 	0 	1 -1 
 END
 BEGIN SineReal 0
 1 
@@ -55,7 +55,7 @@ BEGIN MultiplyTwoInputReal 0
 Run_MultiplyTwoInputReal	1	1	6	2 F 2 F 5 	1 F 6 	1 9 
 END
 BEGIN Constant_Real1 0
--1 
+-2 
 Run_ConstantReal	1	1	-1	0 	1 F 5 	0 
 END
 BEGIN AdditionTwoInputReal 0
@@ -79,7 +79,7 @@ show	1	1	1	0 	0 	1 -1
 data	1	1	10	2 F 8 S -1 	2 F -1 S -1 	2 -1 -1 
 END
 BEGIN rng 0
-44 
+44 0 100 
 run	1	1	2	1 I -1 	1 I 2 	1 11 
 END
 BEGIN ConvertorIntToReal 0
@@ -102,14 +102,14 @@ BEGIN gui_text_bool2 0
 %%%_widget9 g0000000.gui 0 0 
 create	1	1	1	0 	6 I -1 I -1 I -1 I -1 B -1 S -1 	5 -1 -1 -1 -1 -1 
 show	1	1	1	0 	0 	1 -1 
-data	1	1	12	2 B 1 S -1 	2 B -1 S -1 	2 -1 -1 
+data	1	1	12	2 B 1 S 1 	2 B -1 S -1 	2 -1 -1 
 END
 BEGIN ComparatorGreaterReal1 0
 0.0 
 Run_ComparatorGreaterReal	1	1	10	2 F 9 F 10 	1 B 1 	2 13 14 
 END
 BEGIN Constant_Real1 0
-0 
+10 
 Run_ConstantReal	1	1	-1	0 	1 F 9 	0 
 END
 BEGIN EventTwoInputOr 0
@@ -122,8 +122,8 @@ BEGIN DivisionReal 0
 Run_DivisionReal	1	1	15	2 F 11 F 12 	1 F 2 	1 6 
 END
 BEGIN Constant_Real1 0
-5 
-Run_ConstantReal	1	1	-1	0 	1 F 12 	0 
+1 
+Run_ConstantReal	1	1	-1	0 	1 F 21 	0 
 END
 BEGIN MultiplyTwoInputReal 0
 *
@@ -155,25 +155,50 @@ Run_AdditionTwoInputReal	1	1	20	2 F 18 F 16 	1 F 8 	1 10
 END
 BEGIN gui_text_real2 0
 %%%_widget12 g0000000.gui 0 0 2 
-create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 20 S -1 	5 -1 25 -1 -1 26 
+create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 20 S -1 	5 -1 27 -1 -1 28 
 show	1	1	1	0 	0 	1 -1 
-data	1	1	21	2 F 19 S -1 	2 F 20 S -1 	2 -1 26 
+data	1	1	21	2 F 19 S -1 	2 F 20 S -1 	2 -1 28 
 END
 BEGIN gui_text_real2 0
 %%%_widget13 g0000000.gui 0 0 2 
 create	1	1	1	0 	6 I -1 I -1 I -1 I -1 F 19 S -1 	5 -1 23 -1 -1 24 
 show	1	1	1	0 	0 	1 -1 
-data	1	1	22	2 F 20 S -1 	2 F 19 S -1 	2 -1 24 
+data	1	1	22	2 F 20 S 2 	2 F 19 S -1 	2 -1 24 
 END
 BEGIN EventTwoInputOr 0
 *
 Or1	1	1	23	0 	0 	1 21 
 Or2	1	1	24	0 	0 	1 21 
 END
+BEGIN Constant_String1 0
+Press Me 
+Run_ConstantString	1	1	-1	0 	1 S 1 	0 
+END
+BEGIN AdditionTwoInputReal 0
+*
+Run_AdditionTwoInputReal	1	1	25	2 F 21 F 22 	1 F 12 	1 -1 
+END
 BEGIN EventTwoInputOr 0
 *
-Or1	1	1	25	0 	0 	1 22 
-Or2	1	1	26	0 	0 	1 22 
+Or1	1	1	1	0 	0 	1 25 
+Or2	1	1	26	0 	0 	1 25 
+END
+BEGIN DivisionReal 0
+*
+Run_DivisionReal	1	1	22	2 F 20 F 23 	1 F 22 	1 26 
+END
+BEGIN Constant_Real1 0
+50 
+Run_ConstantReal	1	1	-1	0 	1 F 23 	0 
+END
+BEGIN Constant_String1 0
+Frequency 
+Run_ConstantString	1	1	-1	0 	1 S 2 	0 
+END
+BEGIN EventFourInputOr 0
+*
+Or3	1	1	27	0 	0 	1 22 
+Or4	1	1	28	0 	0 	1 22 
 END
 BEGIN Start
 *

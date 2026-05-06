@@ -1,7 +1,7 @@
 #V:2.1.2
 
 CanvasSizeXY
-1680	1490
+1908	1490
 
 IconData
 BEGIN_BLOCK
@@ -46,13 +46,13 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
 
 parameter
-Load Image From App Directory	0	0	0	0	0	0	0	1.2	0
+Load From App Dir	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 load the image from the app directory at runtime instead of the user directory.
@@ -316,7 +316,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -769,10 +769,10 @@ rst
 funcName= Run_ResetEventCounter 4	0	EndOfFunc
 BEGIN_LINE
 1	29	2	2	-1	1
--1000	-755
--1000	-830
--1176	-830
--1176	-780
+-1020	-755
+-1020	-830
+-1145	-830
+-1145	-780
 END_LINE
 startport
 
@@ -858,12 +858,12 @@ User interface plot chart widget
 ui_chart
 0
 _
--585	-925	-480	-743
+-530	-930	-415	-665
 1	0
 blockattr
 BEGIN_BA
 type	IO
-text	48	160	1.8	0	Chart
+text	63	243	1.8	0	Chart
 trans	-1	0	0	0
 offset	0	0
 hash	0x839F
@@ -883,25 +883,13 @@ EndOfLabels
 widget group
 
 parameter
-Title	3	_	_	0	0	0	0	1.2	Chart
+Data Size	1	0	1000	0	0	0	0	1.2	30
 EndOfValues
 EndOfLabels
-_
+Number of data points
 
 parameter
-Data1 Size	1	0	1000	0	0	0	0	1.2	100
-EndOfValues
-EndOfLabels
-Size of data1
-
-parameter
-Data2 Size	1	0	1000	0	0	0	0	1.2	0
-EndOfValues
-EndOfLabels
-Size of data2
-
-parameter
-X Max	1	-65536	65536	0	0	0	0	1.2	30
+X Max	1	-65536	65536	0	0	0	0	1.2	50
 EndOfValues
 EndOfLabels
 Maximum x-axis range value
@@ -924,9 +912,51 @@ EndOfValues
 EndOfLabels
 Minimum y-axis range value
 
+parameter
+Horizontal lines	1	0	20	0	0	0	0	1.2	5
+EndOfValues
+EndOfLabels
+Number of horizontal division lines.
+
+parameter
+Vertical lines	1	0	20	0	0	0	0	1.2	9
+EndOfValues
+EndOfLabels
+Number of vertical division lines.
+
+parameter
+Auto range	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Adjusts y-axis range based on data min max values of data
+
+parameter
+NaN	1	-32768	32768	0	0	0	0	1.2	-32768
+EndOfValues
+EndOfLabels
+Number used for identifying NaN value
+
+parameter
+Enable Plot 1	0	0	1	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+Creates data series for plot 1
+
+parameter
+Enable Plot 2	0	0	1	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+Creates data series for plot 2
+
+parameter
+Enable Plot 3	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Creates data series for plot 3
+
 inputport
 
-0	1	coords= -586 -853 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -531 -860 0	0	0	1	mandatory= 0	0	1
 off.x
 
 funcName= update 5	1	EndOfFunc
@@ -935,7 +965,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -586 -843 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -531 -850 0	1	0	1	mandatory= 0	0	1
 off.y
 
 funcName= update 5	2	EndOfFunc
@@ -944,7 +974,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -586 -833 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -531 -840 0	2	0	1	mandatory= 0	0	1
 off.wid
 
 funcName= update 5	3	EndOfFunc
@@ -953,7 +983,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -586 -823 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -531 -830 0	3	0	1	mandatory= 0	0	1
 off.ht
 
 funcName= update 5	4	EndOfFunc
@@ -962,7 +992,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -586 -813 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -531 -820 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -971,45 +1001,106 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	3	coords= -586 -785 0	5	0	1	mandatory= 0	0	1
-data1
+0	0	coords= -531 -758 0	5	0	1	mandatory= 0	0	1
+auto
 
-funcName= data 6	1	EndOfFunc
+funcName= data_update 6	1	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 inputport
 
-0	3	coords= -586 -775 0	6	0	1	mandatory= 0	0	1
+0	1	coords= -531 -768 0	6	0	1	mandatory= 0	0	1
+maxy
+
+funcName= data_update 6	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -778 0	7	0	1	mandatory= 0	0	1
+miny
+
+funcName= data_update 6	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -788 0	8	0	1	mandatory= 0	0	1
+maxx
+
+funcName= data_update 6	4	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -798 0	9	0	1	mandatory= 0	0	1
+minx
+
+funcName= data_update 6	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	3	coords= -531 -725 0	10	0	1	mandatory= 0	0	1
+data1
+
+funcName= data 7	1	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	3	coords= -531 -715 0	11	0	1	mandatory= 0	0	1
 data2
 
-funcName= data 6	2	EndOfFunc
+funcName= data 7	2	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 inputport
 
-0	2	coords= -586 -763 0	0	0	1	mandatory= 0	0	1
+0	3	coords= -531 -705 0	12	0	1	mandatory= 0	0	1
+data3
+
+funcName= data 7	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	2	coords= -531 -695 0	0	0	1	mandatory= 0	0	1
 data1
-Data 1
-funcName= data 6	3	EndOfFunc
+
+funcName= data 7	4	EndOfFunc
 BEGIN_LINE
 1	204	0	0	-1	1
--596	-700
--596	-763
 END_LINE
 inputport
 
-0	2	coords= -586 -753 0	8	0	1	mandatory= 0	0	1
+0	2	coords= -531 -685 0	14	0	1	mandatory= 0	0	1
 data2
 
-funcName= data 6	4	EndOfFunc
+funcName= data 7	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	2	coords= -531 -675 0	15	0	1	mandatory= 0	0	1
+data3
+
+funcName= data 7	6	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 outputport
 
-1	1	coords= -480 -848 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -415 -860 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -1018,7 +1109,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -480 -838 0	1	0	1	mandatory= 0	0	1
+1	1	coords= -415 -850 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -1027,7 +1118,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -480 -828 0	2	0	1	mandatory= 0	0	1
+1	1	coords= -415 -840 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -1036,7 +1127,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -480 -818 0	3	0	1	mandatory= 0	0	1
+1	1	coords= -415 -830 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -1045,7 +1136,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -586 -915 0	0	1	0	mandatory= 1	0	1
+2	1	coords= -531 -920 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -1054,7 +1145,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -586 -905 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -531 -910 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -1063,7 +1154,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -586 -890 0	2	1	0	mandatory= 0	0	1
+2	1	coords= -531 -895 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -1072,7 +1163,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -586 -880 0	3	0	0	mandatory= 0	0	1
+2	0	coords= -531 -885 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -1081,29 +1172,36 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -586 -865 0	4	0	0	mandatory= 0	0	1
+2	1	coords= -531 -870 0	4	0	0	mandatory= 0	0	1
 update
 Data 1 event
 funcName= update 5	0	EndOfFunc
 BEGIN_LINE
 1	204	0	2	-1	1
--596	-710
--596	-865
+-585	-710
+-585	-870
 END_LINE
 startport
 
-2	2	coords= -586 -798 0	0	0	0	mandatory= 0	0	1
+2	1	coords= -531 -808 0	5	0	0	mandatory= 0	0	1
+update
+
+funcName= data_update 6	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	2	coords= -531 -735 0	0	0	0	mandatory= 0	0	1
 data
-Data 1 event
-funcName= data 6	0	EndOfFunc
+
+funcName= data 7	0	EndOfFunc
 BEGIN_LINE
 1	204	0	2	-1	1
--601	-710
--601	-798
 END_LINE
 finishport
 
-3	1	coords= -480 -915 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -415 -920 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	5	EndOfFunc
@@ -1112,7 +1210,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -480 -905 0	1	0	1	mandatory= 0	0	1
+3	1	coords= -415 -910 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -1121,7 +1219,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -480 -890 0	2	0	1	mandatory= 0	0	1
+3	1	coords= -415 -895 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -1130,7 +1228,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -480 -880 0	3	0	1	mandatory= 0	0	1
+3	1	coords= -415 -885 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -1139,7 +1237,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -480 -863 0	4	0	1	mandatory= 0	0	1
+3	1	coords= -415 -870 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -1148,10 +1246,37 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -480 -795 0	5	0	1	mandatory= 0	0	1
+3	1	coords= -415 -805 0	5	0	1	mandatory= 0	0	1
 --
 
-funcName= data 6	5	EndOfFunc
+funcName= data_update 6	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	1	coords= -415 -735 0	5	0	1	mandatory= 0	0	1
+--
+
+funcName= data 7	7	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	2	coords= -415 -710 0	7	0	1	mandatory= 0	0	1
+click
+
+funcName= create 1	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	2	coords= -415 -700 0	8	0	1	mandatory= 0	0	1
+mouse down
+
+funcName= create 1	7	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
 END_LINE
@@ -1207,8 +1332,8 @@ startport
 funcName= Run 1	0	EndOfFunc
 BEGIN_LINE
 1	29	0	2	-1	1
--1041	-765
--1041	-685
+-1000	-765
+-1000	-685
 END_LINE
 finishport
 
@@ -1257,8 +1382,8 @@ inputport
 funcName= Run_SineReal 1	1	EndOfFunc
 BEGIN_LINE
 1	178	0	0	-1	1
--826	-645
--826	-735
+-810	-645
+-810	-735
 END_LINE
 outputport
 
@@ -1277,8 +1402,8 @@ startport
 funcName= Run_SineReal 1	0	EndOfFunc
 BEGIN_LINE
 1	178	0	2	-1	1
--826	-655
--826	-745
+-820	-655
+-820	-745
 END_LINE
 finishport
 
@@ -1301,12 +1426,12 @@ User interface plot chart widget
 ui_chart
 0
 _
--575	-640	-470	-458
+-530	-645	-415	-380
 1	0
 blockattr
 BEGIN_BA
 type	IO
-text	48	160	1.8	0	Chart
+text	63	243	1.8	0	Chart
 trans	-1	0	0	0
 offset	0	0
 hash	0x839F
@@ -1326,22 +1451,10 @@ EndOfLabels
 widget group
 
 parameter
-Title	3	_	_	0	0	0	0	1.2	Chart
+Data Size	1	0	1000	0	0	0	0	1.2	50
 EndOfValues
 EndOfLabels
-_
-
-parameter
-Data1 Size	1	0	1000	0	0	0	0	1.2	100
-EndOfValues
-EndOfLabels
-Size of data1
-
-parameter
-Data2 Size	1	0	1000	0	0	0	0	1.2	0
-EndOfValues
-EndOfLabels
-Size of data2
+Number of data points
 
 parameter
 X Max	1	-65536	65536	0	0	0	0	1.2	150
@@ -1367,9 +1480,51 @@ EndOfValues
 EndOfLabels
 Minimum y-axis range value
 
+parameter
+Horizontal lines	1	0	20	0	0	0	0	1.2	5
+EndOfValues
+EndOfLabels
+Number of horizontal division lines.
+
+parameter
+Vertical lines	1	0	20	0	0	0	0	1.2	9
+EndOfValues
+EndOfLabels
+Number of vertical division lines.
+
+parameter
+Auto range	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Adjusts y-axis range based on data min max values of data
+
+parameter
+NaN	1	-32768	32768	0	0	0	0	1.2	-32768
+EndOfValues
+EndOfLabels
+Number used for identifying NaN value
+
+parameter
+Enable Plot 1	0	0	1	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+Creates data series for plot 1
+
+parameter
+Enable Plot 2	0	0	1	0	0	0	0	1.2	1
+EndOfValues
+EndOfLabels
+Creates data series for plot 2
+
+parameter
+Enable Plot 3	0	0	1	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Creates data series for plot 3
+
 inputport
 
-0	1	coords= -576 -568 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -531 -575 0	0	0	1	mandatory= 0	0	1
 off.x
 
 funcName= update 5	1	EndOfFunc
@@ -1378,7 +1533,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -576 -558 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -531 -565 0	1	0	1	mandatory= 0	0	1
 off.y
 
 funcName= update 5	2	EndOfFunc
@@ -1387,7 +1542,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -576 -548 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -531 -555 0	2	0	1	mandatory= 0	0	1
 off.wid
 
 funcName= update 5	3	EndOfFunc
@@ -1396,7 +1551,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -576 -538 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -531 -545 0	3	0	1	mandatory= 0	0	1
 off.ht
 
 funcName= update 5	4	EndOfFunc
@@ -1405,7 +1560,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -576 -528 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -531 -535 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -1414,45 +1569,108 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	3	coords= -576 -500 0	5	0	1	mandatory= 0	0	1
-data1
+0	0	coords= -531 -473 0	5	0	1	mandatory= 0	0	1
+auto
 
-funcName= data 6	1	EndOfFunc
+funcName= data_update 6	1	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 inputport
 
-0	3	coords= -576 -490 0	6	0	1	mandatory= 0	0	1
+0	1	coords= -531 -483 0	6	0	1	mandatory= 0	0	1
+maxy
+
+funcName= data_update 6	2	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -493 0	7	0	1	mandatory= 0	0	1
+miny
+
+funcName= data_update 6	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -503 0	8	0	1	mandatory= 0	0	1
+maxx
+
+funcName= data_update 6	4	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	1	coords= -531 -513 0	9	0	1	mandatory= 0	0	1
+minx
+
+funcName= data_update 6	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	3	coords= -531 -440 0	10	0	1	mandatory= 0	0	1
+data1
+
+funcName= data 7	1	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	3	coords= -531 -430 0	11	0	1	mandatory= 0	0	1
 data2
 
-funcName= data 6	2	EndOfFunc
+funcName= data 7	2	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 inputport
 
-0	2	coords= -576 -478 0	0	0	1	mandatory= 0	0	1
+0	3	coords= -531 -420 0	12	0	1	mandatory= 0	0	1
+data3
+
+funcName= data 7	3	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	2	coords= -531 -410 0	0	0	1	mandatory= 0	0	1
 data1
-Data 2
-funcName= data 6	3	EndOfFunc
+
+funcName= data 7	4	EndOfFunc
 BEGIN_LINE
 1	261	0	0	-1	1
--586	-485
--576	-478
+-600	-485
+-600	-410
 END_LINE
 inputport
 
-0	2	coords= -576 -468 0	8	0	1	mandatory= 0	0	1
+0	2	coords= -531 -400 0	14	0	1	mandatory= 0	0	1
 data2
 
-funcName= data 6	4	EndOfFunc
+funcName= data 7	5	EndOfFunc
+BEGIN_LINE
+0	-1	0	0	-1	0
+END_LINE
+inputport
+
+0	2	coords= -531 -390 0	15	0	1	mandatory= 0	0	1
+data3
+
+funcName= data 7	6	EndOfFunc
 BEGIN_LINE
 0	-1	0	0	-1	0
 END_LINE
 outputport
 
-1	1	coords= -470 -563 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -415 -575 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -1461,7 +1679,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -470 -553 0	1	0	1	mandatory= 0	0	1
+1	1	coords= -415 -565 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -1470,7 +1688,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -470 -543 0	2	0	1	mandatory= 0	0	1
+1	1	coords= -415 -555 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -1479,7 +1697,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -470 -533 0	3	0	1	mandatory= 0	0	1
+1	1	coords= -415 -545 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -1488,7 +1706,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -576 -630 0	0	1	0	mandatory= 1	0	1
+2	1	coords= -531 -635 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -1497,7 +1715,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -576 -620 0	1	0	0	mandatory= 0	0	1
+2	0	coords= -531 -625 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -1506,7 +1724,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -576 -605 0	2	1	0	mandatory= 0	0	1
+2	1	coords= -531 -610 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -1515,7 +1733,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -576 -595 0	3	0	0	mandatory= 0	0	1
+2	0	coords= -531 -600 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -1524,29 +1742,38 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -576 -580 0	4	0	0	mandatory= 0	0	1
+2	1	coords= -531 -585 0	4	0	0	mandatory= 0	0	1
 update
 Data 2 event
 funcName= update 5	0	EndOfFunc
 BEGIN_LINE
 1	261	0	2	-1	1
--608	-495
--608	-580
+-620	-495
+-620	-585
 END_LINE
 startport
 
-2	2	coords= -576 -513 0	0	0	0	mandatory= 0	0	1
+2	1	coords= -531 -523 0	5	0	0	mandatory= 0	0	1
+update
+
+funcName= data_update 6	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	2	coords= -531 -450 0	0	0	0	mandatory= 0	0	1
 data
-Data 2 event
-funcName= data 6	0	EndOfFunc
+
+funcName= data 7	0	EndOfFunc
 BEGIN_LINE
 1	261	0	2	-1	1
--630	-495
--620	-513
+-595	-495
+-595	-450
 END_LINE
 finishport
 
-3	1	coords= -470 -630 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -415 -635 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	5	EndOfFunc
@@ -1555,7 +1782,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -470 -620 0	1	0	1	mandatory= 0	0	1
+3	1	coords= -415 -625 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -1564,7 +1791,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -470 -605 0	2	0	1	mandatory= 0	0	1
+3	1	coords= -415 -610 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -1573,7 +1800,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -470 -595 0	3	0	1	mandatory= 0	0	1
+3	1	coords= -415 -600 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -1582,7 +1809,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -470 -578 0	4	0	1	mandatory= 0	0	1
+3	1	coords= -415 -585 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -1591,10 +1818,37 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -470 -510 0	5	0	1	mandatory= 0	0	1
+3	1	coords= -415 -520 0	5	0	1	mandatory= 0	0	1
 --
 
-funcName= data 6	5	EndOfFunc
+funcName= data_update 6	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	1	coords= -415 -450 0	5	0	1	mandatory= 0	0	1
+--
+
+funcName= data 7	7	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	2	coords= -415 -425 0	7	0	1	mandatory= 0	0	1
+click
+
+funcName= create 1	6	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+finishport
+
+3	2	coords= -415 -415 0	8	0	1	mandatory= 0	0	1
+mouse down
+
+funcName= create 1	7	EndOfFunc
 BEGIN_LINE
 0	-1	0	3	-1	0
 END_LINE
@@ -1636,8 +1890,8 @@ inputport
 funcName= Run_SineReal 1	1	EndOfFunc
 BEGIN_LINE
 1	57	0	0	-1	1
--815	-490
--815	-515
+-793	-490
+-793	-515
 END_LINE
 outputport
 
@@ -1656,8 +1910,8 @@ startport
 funcName= Run_SineReal 1	0	EndOfFunc
 BEGIN_LINE
 1	57	0	2	-1	1
--815	-500
--815	-525
+-795	-500
+-795	-525
 END_LINE
 finishport
 
@@ -1700,10 +1954,10 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	1	EndOfFunc
 BEGIN_LINE
 1	178	0	0	-1	1
--785	-645
--785	-580
--981	-580
--981	-540
+-810	-645
+-810	-585
+-965	-585
+-965	-540
 END_LINE
 inputport
 
@@ -1713,8 +1967,8 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	2	EndOfFunc
 BEGIN_LINE
 1	56	0	0	-1	1
--988	-450
--988	-530
+-965	-515
+-951	-530
 END_LINE
 outputport
 
@@ -1734,9 +1988,9 @@ funcName= Run_MultiplyTwoInputReal 1	0	EndOfFunc
 BEGIN_LINE
 1	178	0	2	-1	1
 -795	-655
--795	-590
--991	-590
--991	-550
+-795	-575
+-960	-575
+-960	-550
 END_LINE
 finishport
 
@@ -1759,7 +2013,7 @@ This is a real constant.
 Constant_Real1
 0
 _
--1130	-460	-1035	-440
+-1095	-525	-1000	-505
 1	0
 blockattr
 BEGIN_BA
@@ -1767,18 +2021,18 @@ type	Data_Processor
 trans	-1	0	0	0
 offset	0	5
 hash	0x9458
-Instance_Info	_
+Instance_Info	Frequency Multiplier
 End_Instance
 END_BA
 parameter
-Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	-1
+Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	-2
 EndOfValues
 EndOfLabels
 real constant
 
 outputport
 
-1	2	coords= -1035 -450 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -1000 -515 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantReal 1	1	EndOfFunc
@@ -1928,7 +2182,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--40	-940	75	-725
+90	-930	205	-715
 1	0
 blockattr
 BEGIN_BA
@@ -1959,7 +2213,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -1972,7 +2226,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -41 -783 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 89 -773 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -1981,7 +2235,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -41 -773 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 89 -763 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -1990,7 +2244,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -41 -763 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 89 -753 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -1999,7 +2253,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -41 -753 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 89 -743 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -2008,7 +2262,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -41 -743 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 89 -733 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -2017,18 +2271,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -41 -823 0	5	0	1	mandatory= 0	0	1
+0	2	coords= 89 -813 0	5	0	1	mandatory= 0	0	1
 data
 rng modular
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	294	0	0	-1	1
--113	-535
--113	-823
+17	-525
+17	-813
 END_LINE
 inputport
 
-0	3	coords= -41 -813 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 89 -803 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -2037,7 +2291,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 75 -783 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 205 -773 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -2046,7 +2300,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 75 -773 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 205 -763 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -2055,7 +2309,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 75 -763 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 205 -753 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -2064,7 +2318,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 75 -753 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 205 -743 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -2073,7 +2327,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= 75 -823 0	4	0	1	mandatory= 0	0	1
+1	2	coords= 205 -813 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -2082,7 +2336,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 75 -813 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 205 -803 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -2091,7 +2345,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -915 0	0	1	0	mandatory= 1	0	1
+2	1	coords= 89 -905 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -2100,7 +2354,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -905 0	1	0	0	mandatory= 0	0	1
+2	1	coords= 89 -895 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -2109,7 +2363,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -890 0	2	1	0	mandatory= 0	0	1
+2	1	coords= 89 -880 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -2118,7 +2372,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -880 0	3	0	0	mandatory= 0	0	1
+2	1	coords= 89 -870 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -2127,7 +2381,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -795 0	4	0	0	mandatory= 0	0	1
+2	1	coords= 89 -785 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -2136,18 +2390,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -41 -835 0	5	0	0	mandatory= 0	0	1
+2	1	coords= 89 -825 0	5	0	0	mandatory= 0	0	1
 update
 RNG event
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	294	0	2	-1	1
--113	-545
--113	-835
+17	-535
+17	-825
 END_LINE
 finishport
 
-3	1	coords= 75 -915 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 205 -905 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -2156,7 +2410,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -905 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 205 -895 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -2165,7 +2419,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -890 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 205 -880 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -2174,7 +2428,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -880 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 205 -870 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -2183,7 +2437,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -795 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 205 -785 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -2192,7 +2446,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -865 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 205 -855 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -2201,7 +2455,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -855 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 205 -845 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -2210,7 +2464,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 75 -835 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 205 -825 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -2219,7 +2473,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 75 -845 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 205 -835 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -2238,7 +2492,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--45	-650	70	-435
+85	-640	200	-425
 1	0
 blockattr
 BEGIN_BA
@@ -2269,7 +2523,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -2282,7 +2536,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -46 -493 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 84 -483 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -2291,7 +2545,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -46 -483 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 84 -473 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -2300,7 +2554,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -46 -473 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 84 -463 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -2309,7 +2563,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -46 -463 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 84 -453 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -2318,7 +2572,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -46 -453 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 84 -443 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -2327,18 +2581,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -46 -533 0	0	0	1	mandatory= 0	0	1
+0	2	coords= 84 -523 0	0	0	1	mandatory= 0	0	1
 data
 rng modular
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	294	0	0	-1	1
--111	-535
--101	-533
+-16	-525
+-14	-523
 END_LINE
 inputport
 
-0	3	coords= -46 -523 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 84 -513 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -2347,7 +2601,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 70 -493 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 200 -483 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -2356,7 +2610,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 70 -483 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 200 -473 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -2365,7 +2619,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 70 -473 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 200 -463 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -2374,7 +2628,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 70 -463 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 200 -453 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -2383,7 +2637,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= 70 -533 0	4	0	1	mandatory= 0	0	1
+1	2	coords= 200 -523 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -2392,7 +2646,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 70 -523 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 200 -513 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -2401,7 +2655,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -46 -625 0	0	1	0	mandatory= 1	0	1
+2	1	coords= 84 -615 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -2410,7 +2664,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -46 -615 0	1	0	0	mandatory= 0	0	1
+2	1	coords= 84 -605 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -2419,7 +2673,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -46 -600 0	2	1	0	mandatory= 0	0	1
+2	1	coords= 84 -590 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -2428,7 +2682,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -46 -590 0	3	0	0	mandatory= 0	0	1
+2	1	coords= 84 -580 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -2437,7 +2691,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -46 -505 0	4	0	0	mandatory= 0	0	1
+2	1	coords= 84 -495 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -2446,18 +2700,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -46 -545 0	0	0	0	mandatory= 0	0	1
+2	2	coords= 84 -535 0	0	0	0	mandatory= 0	0	1
 update
 RNG event
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	294	0	2	-1	1
--121	-545
--111	-545
+14	-535
+14	-535
 END_LINE
 finishport
 
-3	1	coords= 70 -625 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 200 -615 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -2466,7 +2720,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -615 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 200 -605 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -2475,7 +2729,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -600 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 200 -590 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -2484,7 +2738,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -590 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 200 -580 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -2493,7 +2747,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -505 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 200 -495 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -2502,7 +2756,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -575 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 200 -565 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -2511,7 +2765,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -565 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 200 -555 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -2520,7 +2774,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 70 -545 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 200 -535 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -2529,7 +2783,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 70 -555 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 200 -545 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -2548,7 +2802,7 @@ random number generator
 rng
 0
 _
--410	-815	-360	-770
+-260	-805	-210	-760
 1	0
 blockattr
 BEGIN_BA
@@ -2566,9 +2820,21 @@ EndOfValues
 EndOfLabels
 seed
 
+parameter
+min	1	-2147483648	2147483647	0	0	0	0	1.2	0
+EndOfValues
+EndOfLabels
+Minimum value of the range
+
+parameter
+max	1	-2147483648	2147483647	0	0	0	0	1.2	100
+EndOfValues
+EndOfLabels
+maximum value of the range
+
 inputport
 
-0	1	coords= -411 -780 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -261 -770 0	0	0	1	mandatory= 0	0	1
 seed
 
 funcName= run 1	1	EndOfFunc
@@ -2577,7 +2843,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -360 -780 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -210 -770 0	0	0	1	mandatory= 0	0	1
 num
 
 funcName= run 1	2	EndOfFunc
@@ -2586,18 +2852,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -411 -795 0	0	0	0	mandatory= 0	0	1
+2	1	coords= -261 -785 0	0	0	0	mandatory= 0	0	1
 gen
 Timer
 funcName= run 1	0	EndOfFunc
 BEGIN_LINE
 1	15	0	2	-1	1
--796	-830
--796	-795
+-296	-830
+-296	-785
 END_LINE
 finishport
 
-3	1	coords= -360 -795 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -210 -785 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= run 1	3	EndOfFunc
@@ -2616,7 +2882,7 @@ This is an integer to real converter.
 ConvertorIntToReal
 0
 _
--300	-805	-270	-775
+-150	-795	-120	-765
 1	0
 blockattr
 BEGIN_BA
@@ -2630,18 +2896,18 @@ End_Instance
 END_BA
 inputport
 
-0	1	coords= -301 -785 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -151 -775 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run 1	1	EndOfFunc
 BEGIN_LINE
 1	105	0	0	-1	1
--326	-780
--316	-785
+-180	-770
+-176	-775
 END_LINE
 outputport
 
-1	2	coords= -270 -785 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -120 -775 0	0	0	1	mandatory= 0	0	1
 
 RNG
 funcName= Run 1	2	EndOfFunc
@@ -2650,18 +2916,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -301 -795 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -151 -785 0	0	0	0	mandatory= 0	0	1
 
 
 funcName= Run 1	0	EndOfFunc
 BEGIN_LINE
 1	105	0	2	-1	1
--326	-795
--316	-795
+-171	-785
+-171	-785
 END_LINE
 finishport
 
-3	2	coords= -270 -795 0	0	0	1	mandatory= 0	0	1
+3	2	coords= -120 -785 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run 1	3	EndOfFunc
@@ -2680,7 +2946,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--50	-395	65	-180
+80	-385	195	-170
 1	0
 blockattr
 BEGIN_BA
@@ -2711,7 +2977,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -2724,7 +2990,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -51 -238 0	0	0	1	mandatory= 0	0	1
+0	1	coords= 79 -228 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -2733,7 +2999,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -51 -228 0	1	0	1	mandatory= 0	0	1
+0	1	coords= 79 -218 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -2742,7 +3008,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -51 -218 0	2	0	1	mandatory= 0	0	1
+0	1	coords= 79 -208 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -2751,7 +3017,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -51 -208 0	3	0	1	mandatory= 0	0	1
+0	1	coords= 79 -198 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -2760,7 +3026,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -51 -198 0	4	0	1	mandatory= 0	0	1
+0	1	coords= 79 -188 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -2769,18 +3035,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -51 -278 0	5	0	1	mandatory= 0	0	1
+0	2	coords= 79 -268 0	5	0	1	mandatory= 0	0	1
 data
 rng modular
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	294	0	0	-1	1
--108	-535
--108	-278
+22	-525
+22	-268
 END_LINE
 inputport
 
-0	3	coords= -51 -268 0	6	0	1	mandatory= 0	0	1
+0	3	coords= 79 -258 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -2789,7 +3055,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 65 -238 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 195 -228 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -2798,7 +3064,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 65 -228 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 195 -218 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -2807,7 +3073,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 65 -218 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 195 -208 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -2816,7 +3082,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 65 -208 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 195 -198 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -2825,7 +3091,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= 65 -278 0	4	0	1	mandatory= 0	0	1
+1	2	coords= 195 -268 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -2834,7 +3100,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 65 -268 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 195 -258 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -2843,7 +3109,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -370 0	0	1	0	mandatory= 1	0	1
+2	1	coords= 79 -360 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -2852,7 +3118,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -360 0	1	0	0	mandatory= 0	0	1
+2	1	coords= 79 -350 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -2861,7 +3127,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -345 0	2	1	0	mandatory= 0	0	1
+2	1	coords= 79 -335 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -2870,7 +3136,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -335 0	3	0	0	mandatory= 0	0	1
+2	1	coords= 79 -325 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -2879,7 +3145,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -250 0	4	0	0	mandatory= 0	0	1
+2	1	coords= 79 -240 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -2888,18 +3154,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -51 -290 0	5	0	0	mandatory= 0	0	1
+2	1	coords= 79 -280 0	5	0	0	mandatory= 0	0	1
 update
 RNG event
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	294	0	2	-1	1
--108	-545
--108	-290
+22	-535
+22	-280
 END_LINE
 finishport
 
-3	1	coords= 65 -370 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 195 -360 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -2908,7 +3174,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -360 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 195 -350 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -2917,7 +3183,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -345 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 195 -335 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -2926,7 +3192,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -335 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 195 -325 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -2935,7 +3201,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -250 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 195 -240 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -2944,7 +3210,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -320 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 195 -310 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -2953,7 +3219,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -310 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 195 -300 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -2962,7 +3228,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 65 -290 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 195 -280 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -2971,7 +3237,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 65 -300 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 195 -290 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -2990,7 +3256,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--55	-105	60	110
+-95	-240	20	-25
 1	0
 blockattr
 BEGIN_BA
@@ -3021,7 +3287,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -3034,7 +3300,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -56 52 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -96 -83 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -3043,7 +3309,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -56 62 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -96 -73 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -3052,7 +3318,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -56 72 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -96 -63 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -3061,7 +3327,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -56 82 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -96 -53 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -3070,7 +3336,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -56 92 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -96 -43 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -3079,18 +3345,18 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -56 12 0	0	0	1	mandatory= 0	0	1
+0	2	coords= -96 -123 0	0	0	1	mandatory= 0	0	1
 data
 rng modular
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	294	0	0	-1	1
--106	-535
--106	12
+-106	-525
+-106	-123
 END_LINE
 inputport
 
-0	3	coords= -56 22 0	6	0	1	mandatory= 0	0	1
+0	3	coords= -96 -113 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -3099,7 +3365,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 60 52 0	0	0	1	mandatory= 0	0	1
+1	1	coords= 20 -83 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -3108,7 +3374,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 60 62 0	1	0	1	mandatory= 0	0	1
+1	1	coords= 20 -73 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -3117,7 +3383,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 60 72 0	2	0	1	mandatory= 0	0	1
+1	1	coords= 20 -63 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -3126,7 +3392,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= 60 82 0	3	0	1	mandatory= 0	0	1
+1	1	coords= 20 -53 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -3135,7 +3401,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= 60 12 0	4	0	1	mandatory= 0	0	1
+1	2	coords= 20 -123 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -3144,7 +3410,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= 60 22 0	5	0	1	mandatory= 0	0	1
+1	3	coords= 20 -113 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -3153,7 +3419,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -56 -80 0	0	1	0	mandatory= 1	0	1
+2	1	coords= -96 -215 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -3162,7 +3428,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -56 -70 0	1	0	0	mandatory= 0	0	1
+2	1	coords= -96 -205 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -3171,7 +3437,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -56 -55 0	2	1	0	mandatory= 0	0	1
+2	1	coords= -96 -190 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -3180,7 +3446,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -56 -45 0	3	0	0	mandatory= 0	0	1
+2	1	coords= -96 -180 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -3189,7 +3455,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -56 40 0	4	0	0	mandatory= 0	0	1
+2	1	coords= -96 -95 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -3198,18 +3464,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -56 0 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -96 -135 0	0	0	0	mandatory= 0	0	1
 update
 RNG event
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
 1	294	0	2	-1	1
--106	-545
--106	0
+-106	-535
+-106	-135
 END_LINE
 finishport
 
-3	1	coords= 60 -80 0	0	0	1	mandatory= 0	0	1
+3	1	coords= 20 -215 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -3218,7 +3484,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 -70 0	1	0	1	mandatory= 0	0	1
+3	1	coords= 20 -205 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -3227,7 +3493,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 -55 0	2	0	1	mandatory= 0	0	1
+3	1	coords= 20 -190 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -3236,7 +3502,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 -45 0	3	0	1	mandatory= 0	0	1
+3	1	coords= 20 -180 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -3245,7 +3511,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 40 0	4	0	1	mandatory= 0	0	1
+3	1	coords= 20 -95 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -3254,7 +3520,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 -30 0	5	0	1	mandatory= 0	0	1
+3	1	coords= 20 -165 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -3263,7 +3529,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 -20 0	6	0	1	mandatory= 0	0	1
+3	1	coords= 20 -155 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -3272,7 +3538,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= 60 0 0	7	0	1	mandatory= 0	0	1
+3	1	coords= 20 -135 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -3281,7 +3547,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= 60 -10 0	8	0	1	mandatory= 0	0	1
+3	3	coords= 20 -145 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -3331,7 +3597,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -3389,8 +3655,8 @@ data
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	154	0	0	-1	1
--826	-215
--826	-158
+-860	-215
+-860	-158
 END_LINE
 inputport
 
@@ -3399,7 +3665,9 @@ label
 
 funcName= data 6	2	EndOfFunc
 BEGIN_LINE
-0	-1	0	0	-1	0
+1	477470	0	0	-1	0
+-868	-124
+-868	-148
 END_LINE
 outputport
 
@@ -3617,7 +3885,7 @@ Instance_Info	_
 End_Instance
 END_BA
 parameter
-Constant (can use x.yE+nn notation)	2	-1.7E+308	1.7E+308	1	12	38	0	1.2	0.0
+Constant (x.yE+n allowed)	2	-1.7E+308	1.7E+308	1	12	38	0	1.2	0.0
 EndOfValues
 EndOfLabels
 Comparator constant
@@ -3641,7 +3909,7 @@ RNG
 funcName= Run_ComparatorGreaterReal 1	2	EndOfFunc
 BEGIN_LINE
 1	106	0	0	-1	1
--225	-785
+-225	-775
 -225	-5
 -1126	-5
 -1126	-215
@@ -3663,7 +3931,7 @@ RNG event
 funcName= Run_ComparatorGreaterReal 1	0	EndOfFunc
 BEGIN_LINE
 1	294	0	2	-1	1
--115	-545
+-115	-535
 -115	-30
 -1101	-30
 -1101	-235
@@ -3710,7 +3978,7 @@ Instance_Info	_
 End_Instance
 END_BA
 parameter
-Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	0
+Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	10
 EndOfValues
 EndOfLabels
 real constant
@@ -3820,8 +4088,8 @@ N
 funcName= Run_DivisionReal 1	1	EndOfFunc
 BEGIN_LINE
 1	31	0	0	-1	1
--908	-675
--908	-645
+-915	-675
+-915	-645
 END_LINE
 inputport
 
@@ -3830,9 +4098,9 @@ D
 
 funcName= Run_DivisionReal 1	2	EndOfFunc
 BEGIN_LINE
-1	203	0	0	-1	1
--946	-565
--946	-635
+1	477594	0	0	-1	1
+-886	-605
+-886	-635
 END_LINE
 outputport
 
@@ -3875,7 +4143,7 @@ This is a real constant.
 Constant_Real1
 0
 _
--1130	-575	-1035	-555
+-1205	-615	-1110	-595
 1	0
 blockattr
 BEGIN_BA
@@ -3883,23 +4151,23 @@ type	Data_Processor
 trans	-1	0	0	0
 offset	0	5
 hash	0x9458
-Instance_Info	_
+Instance_Info	Frequecy
 End_Instance
 END_BA
 parameter
-Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	5
+Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	1
 EndOfValues
 EndOfLabels
 real constant
 
 outputport
 
-1	2	coords= -1035 -565 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -1110 -605 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantReal 1	1	EndOfFunc
 BEGIN_LINE
-0	204	1	1	-1	0
+0	477594	0	1	-1	0
 END_LINE
 internalport
 
@@ -3942,8 +4210,8 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	1	EndOfFunc
 BEGIN_LINE
 1	33	0	0	-1	1
--693	-735
--693	-700
+-700	-735
+-700	-700
 END_LINE
 inputport
 
@@ -3953,8 +4221,8 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	2	EndOfFunc
 BEGIN_LINE
 1	232	0	0	-1	1
--646	-630
--646	-690
+-650	-650
+-650	-690
 END_LINE
 outputport
 
@@ -3997,7 +4265,7 @@ This is a real constant.
 Constant_Real1
 0
 _
--760	-640	-665	-620
+-775	-660	-680	-640
 1	0
 blockattr
 BEGIN_BA
@@ -4016,7 +4284,7 @@ real constant
 
 outputport
 
-1	2	coords= -665 -630 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -680 -650 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantReal 1	1	EndOfFunc
@@ -4064,8 +4332,8 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	1	EndOfFunc
 BEGIN_LINE
 1	54	0	0	-1	1
--708	-515
--708	-485
+-715	-515
+-715	-485
 END_LINE
 inputport
 
@@ -4075,10 +4343,10 @@ inputport
 funcName= Run_MultiplyTwoInputReal 1	2	EndOfFunc
 BEGIN_LINE
 1	232	0	0	-1	1
--610	-630
--610	-540
--716	-540
--716	-475
+-650	-650
+-650	-540
+-690	-540
+-690	-475
 END_LINE
 outputport
 
@@ -4121,7 +4389,7 @@ This is a 2-input real modulus.
 ModulusReal
 0
 _
--315	-650	-285	-605
+-165	-640	-135	-595
 1	0
 blockattr
 BEGIN_BA
@@ -4135,31 +4403,29 @@ End_Instance
 END_BA
 inputport
 
-0	2	coords= -316 -630 0	0	0	1	mandatory= 1	0	1
+0	2	coords= -166 -620 0	0	0	1	mandatory= 1	0	1
 N
 RNG
 funcName= Run_ModulusReal 1	1	EndOfFunc
 BEGIN_LINE
 1	106	0	0	-1	1
--215	-785
--215	-685
--361	-685
--361	-630
+-65	-775
+-65	-675
+-211	-675
+-211	-620
 END_LINE
 inputport
 
-0	2	coords= -316 -620 0	1	0	1	mandatory= 1	0	1
+0	2	coords= -166 -610 0	1	0	1	mandatory= 1	0	1
 D
 
 funcName= Run_ModulusReal 1	2	EndOfFunc
 BEGIN_LINE
 1	292	0	0	-1	1
--328	-590
--328	-620
 END_LINE
 outputport
 
-1	2	coords= -285 -630 0	0	0	1	mandatory= 1	0	1
+1	2	coords= -135 -620 0	0	0	1	mandatory= 1	0	1
 
 
 funcName= Run_ModulusReal 1	3	EndOfFunc
@@ -4168,20 +4434,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -316 -640 0	0	0	0	mandatory= 1	0	1
+2	2	coords= -166 -630 0	0	0	0	mandatory= 1	0	1
 
 
 funcName= Run_ModulusReal 1	0	EndOfFunc
 BEGIN_LINE
 1	106	0	2	-1	1
--215	-795
--215	-685
--361	-685
--361	-640
+-65	-785
+-65	-675
+-211	-675
+-211	-630
 END_LINE
 finishport
 
-3	2	coords= -285 -640 0	0	0	1	mandatory= 0	0	1
+3	2	coords= -135 -630 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ModulusReal 1	4	EndOfFunc
@@ -4200,7 +4466,7 @@ This is a real constant.
 Constant_Real1
 0
 _
--445	-600	-350	-580
+-295	-590	-200	-570
 1	0
 blockattr
 BEGIN_BA
@@ -4219,7 +4485,7 @@ real constant
 
 outputport
 
-1	2	coords= -350 -590 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -200 -580 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_ConstantReal 1	1	EndOfFunc
@@ -4247,7 +4513,7 @@ This is an absolute real value.
 AbsReal
 0
 _
--230	-640	-200	-605
+-80	-630	-50	-595
 1	0
 blockattr
 BEGIN_BA
@@ -4261,18 +4527,18 @@ End_Instance
 END_BA
 inputport
 
-0	2	coords= -231 -620 0	0	0	1	mandatory= 0	0	1
+0	2	coords= -81 -610 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_AbsReal 1	1	EndOfFunc
 BEGIN_LINE
 1	262	0	0	-1	1
--263	-630
--253	-620
+-113	-620
+-103	-610
 END_LINE
 outputport
 
-1	2	coords= -200 -620 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -50 -610 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_AbsReal 1	2	EndOfFunc
@@ -4281,18 +4547,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -231 -630 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -81 -620 0	0	0	0	mandatory= 0	0	1
 
 
 funcName= Run_AbsReal 1	0	EndOfFunc
 BEGIN_LINE
 1	262	0	2	-1	1
--263	-640
--253	-630
+-113	-630
+-103	-620
 END_LINE
 finishport
 
-3	2	coords= -200 -630 0	0	0	1	mandatory= 0	0	1
+3	2	coords= -50 -620 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Run_AbsReal 1	3	EndOfFunc
@@ -4311,7 +4577,7 @@ This is a 2-input real adder.
 AdditionTwoInputReal
 0
 _
--215	-555	-185	-515
+-65	-545	-35	-505
 1	0
 blockattr
 BEGIN_BA
@@ -4325,31 +4591,31 @@ End_Instance
 END_BA
 inputport
 
-0	2	coords= -216 -535 0	0	0	1	mandatory= 1	0	1
+0	2	coords= -66 -525 0	0	0	1	mandatory= 1	0	1
 
 
 funcName= Run_AdditionTwoInputReal 1	1	EndOfFunc
 BEGIN_LINE
 1	293	0	0	-1	1
--155	-620
--155	-675
--261	-675
--261	-535
+-25	-610
+-25	-590
+-105	-590
+-105	-525
 END_LINE
 inputport
 
-0	2	coords= -216 -525 0	1	0	1	mandatory= 1	0	1
+0	2	coords= -66 -515 0	1	0	1	mandatory= 1	0	1
 
 
 funcName= Run_AdditionTwoInputReal 1	2	EndOfFunc
 BEGIN_LINE
 1	292	0	0	-1	1
--288	-590
--288	-525
+-138	-580
+-138	-515
 END_LINE
 outputport
 
-1	2	coords= -185 -535 0	0	0	1	mandatory= 0	0	1
+1	2	coords= -35 -525 0	0	0	1	mandatory= 0	0	1
 
 rng modular
 funcName= Run_AdditionTwoInputReal 1	3	EndOfFunc
@@ -4358,20 +4624,20 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -216 -545 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -66 -535 0	0	0	0	mandatory= 0	0	1
 
 
 funcName= Run_AdditionTwoInputReal 1	0	EndOfFunc
 BEGIN_LINE
 1	293	0	2	-1	1
--155	-630
--155	-675
--261	-675
--261	-545
+-5	-620
+-5	-575
+-95	-575
+-95	-535
 END_LINE
 finishport
 
-3	2	coords= -185 -545 0	0	0	1	mandatory= 0	0	1
+3	2	coords= -35 -535 0	0	0	1	mandatory= 0	0	1
 
 RNG event
 funcName= Run_AdditionTwoInputReal 1	4	EndOfFunc
@@ -4390,7 +4656,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--1035	335	-920	550
+-1110	35	-995	250
 1	0
 blockattr
 BEGIN_BA
@@ -4421,7 +4687,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -4434,7 +4700,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -1036 492 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -1111 192 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -4443,7 +4709,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -1036 502 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -1111 202 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -4452,7 +4718,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -1036 512 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -1111 212 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -4461,7 +4727,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -1036 522 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -1111 222 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -4470,7 +4736,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -1036 532 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -1111 232 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -4479,20 +4745,20 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -1036 452 0	0	0	1	mandatory= 0	0	1
+0	2	coords= -1111 152 0	0	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
-1	528	4	0	-1	0
--605	432
--605	280
--1081	280
--1081	452
+1	528	4	0	-1	1
+-680	132
+-680	0
+-1156	0
+-1156	152
 END_LINE
 inputport
 
-0	3	coords= -1036 462 0	6	0	1	mandatory= 0	0	1
+0	3	coords= -1111 162 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
@@ -4501,7 +4767,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -920 492 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -995 192 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -4510,7 +4776,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -920 502 0	1	0	1	mandatory= 0	0	1
+1	1	coords= -995 202 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -4519,7 +4785,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -920 512 0	2	0	1	mandatory= 0	0	1
+1	1	coords= -995 212 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -4528,7 +4794,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -920 522 0	3	0	1	mandatory= 0	0	1
+1	1	coords= -995 222 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -4537,16 +4803,16 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= -920 452 0	4	0	1	mandatory= 0	0	1
+1	2	coords= -995 152 0	4	0	1	mandatory= 0	0	1
 data
-
+SLidebarValue
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
 BEGIN_LINE
-0	528	5	1	-1	0
+0	477594	1	1	-1	0
 END_LINE
 outputport
 
-1	3	coords= -920 462 0	5	0	1	mandatory= 0	0	1
+1	3	coords= -995 162 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -4555,7 +4821,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -1036 360 0	0	1	0	mandatory= 1	0	1
+2	1	coords= -1111 60 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -4564,7 +4830,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -1036 370 0	1	0	0	mandatory= 0	0	1
+2	1	coords= -1111 70 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -4573,7 +4839,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -1036 385 0	2	1	0	mandatory= 0	0	1
+2	1	coords= -1111 85 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -4582,7 +4848,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -1036 395 0	3	0	0	mandatory= 0	0	1
+2	1	coords= -1111 95 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -4591,7 +4857,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -1036 480 0	4	0	0	mandatory= 0	0	1
+2	1	coords= -1111 180 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -4600,18 +4866,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -1036 440 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -1111 140 0	0	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
-1	529	0	2	-1	0
--1085	376
--1085	440
+1	529	0	2	-1	1
+-1160	76
+-1160	140
 END_LINE
 finishport
 
-3	1	coords= -920 360 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -995 60 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -4620,7 +4886,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 370 0	1	0	1	mandatory= 0	0	1
+3	1	coords= -995 70 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -4629,7 +4895,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 385 0	2	0	1	mandatory= 0	0	1
+3	1	coords= -995 85 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -4638,7 +4904,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 395 0	3	0	1	mandatory= 0	0	1
+3	1	coords= -995 95 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -4647,7 +4913,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 480 0	4	0	1	mandatory= 0	0	1
+3	1	coords= -995 180 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -4656,7 +4922,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 410 0	5	0	1	mandatory= 0	0	1
+3	1	coords= -995 110 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -4665,7 +4931,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 420 0	6	0	1	mandatory= 0	0	1
+3	1	coords= -995 120 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -4674,7 +4940,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -920 440 0	7	0	1	mandatory= 0	0	1
+3	1	coords= -995 140 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -4683,7 +4949,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= -920 430 0	8	0	1	mandatory= 0	0	1
+3	3	coords= -995 130 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -4702,7 +4968,7 @@ This widget displays an floating point number to the GUI output. It can also be 
 gui_text_real2
 0
 _
--765	315	-650	530
+-840	15	-725	230
 1	0
 blockattr
 BEGIN_BA
@@ -4733,7 +4999,7 @@ EndOfLabels
 maintains aspect ratio of widget when width is changed and ignores changes in height if TRUE, allows width and height to be altered independently if FALSE.
 
 parameter
-Register Click Disregarding Z-Order	0	0	0	0	0	0	0	1.2	0
+Always Clickable	0	0	0	0	0	0	0	1.2	0
 EndOfValues
 EndOfLabels
 allows a widget to register a mouse click event when it is hidden behind another widget if TRUE, the widget only registers mouse clicks if the widget is visible at the coords that the mouse click occurs at if FALSE.
@@ -4746,7 +5012,7 @@ Max number of decimal places
 
 inputport
 
-0	1	coords= -766 472 0	0	0	1	mandatory= 0	0	1
+0	1	coords= -841 172 0	0	0	1	mandatory= 0	0	1
 x offset
 
 funcName= update 5	1	EndOfFunc
@@ -4755,7 +5021,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -766 482 0	1	0	1	mandatory= 0	0	1
+0	1	coords= -841 182 0	1	0	1	mandatory= 0	0	1
 y offset
 
 funcName= update 5	2	EndOfFunc
@@ -4764,7 +5030,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -766 492 0	2	0	1	mandatory= 0	0	1
+0	1	coords= -841 192 0	2	0	1	mandatory= 0	0	1
 width
 
 funcName= update 5	3	EndOfFunc
@@ -4773,7 +5039,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -766 502 0	3	0	1	mandatory= 0	0	1
+0	1	coords= -841 202 0	3	0	1	mandatory= 0	0	1
 height
 
 funcName= update 5	4	EndOfFunc
@@ -4782,7 +5048,7 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	1	coords= -766 512 0	4	0	1	mandatory= 0	0	1
+0	1	coords= -841 212 0	4	0	1	mandatory= 0	0	1
 alpha
 
 funcName= update 5	5	EndOfFunc
@@ -4791,27 +5057,29 @@ BEGIN_LINE
 END_LINE
 inputport
 
-0	2	coords= -766 432 0	0	0	1	mandatory= 0	0	1
+0	2	coords= -841 132 0	0	0	1	mandatory= 0	0	1
 data
 
 funcName= data 6	1	EndOfFunc
 BEGIN_LINE
 1	486	4	0	-1	0
--838	452
--838	432
+-895	152
+-895	132
 END_LINE
 inputport
 
-0	3	coords= -766 442 0	6	0	1	mandatory= 0	0	1
+0	3	coords= -841 142 0	6	0	1	mandatory= 0	0	1
 label
 
 funcName= data 6	2	EndOfFunc
 BEGIN_LINE
-0	-1	0	0	-1	0
+1	477864	0	0	-1	0
+-885	296
+-885	142
 END_LINE
 outputport
 
-1	1	coords= -650 472 0	0	0	1	mandatory= 0	0	1
+1	1	coords= -725 172 0	0	0	1	mandatory= 0	0	1
 abs x
 
 funcName= create 1	1	funcName= update 5	6	EndOfFunc
@@ -4820,7 +5088,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -650 482 0	1	0	1	mandatory= 0	0	1
+1	1	coords= -725 182 0	1	0	1	mandatory= 0	0	1
 abs y
 
 funcName= create 1	2	funcName= update 5	7	EndOfFunc
@@ -4829,7 +5097,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -650 492 0	2	0	1	mandatory= 0	0	1
+1	1	coords= -725 192 0	2	0	1	mandatory= 0	0	1
 wid
 
 funcName= create 1	3	funcName= update 5	8	EndOfFunc
@@ -4838,7 +5106,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	1	coords= -650 502 0	3	0	1	mandatory= 0	0	1
+1	1	coords= -725 202 0	3	0	1	mandatory= 0	0	1
 ht
 
 funcName= create 1	4	funcName= update 5	9	EndOfFunc
@@ -4847,7 +5115,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	2	coords= -650 432 0	4	0	1	mandatory= 0	0	1
+1	2	coords= -725 132 0	4	0	1	mandatory= 0	0	1
 data
 
 funcName= create 1	5	funcName= data 6	3	EndOfFunc
@@ -4856,7 +5124,7 @@ BEGIN_LINE
 END_LINE
 outputport
 
-1	3	coords= -650 442 0	5	0	1	mandatory= 0	0	1
+1	3	coords= -725 142 0	5	0	1	mandatory= 0	0	1
 label
 
 funcName= create 1	6	funcName= data 6	4	EndOfFunc
@@ -4865,7 +5133,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -766 340 0	0	1	0	mandatory= 1	0	1
+2	1	coords= -841 40 0	0	1	0	mandatory= 1	0	1
 create
 
 funcName= create 1	0	EndOfFunc
@@ -4874,7 +5142,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -766 350 0	1	0	0	mandatory= 0	0	1
+2	1	coords= -841 50 0	1	0	0	mandatory= 0	0	1
 destroy
 
 funcName= destroy 2	0	EndOfFunc
@@ -4883,7 +5151,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -766 365 0	2	1	0	mandatory= 0	0	1
+2	1	coords= -841 65 0	2	1	0	mandatory= 0	0	1
 show
 
 funcName= show 3	0	EndOfFunc
@@ -4892,7 +5160,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -766 375 0	3	0	0	mandatory= 0	0	1
+2	1	coords= -841 75 0	3	0	0	mandatory= 0	0	1
 hide
 
 funcName= hide 4	0	EndOfFunc
@@ -4901,7 +5169,7 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	1	coords= -766 460 0	4	0	0	mandatory= 0	0	1
+2	1	coords= -841 160 0	4	0	0	mandatory= 0	0	1
 update
 
 funcName= update 5	0	EndOfFunc
@@ -4910,18 +5178,18 @@ BEGIN_LINE
 END_LINE
 startport
 
-2	2	coords= -766 420 0	0	0	0	mandatory= 0	0	1
+2	2	coords= -841 120 0	0	0	0	mandatory= 0	0	1
 update
 
 funcName= data 6	0	EndOfFunc
 BEGIN_LINE
-1	530	0	2	-1	0
--797	426
--787	420
+1	477955	0	2	-1	0
+-893	64
+-893	120
 END_LINE
 finishport
 
-3	1	coords= -650 340 0	0	0	1	mandatory= 0	0	1
+3	1	coords= -725 40 0	0	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	7	EndOfFunc
@@ -4930,7 +5198,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 350 0	1	0	1	mandatory= 0	0	1
+3	1	coords= -725 50 0	1	0	1	mandatory= 0	0	1
 --
 
 funcName= destroy 2	1	EndOfFunc
@@ -4939,7 +5207,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 365 0	2	0	1	mandatory= 0	0	1
+3	1	coords= -725 65 0	2	0	1	mandatory= 0	0	1
 --
 
 funcName= show 3	1	EndOfFunc
@@ -4948,7 +5216,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 375 0	3	0	1	mandatory= 0	0	1
+3	1	coords= -725 75 0	3	0	1	mandatory= 0	0	1
 --
 
 funcName= hide 4	1	EndOfFunc
@@ -4957,7 +5225,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 460 0	4	0	1	mandatory= 0	0	1
+3	1	coords= -725 160 0	4	0	1	mandatory= 0	0	1
 --
 
 funcName= update 5	10	EndOfFunc
@@ -4966,7 +5234,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 390 0	5	0	1	mandatory= 0	0	1
+3	1	coords= -725 90 0	5	0	1	mandatory= 0	0	1
 click
 
 funcName= create 1	8	EndOfFunc
@@ -4975,7 +5243,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 400 0	6	0	1	mandatory= 0	0	1
+3	1	coords= -725 100 0	6	0	1	mandatory= 0	0	1
 mouse down
 
 funcName= create 1	9	EndOfFunc
@@ -4984,7 +5252,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	1	coords= -650 420 0	7	0	1	mandatory= 0	0	1
+3	1	coords= -725 120 0	7	0	1	mandatory= 0	0	1
 --
 
 funcName= create 1	10	funcName= data 6	5	EndOfFunc
@@ -4993,7 +5261,7 @@ BEGIN_LINE
 END_LINE
 finishport
 
-3	3	coords= -650 410 0	8	0	1	mandatory= 0	0	1
+3	3	coords= -725 110 0	8	0	1	mandatory= 0	0	1
 data change
 
 funcName= create 1	11	funcName= data 6	6	EndOfFunc
@@ -5012,7 +5280,7 @@ This is a 2-input event OR.
 EventTwoInputOr
 0
 _
--1150	355	-1130	395
+-1225	55	-1205	95
 1	0
 blockattr
 BEGIN_BA
@@ -5026,33 +5294,33 @@ End_Instance
 END_BA
 startport
 
-2	-1	coords= -1151 365 0	0	0	0	mandatory= 0	0	1
+2	-1	coords= -1226 65 0	0	0	0	mandatory= 0	0	1
 
 
 funcName= Or1 1	0	EndOfFunc
 BEGIN_LINE
 1	528	5	2	-1	0
--600	390
--600	295
--1201	295
--1201	365
+-675	90
+-675	-5
+-1276	-5
+-1276	65
 END_LINE
 startport
 
-2	-1	coords= -1151 385 0	1	0	0	mandatory= 0	0	1
+2	-1	coords= -1226 85 0	1	0	0	mandatory= 0	0	1
 
 
 funcName= Or2 2	0	EndOfFunc
 BEGIN_LINE
 1	528	8	2	-1	0
--595	410
--595	290
--1206	290
--1206	385
+-670	110
+-670	-10
+-1281	-10
+-1281	85
 END_LINE
 finishport
 
-3	-1	coords= -1138 376 0	0	0	1	mandatory= 0	0	1
+3	-1	coords= -1213 76 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Or1 1	1	funcName= Or2 2	1	EndOfFunc
@@ -5071,7 +5339,7 @@ This is a 2-input event OR.
 EventTwoInputOr
 0
 _
--850	405	-830	445
+-925	105	-905	145
 1	0
 blockattr
 BEGIN_BA
@@ -5085,34 +5353,531 @@ End_Instance
 END_BA
 startport
 
-2	-1	coords= -851 415 0	0	0	0	mandatory= 0	0	1
+2	-1	coords= -926 115 0	2	0	0	mandatory= 0	0	1
 
 
 funcName= Or1 1	0	EndOfFunc
 BEGIN_LINE
-1	486	5	2	-1	0
--891	410
--881	415
+0	-1	0	2	-1	0
 END_LINE
 startport
 
-2	-1	coords= -851 435 0	1	0	0	mandatory= 0	0	1
+2	-1	coords= -926 135 0	3	0	0	mandatory= 0	0	1
 
 
 funcName= Or2 2	0	EndOfFunc
 BEGIN_LINE
-1	486	8	2	-1	0
--891	430
--881	435
+0	-1	0	2	-1	0
 END_LINE
 finishport
 
-3	-1	coords= -838 426 0	0	0	1	mandatory= 0	0	1
+3	-1	coords= -913 126 0	0	0	1	mandatory= 0	0	1
 
 
 funcName= Or1 1	1	funcName= Or2 2	1	EndOfFunc
 BEGIN_LINE
-0	528	5	3	-1	0
+0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+xcomment
+_
+477084	0	0	0
+_
+_
+<nl?>        
+xcomment
+0
+_
+-1590	-640	-1290	-509
+1	0
+blockattr
+BEGIN_BA
+type	Comment_Block
+trans	2	0	0	0
+offset	0	0
+hash	0xE6D1
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+Text	3	0	0	0	0	0	0	1.2	Simple HMI with some Data Analysis Charts.\n Randomly named GUI elements to explore!!\n Find them in the LGB GUInlayout tool.\n You can improve on this start we are sure!
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Text Color	3	0	0	0	0	0	0	1.2	#000000
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Backgound Color	3	0	0	0	0	0	0	1.2	#9DFF9C
+EndOfValues
+EndOfLabels
+_
+
+END_BLOCK
+BEGIN_BLOCK
+
+xcomment
+_
+477390	0	0	0
+_
+_
+<nl?>        
+xcomment
+0
+_
+125	-135	303	-98
+1	0
+blockattr
+BEGIN_BA
+type	Comment_Block
+trans	2	0	0	0
+offset	0	0
+hash	0xE6D1
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+Text	3	0	0	0	0	0	0	1.2	Variousely Coloured Dials
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Text Color	3	0	0	0	0	0	0	1.2	#000000
+EndOfValues
+EndOfLabels
+_
+
+parameter
+Backgound Color	3	0	0	0	0	0	0	1.2	#9DFF9C
+EndOfValues
+EndOfLabels
+_
+
+END_BLOCK
+BEGIN_BLOCK
+
+const_s1
+_
+477470	0	0	0
+_
+_
+This is a string constant.
+Constant_String1
+0
+_
+-1050	-135	-910	-114
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+trans	-1	0	0	0
+offset	0	5
+hash	0x1777
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+String Constant	3	0	100	1	5	4	0	1.2	Press Me
+EndOfValues
+EndOfLabels
+string constant
+
+outputport
+
+1	3	coords= -910 -124 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	1	EndOfFunc
+BEGIN_LINE
+0	153	6	1	-1	0
+END_LINE
+internalport
+
+4	-1	coords= 0 0 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	4	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+operator_add2rx
+_
+477594	0	0	0
+_
+_
+This is a 2-input real adder.
+AdditionTwoInputReal
+0
+_
+-990	-625	-960	-585
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+text	20	15	1.25	1	+
+trans	-1	0	0	0
+offset	0	0
+hash	0xBD06
+Instance_Info	_
+End_Instance
+END_BA
+inputport
+
+0	2	coords= -991 -605 0	0	0	1	mandatory= 1	0	1
+
+
+funcName= Run_AdditionTwoInputReal 1	1	EndOfFunc
+BEGIN_LINE
+1	203	0	0	-1	0
+-1090	-605
+-1090	-605
+END_LINE
+inputport
+
+0	2	coords= -991 -595 0	0	0	1	mandatory= 1	0	1
+
+
+funcName= Run_AdditionTwoInputReal 1	2	EndOfFunc
+BEGIN_LINE
+1	477682	0	0	-1	0
+-1018	-550
+-1018	-595
+END_LINE
+outputport
+
+1	2	coords= -960 -605 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_AdditionTwoInputReal 1	3	EndOfFunc
+BEGIN_LINE
+0	204	1	1	-1	0
+END_LINE
+startport
+
+2	2	coords= -991 -615 0	0	0	0	mandatory= 0	0	1
+
+
+funcName= Run_AdditionTwoInputReal 1	0	EndOfFunc
+BEGIN_LINE
+1	477596	0	2	-1	0
+END_LINE
+finishport
+
+3	2	coords= -960 -615 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_AdditionTwoInputReal 1	4	EndOfFunc
+BEGIN_LINE
+0	-1	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+trigger_eventor2
+_
+477596	0	0	0
+_
+_
+This is a 2-input event OR.
+EventTwoInputOr
+0
+_
+-1025	-650	-1005	-610
+1	0
+blockattr
+BEGIN_BA
+type	Or_Event
+type_var	norm_2
+trans	-1	0	0	0
+offset	0	0
+hash	0x0A91
+Instance_Info	_
+End_Instance
+END_BA
+startport
+
+2	-1	coords= -1026 -640 0	0	1	0	mandatory= 0	0	1
+
+
+funcName= Or1 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	2	coords= -1026 -620 0	0	0	0	mandatory= 0	0	1
+
+
+funcName= Or2 2	0	EndOfFunc
+BEGIN_LINE
+1	477682	0	2	-1	0
+-1053	-560
+-1053	-620
+END_LINE
+finishport
+
+3	-1	coords= -1013 -629 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Or1 1	1	funcName= Or2 2	1	EndOfFunc
+BEGIN_LINE
+0	477594	0	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+operator_divrx
+_
+477682	0	0	0
+_
+_
+This is a 2-input real divider.
+DivisionReal
+0
+_
+-1120	-570	-1090	-530
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+text	12	6	2	0	/
+trans	-1	0	0	0
+offset	0	0
+hash	0xB077
+Instance_Info	_
+End_Instance
+END_BA
+inputport
+
+0	2	coords= -1121 -550 0	1	0	1	mandatory= 1	0	1
+N
+SLidebarValue
+funcName= Run_DivisionReal 1	1	EndOfFunc
+BEGIN_LINE
+1	486	4	0	-1	0
+-792	152
+-792	-753
+-1030	-753
+-1030	-550
+END_LINE
+inputport
+
+0	2	coords= -1121 -540 0	1	0	1	mandatory= 1	0	1
+D
+
+funcName= Run_DivisionReal 1	2	EndOfFunc
+BEGIN_LINE
+1	477729	0	0	-1	0
+-1138	-485
+-1138	-540
+END_LINE
+outputport
+
+1	2	coords= -1090 -550 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_DivisionReal 1	3	EndOfFunc
+BEGIN_LINE
+0	477594	1	1	-1	0
+END_LINE
+startport
+
+2	-1	coords= -1121 -560 0	1	0	0	mandatory= 0	0	1
+
+SLideBarValChange
+funcName= Run_DivisionReal 1	0	EndOfFunc
+BEGIN_LINE
+1	477955	0	2	-1	0
+80	64
+80	-80
+-357	-80
+-357	-560
+END_LINE
+finishport
+
+3	2	coords= -1090 -560 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_DivisionReal 1	4	EndOfFunc
+BEGIN_LINE
+0	477596	1	3	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+const_r1
+_
+477729	0	0	0
+_
+_
+This is a real constant.
+Constant_Real1
+0
+_
+-1250	-495	-1155	-475
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+trans	-1	0	0	0
+offset	0	5
+hash	0x9458
+Instance_Info	Frequecy
+End_Instance
+END_BA
+parameter
+Real Constant	2	-1.7E308	1.7E+308	1	5	4	0	1.2	50
+EndOfValues
+EndOfLabels
+real constant
+
+outputport
+
+1	2	coords= -1155 -485 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantReal 1	1	EndOfFunc
+BEGIN_LINE
+0	477682	1	1	-1	0
+END_LINE
+internalport
+
+4	-1	coords= 0 0 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantReal 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	4	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+const_s1
+_
+477864	0	0	0
+_
+_
+This is a string constant.
+Constant_String1
+0
+_
+-1085	285	-945	306
+1	0
+blockattr
+BEGIN_BA
+type	Data_Processor
+trans	-1	0	0	0
+offset	0	5
+hash	0x1777
+Instance_Info	_
+End_Instance
+END_BA
+parameter
+String Constant	3	0	100	1	5	4	0	1.2	Frequency
+EndOfValues
+EndOfLabels
+string constant
+
+outputport
+
+1	3	coords= -945 296 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	1	EndOfFunc
+BEGIN_LINE
+0	528	6	1	-1	0
+END_LINE
+internalport
+
+4	-1	coords= 0 0 0	0	0	1	mandatory= 0	0	1
+
+
+funcName= Run_ConstantString 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	4	-1	0
+END_LINE
+END_BLOCK
+BEGIN_BLOCK
+
+trigger_eventor4
+_
+477955	0	0	0
+_
+_
+This is a 4-input event OR.
+EventFourInputOr
+0
+_
+-925	30	-905	95
+1	0
+blockattr
+BEGIN_BA
+type	Or_Event
+type_var	norm_4
+trans	-1	0	0	0
+offset	0	0
+hash	0x549D
+Instance_Info	_
+End_Instance
+END_BA
+startport
+
+2	-1	coords= -926 40 0	0	0	0	mandatory= 0	0	1
+
+
+funcName= Or1 1	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	-1	coords= -926 55 0	1	0	0	mandatory= 0	0	1
+
+
+funcName= Or2 2	0	EndOfFunc
+BEGIN_LINE
+0	-1	0	2	-1	0
+END_LINE
+startport
+
+2	-1	coords= -926 70 0	0	0	0	mandatory= 0	0	1
+
+
+funcName= Or3 3	0	EndOfFunc
+BEGIN_LINE
+1	486	5	2	-1	0
+-953	110
+-953	70
+END_LINE
+startport
+
+2	-1	coords= -926 85 0	1	0	0	mandatory= 0	0	1
+
+
+funcName= Or4 4	0	EndOfFunc
+BEGIN_LINE
+1	486	8	2	-1	0
+-969	130
+-969	85
+END_LINE
+finishport
+
+3	-1	coords= -913 64 0	0	0	1	mandatory= 0	0	1
+
+SLideBarValChange
+funcName= Or1 1	1	funcName= Or2 2	1	funcName= Or3 3	1	funcName= Or4 4	1	EndOfFunc
+BEGIN_LINE
+0	477596	1	3	-1	0
 END_LINE
 END_BLOCK
 END_OF_BLOCKS
